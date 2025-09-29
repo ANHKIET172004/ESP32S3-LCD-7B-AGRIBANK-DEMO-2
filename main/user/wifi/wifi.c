@@ -23,6 +23,8 @@ extern char saved_ssid[32];
 extern char saved_password[64];//
 //////////
 extern bool found_saved_ap;
+extern int change;
+extern int cnt;
 
 // Callback function to update UI when Wi-Fi connection is established
 /*
@@ -136,7 +138,10 @@ void wifi_task(void *arg)
     static uint8_t connection_num = 0;  // Variable to track the number of connected stations
 
     while (1)
-    {
+    {   
+        //
+       
+       
         // Scan Wi-Fi networks if the scan flag is set
         if (WIFI_SCAN_FLAG)
         {
@@ -147,6 +152,7 @@ void wifi_task(void *arg)
         // Connect to a Wi-Fi network if the station flag is set
         if (WIFI_STA_FLAG)
         {   
+            
             WIFI_STA_FLAG = false;
             
             waveahre_rgb_lcd_set_pclk(12 * 1000 * 1000);  // Set pixel clock for the LCD
@@ -168,6 +174,8 @@ void wifi_task(void *arg)
             lv_timer_t *t = lv_timer_create(wifi_connection_cb, 100, NULL);  // Update UI every 100ms
             
             lv_timer_set_repeat_count(t, 1);  // Run only once
+
+            
             
         }
 

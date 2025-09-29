@@ -49,6 +49,7 @@ lv_obj_t *area=NULL;
 ///////
 static int click_count = 0;
 static uint32_t last_click_time = 0;
+int change=0;
 //////
 
  lv_timer_t* mytimer;
@@ -137,7 +138,7 @@ void ui_event_Image5(lv_event_t * e)
         snprintf(mess,sizeof(mess),"client:%d",score);
         mesh_enb=1;
         ESP_LOGI(SCREEN1_TAG, "diem danh gia: %d\n",score);
-        mytimer=lv_timer_create(change_screen, 2500, NULL);
+        mytimer=lv_timer_create(change_screen, 1000, NULL);
         _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen5_screen_init);
     }
 }
@@ -155,7 +156,7 @@ static void area_click_event_cb(lv_event_t *e) {
 
     if (click_count >= 7) {
         click_count = 0;
-        
+        change=1;//
         _ui_screen_change(&ui_Main_WIFI, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Wifi_Screen_init);
     }
     

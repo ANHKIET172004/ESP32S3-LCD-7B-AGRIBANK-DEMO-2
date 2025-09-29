@@ -84,6 +84,7 @@ lv_obj_t *ui_WIFI_AP_MAC_List;
 
 
 extern int cnt;//
+extern int change;
 
 bool WIFI_CONNECTION_DONE = false;
 void ui_WIFI_list_event_cb(lv_event_t * e);
@@ -163,7 +164,7 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
     if(event_code == LV_EVENT_VALUE_CHANGED && lv_obj_has_state(target, LV_STATE_CHECKED)) {
 
         found_saved_ap=false;//
-        cnt=0;//
+        cnt=0;// 
         // Remove the hidden flag from the Wifi scan list (show the list)
         _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
         WIFIOPEN(e);  // Open Wifi functionality
@@ -310,6 +311,7 @@ void ui_event_WIFI_Button2(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         // Change the screen back to the main screen with a fade animation
        //_ui_screen_change(&ui_Main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
+       change=0;
        _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
     }
 }

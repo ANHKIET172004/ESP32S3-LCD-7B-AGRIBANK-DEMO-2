@@ -28,8 +28,8 @@
 
 // các file header hỗ trợ gatt
 
-//#include "D:/ESP32/ESP32S3_LCD 7B_DEMO_3/ESP32-S3-Touch-LCD-7B-Demo/ESP32-S3-Touch-LCD-7B-Demo/ESP-IDF/16_LVGL_UI/main/gatt_server/gatt_server.h"
-#include "D:/ESP32/ESP32S3_LCD 7B_DEMO_3/ESP32-S3-Touch-LCD-7B-Demo/ESP32-S3-Touch-LCD-7B-Demo/ESP-IDF/16_LVGL_UI/main/gatt_client/gatt_client.h"
+#include "D:/ESP32/ESP32S3_LCD 7B_DEMO_3/ESP32-S3-Touch-LCD-7B-Demo/ESP32-S3-Touch-LCD-7B-Demo/ESP-IDF/16_LVGL_UI/main/gatt_server/gatt_server.h"
+//#include "D:/ESP32/ESP32S3_LCD 7B_DEMO_3/ESP32-S3-Touch-LCD-7B-Demo/ESP32-S3-Touch-LCD-7B-Demo/ESP-IDF/16_LVGL_UI/main/gatt_client/gatt_client.h"
 
 
 
@@ -140,9 +140,12 @@ void mainscreen_wifi_rssi_task(void *pvParameters) {
         }
       
         
-        vTaskDelay(pdMS_TO_TICKS(5000)); // Delay 5s
+        vTaskDelay(pdMS_TO_TICKS(2000)); // Delay 5s
     }
 }
+
+
+
 
 void app_main()
 {
@@ -157,7 +160,7 @@ void app_main()
         err = nvs_flash_init();
     }
 
-   ble_init();
+   //ble_init();
     
     // Open NVS for reading
     /*
@@ -236,10 +239,10 @@ void app_main()
     xTaskCreate(wifi_task, "wifi_task", 6 * 1024, NULL, 9, &wifi_TaskHandle);
     
 
-   // xTaskCreate(ble_server_task, "ble_server_task", 8 * 1024, NULL, 10, NULL);
+     xTaskCreate(ble_server_task, "ble_server_task", 8 * 1024, NULL, 10, NULL);
      xTaskCreate(mainscreen_wifi_rssi_task, "mainscreen_wifi_rssi_task", 8 * 1024, NULL, 9, NULL);
 
-   xTaskCreate(send_message_task, "send_message_task", 8 * 1024, NULL, 10, NULL);
+     //xTaskCreate(send_message_task, "send_message_task", 8 * 1024, NULL, 10, NULL);
 
     
 

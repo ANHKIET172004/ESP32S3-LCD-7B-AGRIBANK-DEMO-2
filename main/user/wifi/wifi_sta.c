@@ -1,6 +1,5 @@
 #include "ui.h"
 #include "wifi.h"
-//#include "esp_mesh.h"
 #include "nvs.h"
 
 static esp_netif_t *sta_netif;
@@ -17,14 +16,16 @@ extern bool found_saved_ap;
 
 
 
- extern lv_obj_t *saved_wifi_button;
+extern lv_obj_t *saved_wifi_button;
 extern bool user_selected_wifi;
 
+int reconnect=0;
+extern int cnt;
+
+extern void wifi_update_list_cb(lv_timer_t * timer) ;
+
 //////////////// lưu ssid,pass và bssid
-
-
-
-
+\
 void save_wifi_credentials (const char *ssid, const char *password, const uint8_t* bssid) {
     nvs_handle_t my_handle;
     esp_err_t err = nvs_open("wifi_cred", NVS_READWRITE, &my_handle);
@@ -195,10 +196,9 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
 
     
       else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ESP_LOGI(TAG_STA, "WIFI GOT_IP.");
-       
+        ESP_LOGI(TAG_STA, "WIFI GOT_IP.");  
 
-    }
+        }
 
    
 }
@@ -258,18 +258,21 @@ void wifi_wait_connect()
                 ESP_LOGI(TAG_STA, "Connected to AP SSID:%s, password:%s, bssid:%s", sta_config.sta.ssid, sta_config.sta.password,(uint8_t*)ap_info_bssid);
                 connection_flag = true;  // Set the connection flag to true
                 _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);//
-                if (user_selected_wifi){
-                user_selected_wifi=false;
+                if ((cnt==1)&&(reconnect==0)){// chip khởi động lại hoặc switch wifi on
+                    reconnect=1;// đánh dấu đã reconnect thành công
+                }
+                if (user_selected_wifi){// nếu connect bằng cách nhập pass thì lưu pass, ngược lại ko lưu
+                  user_selected_wifi=false;
                 //save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
                   save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,sta_config.sta.bssid);
-            }  
+           }  
 
                 //lv_obj_add_flag(ui_Image7, LV_OBJ_FLAG_HIDDEN);     /// Flags
                 //lv_obj_clear_flag(ui_Image19, LV_OBJ_FLAG_HIDDEN);//
                 s_retry_num = 0;  // Reset retry counter on successful connection
                 ////
-                 if (found_saved_ap){
-                    found_saved_ap=false;
+                  if (found_saved_ap){
+                     found_saved_ap=false;
                  }
                 ////
                 break;  // Exit the loop since the connection is successful
@@ -296,6 +299,12 @@ void wifi_wait_connect()
                  if (found_saved_ap){
                     found_saved_ap=false;
                  }
+
+                 if (user_selected_wifi){// nếu connect bằng cách nhập pass thì lưu pass, ngược lại ko lưu
+                  user_selected_wifi=false;
+                    // save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
+                  //save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,sta_config.sta.bssid);
+             }  
                 ////
                     break;  // Exit the loop after failed retries
                 }
@@ -370,8 +379,9 @@ if (found_saved_ap){//
 
     // Set WiFi configuration
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
-    esp_wifi_stop();  // Stop WiFi module
-    esp_wifi_start(); // Start WiFi with the new configuration
+    //esp_wifi_stop();  // Stop WiFi module
+    //esp_wifi_disconnect();//
+    //esp_wifi_start(); // Start WiFi with the new configuration
     ESP_ERROR_CHECK(esp_wifi_connect());  // Attempt to connect to the WiFi
     wifi_wait_connect();  // Wait for the connection to establish
     //是否需要阻塞，会有部分wifi无法连接上
@@ -454,11 +464,11 @@ void wifi_close_sta()
     }
     
     // Destroy the STA network interface if it exists
-    if (sta_netif != NULL)
-    {
-        esp_netif_destroy(sta_netif);  // Destroy the network interface
-        sta_netif = NULL;  // Prevent repeated destruction
-    }
+//    if (sta_netif != NULL)
+  //  {
+    //    esp_netif_destroy(sta_netif);  // Destroy the network interface
+      //  sta_netif = NULL;  // Prevent repeated destruction
+    //}
 }
 
 void wifi_set_default_netif()

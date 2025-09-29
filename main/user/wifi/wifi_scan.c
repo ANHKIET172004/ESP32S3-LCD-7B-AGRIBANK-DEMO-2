@@ -26,7 +26,8 @@ int found=-1;
 
  int cnt=0;
 
-
+extern int reconnect;
+int reconnect2=0;
 
 // Cấu trúc để truyền tham số an toàn 
 typedef struct {
@@ -38,7 +39,7 @@ typedef struct {
 } wifi_reconnect_params_t;
 
  lv_obj_t *wifi_last_Button = NULL;   //
- int8_t wifi_last_index;//
+ int8_t wifi_last_index=-1;//
 
 
 
@@ -53,6 +54,7 @@ lv_obj_t* wifi_get_last_button(void) {
 void wifi_set_last_index(int idx) {
     wifi_last_index = idx;
 }
+
 
 
 
@@ -246,7 +248,8 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
 
 
 
-static void wifi_update_list_cb(lv_timer_t * timer) {
+//static void wifi_update_list_cb(lv_timer_t * timer) {
+ void wifi_update_list_cb(lv_timer_t * timer) {
 
            // đọc ssid và password của wifi đã lưu trước đó
           esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_password, &password_len,saved_bssid);
@@ -255,11 +258,13 @@ static void wifi_update_list_cb(lv_timer_t * timer) {
             
         }
 
+      
     // Show the loading spinner while updating the Wi-Fi list
     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     // Disable the Wi-Fi open button and AP open button while scanning
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
     _ui_state_modify(ui_WIFI_AP_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
+        
     
    
     // Iterate through the scanned AP list
@@ -270,6 +275,9 @@ static void wifi_update_list_cb(lv_timer_t * timer) {
         {
             break;
         }
+
+        
+        /*
         else if(ap_info[i].rssi > -25)  // Strong signal (RSSI > -25)
         {
             // Add button with strong signal icon
@@ -289,7 +297,28 @@ static void wifi_update_list_cb(lv_timer_t * timer) {
         {
             // Add button with very weak signal icon
             WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_wifi_1_png, (const char *)ap_info[i].ssid);
-        }
+        } 
+            */
+         
+        
+
+
+   //     if (i == wifi_last_index && WIFI_CONNECTION != -1) {
+         //   WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_ok_png, (const char *)ap_info[i].ssid);
+         //   lv_obj_move_to_index(WIFI_List_Button, 0);
+
+    //    } else {
+            // Nếu không phải AP đang kết nối → hiển thị icon theo RSSI
+            if (ap_info[i].rssi > -25) {
+                WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_wifi_4_png, (const char *)ap_info[i].ssid);
+            } else if (ap_info[i].rssi > -50) {
+                WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_wifi_3_png, (const char *)ap_info[i].ssid);
+            } else if (ap_info[i].rssi > -75) {
+                WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_wifi_2_png, (const char *)ap_info[i].ssid);
+            } else {
+                WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_wifi_1_png, (const char *)ap_info[i].ssid);
+            }
+     //   }    
    
         
         // Customize button appearance
@@ -302,9 +331,7 @@ static void wifi_update_list_cb(lv_timer_t * timer) {
 
           ////////////
 
-        //if (strcmp((const char *)ap_info[i].ssid, saved_ssid) == 0) {
-        
-
+    if (strcmp((const char *)ap_info[i].ssid, saved_ssid) == 0) {
 
         if (memcmp(ap_info[i].bssid, saved_bssid, 6) == 0) {   //
                 ESP_LOGI(TAG, "" );
@@ -315,18 +342,44 @@ static void wifi_update_list_cb(lv_timer_t * timer) {
 
                 found_saved_ap = true;
                  
-               wifi_set_last_button(WIFI_List_Button);
-              wifi_set_last_index(i);
+                wifi_set_last_button(WIFI_List_Button);
+                wifi_set_last_index(i);
                  wifi_index=i;
                  cnt++;//
-                 if (cnt<2){//
+                 if (cnt<2){// chỉ reconnect khi reset/ switch wifi từ off->on
                  WIFI_STA_FLAG = true;//
+                 }//
+
+                 else {// cnt>1, đã chuyển từ main screen sang wifi screen sau khi reconnect và switch wifi đang on
+                    if ((reconnect==1)&&(reconnect2==0)){// nếu đã reconnect wifi cũ thành công thì lần scan tiếp theo chỉ cập nhật icon ok cho button list của wifi được connect
+                        reconnect=0;
+                   // WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_ok_png, (const char *)ap_info[i].ssid);
+                      lv_obj_t *img = lv_obj_get_child(WIFI_List_Button, 0);
+                      lv_img_set_src(img, &ui_img_ok_png);  // Set success icon
+                      lv_obj_move_to_index(WIFI_List_Button, 0);
+                      reconnect2++;
+                    }
+                    else if (reconnect2>0){
+                      lv_obj_t *img = lv_obj_get_child(WIFI_List_Button, 0);
+                      lv_img_set_src(img, &ui_img_ok_png);  // Set success icon
+                      lv_obj_move_to_index(WIFI_List_Button, 0);
+                      reconnect2++;
+
+                    }
                  }//
 
               
 
             }
             else {
+                  ESP_LOGI(TAG, "" );
+                  ESP_LOGI(TAG, "BSSID %02X:%02X:%02X:%02X:%02X:%02X",ap_info[i].bssid[0],ap_info[i].bssid[1],ap_info[i].bssid[2],ap_info[i].bssid[3],ap_info[i].bssid[4],ap_info[i].bssid[5]);
+                  ESP_LOGI(TAG, "Not saved wifi network, ssid:%s",(const char *)ap_info[i].ssid );
+                  ESP_LOGI(TAG, "Saved BSSID %02X:%02X:%02X:%02X:%02X:%02X",saved_bssid[0],saved_bssid[1],saved_bssid[2],saved_bssid[3],saved_bssid[4],saved_bssid[5]);
+
+            }
+        }
+        else {
                   ESP_LOGI(TAG, "" );
                   ESP_LOGI(TAG, "BSSID %02X:%02X:%02X:%02X:%02X:%02X",ap_info[i].bssid[0],ap_info[i].bssid[1],ap_info[i].bssid[2],ap_info[i].bssid[3],ap_info[i].bssid[4],ap_info[i].bssid[5]);
                   ESP_LOGI(TAG, "Not saved wifi network, ssid:%s",(const char *)ap_info[i].ssid );
@@ -347,7 +400,7 @@ if (found_saved_ap){
 /* Initialize Wi-Fi as STA (Station mode) and set the scan method */
 void wifi_scan(void)
 {
-    uint16_t number = DEFAULT_SCAN_LIST_SIZE;  // Maximum number of APs to scan for
+    uint16_t number = DEFAULT_SCAN_LIST_SIZE;  // Maximum number of APs to scan for 
     uint16_t ap_count = 0;  // Variable to hold the number of found APs
 
     // Clear the ap_info array to hold fresh scan results
@@ -363,16 +416,18 @@ void wifi_scan(void)
     ////////
 
     // Start the Wi-Fi scan
-    esp_wifi_scan_start(NULL, true);
+    esp_wifi_scan_start(NULL, true);// blocking
 
     ESP_LOGI(TAG, "Max AP number ap_info can hold = %u", number);
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count));  // Get the number of scanned APs
+    // chỉ có thể dùng get ap num và get ap records khi set true cho esp_wifi_scan_start(blocking)
+    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count));  // Get the number of scanned APs/ số AP thật sự quét được
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&number, ap_info));  // Get the scan results (AP records)
-    ESP_LOGI(TAG, "Total APs scanned = %u, actual AP number ap_info holds = %u", ap_count, number);
+    //ESP_LOGI(TAG, "Total APs scanned = %u, actual AP number ap_info holds = %u", ap_count, number);
 
     // Create a timer to update the UI with the scanned Wi-Fi list
     lv_timer_t *t = lv_timer_create(wifi_update_list_cb, 100, NULL); // Update the UI every 100ms
-    lv_timer_set_repeat_count(t, 1);
+    lv_timer_set_repeat_count(t, 1);// chỉ update 1 lần
+    
 
     // Delay to allow UI update time
     vTaskDelay(pdMS_TO_TICKS(100));

@@ -6,16 +6,17 @@
 //#include "../ui.h"
 #include "ui.h"
 
-static int click_count = 0;
-static uint32_t last_click_time = 0;
+//static int click_count = 0;
+//static uint32_t last_click_time = 0;
+
+extern int cnt;
+
+
+extern void wifi_scan(void);
 
 
 
-
-
-
-
-
+/*
 static void background_click_event_cb(lv_event_t *e) {
         uint32_t current_time = lv_tick_get();
 
@@ -29,11 +30,37 @@ static void background_click_event_cb(lv_event_t *e) {
     if (click_count >= 3) {
         click_count = 0;
         
-        _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Screen1_screen_init);
+        //_ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Screen1_screen_init);
+       WIFI_SCAN_FLAG=true;
+      wifi_scan();
+     WIFI_SCAN_FLAG = false;
     }
     
     last_click_time = current_time;
 }
+*/
+
+
+
+
+// Callback cho button Rescan
+static void ui_event_WIFI_Refresh_Button(lv_event_t * e)
+{
+//    ESP_LOG("UI", "Rescan button clicked");
+
+if (cnt!=0){
+
+    // Bắt đầu scan Wi-Fi (non-blocking)
+    //wifi_scan();
+    lv_obj_clean(ui_WIFI_SCAN_List);
+    _ui_flag_modify(ui_WIFI_Details_Win, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
+    WIFI_SCAN_FLAG=true;
+}
+
+
+}
+
 
 void ui_Wifi_Screen_init(void)
 {
@@ -502,6 +529,28 @@ void ui_Wifi_Screen_init(void)
     lv_obj_add_event_cb(ui_WIFI_INPUT_PWD, ui_event_WIFI_INPUT_PWD, LV_EVENT_ALL, NULL);                 // Password input field event handler
     lv_keyboard_set_textarea(ui_WIFI_INPUT_KEYBOARD, ui_WIFI_INPUT_PWD);                                 // Set the password input field as the keyboard's text area
 
+////////
+    /* Create "Rescan" button */
+    lv_obj_t *ui_WIFI_Rescan_Button = lv_btn_create(ui_WIFI_SCAN_STA);
+    lv_obj_set_width(ui_WIFI_Rescan_Button, 140);
+    lv_obj_set_height(ui_WIFI_Rescan_Button, 50);
+  //  lv_obj_set_x(ui_WIFI_Rescan_Button, 10);   // đặt bên trái
+   /// lv_obj_set_y(ui_WIFI_Rescan_Button, 10);   // phía trên
+    //lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_TOP_LEFT);
+    //lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_BOTTOM_RIGHT);  // đặt ở góc trên cùng bên phải
+
+    lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_TOP_MID);
+     
+    //lv_obj_align_to(ui_WIFI_Rescan_Button, ui_WIFI_Button2, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+
+    lv_obj_set_style_bg_color(ui_WIFI_Rescan_Button, lv_color_hex(0x0080FF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WIFI_Rescan_Button, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    lv_obj_t *label_rescan = lv_label_create(ui_WIFI_Rescan_Button);
+    lv_label_set_text(label_rescan, "Refresh");
+    lv_obj_center(label_rescan);
+
+
     /* Additional event handlers for Wi-Fi AP settings */
     lv_obj_add_event_cb(ui_WIFI_Button2, ui_event_WIFI_Button2, LV_EVENT_ALL, NULL);         // Button2 event handler
     lv_obj_add_event_cb(ui_WIFI_AP_NAME, ui_event_WIFI_AP_NAME, LV_EVENT_ALL, NULL);         // AP Name input field event handler
@@ -511,6 +560,55 @@ void ui_Wifi_Screen_init(void)
     lv_obj_add_event_cb(ui_WIFI_AP_OPEN, ui_event_WIFI_AP_OPEN, LV_EVENT_ALL, NULL);         // AP Open switch event handler
     lv_keyboard_set_textarea(ui_WIFI_AP_Keyboard, ui_WIFI_AP_NAME);        // Set the AP Name input field as the keyboard's text area
 
-   // lv_obj_add_event_cb(ui_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
+    //lv_obj_add_event_cb(ui_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
+        // Gắn sự kiện cho button Refresh
+    lv_obj_add_event_cb(ui_WIFI_Rescan_Button, ui_event_WIFI_Refresh_Button, LV_EVENT_CLICKED, NULL);
 
+
+      
+}
+
+void ui_Wifi_Screen_destroy(){
+    if(ui_Main_WIFI) lv_obj_del(ui_Main_WIFI);
+     ui_WIFI = NULL;
+    ui_WIFI_STA = NULL;
+    ui_WIFI_SCAN_STA = NULL;
+    ui_WIFI_Button0 = NULL;
+    ui_WIFI_Label0 = NULL;
+    ui_WIFI_OPEN = NULL;
+    ui_WIFI_List_Win = NULL;
+    ui_WIFI_SCAN_List = NULL;
+    ui_WIFI_Spinner = NULL;
+    ui_WIFI_Details_Win = NULL;
+    ui_WIFI_Name = NULL;
+    ui_WIFI_Aurhmode = NULL;
+    ui_WIFI_Pairwise = NULL;
+    ui_WIFI_Group = NULL;
+    ui_WIFI_Channel = NULL;
+    ui_WIFI_IP = NULL;
+    ui_WIFI_Connection_BUTTON = NULL;
+    ui_Connection = NULL;
+    ui_WIFI_INPUT_PWD = NULL;
+    ui_WIFI_EYE = NULL;
+    ui_WIFI_INPUT_KEYBOARD = NULL;
+    ui_WIFI_Wait_CONNECTION = NULL;
+    ui_WIFI_PWD_Error = NULL;
+    ui_WIFI_AP = NULL;
+    ui_WIFI_OPEN_AP_ = NULL;
+    ui_WIFI_Button2 = NULL;
+    ui_WIFI_Label2 = NULL;
+    ui_WIFI_AP_Information = NULL;
+    ui_WIFI_AP_NAME = NULL;
+    ui_WIFI_AP_Password = NULL;
+    ui_WIFI_AP_EYE = NULL;
+    ui_WIFI_AP_Channel = NULL;
+    ui_WIFI_AP_NAME_Label = NULL;
+    ui_WIFI_AP_PWD_Label = NULL;
+    ui_WIFI_AP_Channel_Label = NULL;
+    ui_WIFI_AP_MAC_ADDR = NULL;
+    ui_WIFI_AP_MAC_List = NULL;
+    ui_WIFI_AP_CON_NUM = NULL;
+    ui_WIFI_AP_OPEN = NULL;
+    ui_WIFI_AP_INPUT_ERROR = NULL;
+    ui_WIFI_AP_Keyboard = NULL;
 }
