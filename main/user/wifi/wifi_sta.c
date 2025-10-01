@@ -22,6 +22,8 @@ extern bool user_selected_wifi;
 int reconnect=0;
 extern int cnt;
 
+
+
 extern void wifi_update_list_cb(lv_timer_t * timer) ;
 
 //////////////// lưu ssid,pass và bssid
@@ -78,6 +80,8 @@ static void wifi_ok_cb(lv_timer_t * timer)
             snprintf(ip, sizeof(ip), "IP " IPSTR, IP2STR(&ip_info.ip));
             lv_label_set_text(ui_WIFI_IP, ip);  // Display IP address
             _ui_flag_modify(ui_WIFI_IP, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);  // Show the IP address
+            lv_obj_move_to_index(WIFI_List_Button, 0);//
+
             WIFI_CONNECTION_DONE = true; 
             if (wifi_last_index != -1 && wifi_last_index != wifi_index)
             {  
@@ -87,7 +91,9 @@ static void wifi_ok_cb(lv_timer_t * timer)
                 img = lv_obj_get_child(wifi_last_Button, 0);
 
 
-                if(img != NULL)
+               // if(img != NULL)
+                if(img && lv_obj_is_valid(img)) //
+
                 {
                     if(ap_info[wifi_last_index].rssi > -25)
                         lv_img_set_src(img, &ui_img_wifi_4_png); // Strong signal
@@ -174,7 +180,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data)
 
 {    
-    wifi_event_sta_connected_t* event = (wifi_event_sta_connected_t*) event_data;//
+    //wifi_event_sta_connected_t* event = (wifi_event_sta_connected_t*) event_data;//
 
 
      if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED)
@@ -281,7 +287,7 @@ void wifi_wait_connect()
                 ESP_LOGI(TAG_STA, "Failed to connect to the AP");
 
                 // Retry connection if the retry counter is less than 5
-                if (s_retry_num < 5)
+                if (s_retry_num < 7)
                 {
                     s_retry_num++;
                     ESP_LOGI(TAG_STA, "Retrying to connect to the AP");
@@ -333,11 +339,14 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
         esp_wifi_disconnect();  // Disconnect from the current WiFi
         connection_flag = false;  // Reset connection flag
     }
+    esp_wifi_disconnect();//
+
+    vTaskDelay(pdMS_TO_TICKS(1000));  //
     
-    wifi_config_t wifi_config = {              \
-        .sta = {                                \
-            .threshold.authmode = authmode,     \
-        },                                      \
+    wifi_config_t wifi_config = {              
+        .sta = {                                
+            .threshold.authmode = authmode,     
+        },                                      
     };
     
    

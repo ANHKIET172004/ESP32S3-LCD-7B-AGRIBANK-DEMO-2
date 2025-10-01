@@ -11,7 +11,7 @@
 
 extern int cnt;
 
-
+extern int refresh_index;
 extern void wifi_scan(void);
 
 
@@ -52,10 +52,12 @@ if (cnt!=0){
 
     // Bắt đầu scan Wi-Fi (non-blocking)
     //wifi_scan();
+    _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);
     lv_obj_clean(ui_WIFI_SCAN_List);
     _ui_flag_modify(ui_WIFI_Details_Win, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
      _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
     WIFI_SCAN_FLAG=true;
+    
 }
 
 
@@ -91,6 +93,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_bg_opa(ui_WIFI_STA, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set background opacity
 
     // Create scan container for "STA" tab
+    
     ui_WIFI_SCAN_STA = lv_obj_create(ui_WIFI_STA);
     lv_obj_set_width(ui_WIFI_SCAN_STA, lv_pct(100));                                                          // Full width
     lv_obj_set_height(ui_WIFI_SCAN_STA, lv_pct(100));                                                         // Full height
@@ -316,10 +319,12 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_opa(ui_WIFI_PWD_Error, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
     lv_obj_set_style_text_font(ui_WIFI_PWD_Error, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    
     /* Create new tab in Wi-Fi view for AP settings */
-    ui_WIFI_AP = lv_tabview_add_tab(ui_WIFI, "AP"); // Add a new tab titled "AP" to the Wi-Fi tab view
+  //  ui_WIFI_AP = lv_tabview_add_tab(ui_WIFI, "AP"); // Add a new tab titled "AP" to the Wi-Fi tab view
 
     /* Create a container for the Open AP settings */
+    
     ui_WIFI_OPEN_AP_ = lv_obj_create(ui_WIFI_AP);
     lv_obj_set_width(ui_WIFI_OPEN_AP_, lv_pct(100));                                                          // Set container width to 100% of parent container
     lv_obj_set_height(ui_WIFI_OPEN_AP_, lv_pct(100));                                                         // Set container height to 100% of parent container
@@ -331,6 +336,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_border_opa(ui_WIFI_OPEN_AP_, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set border opacity to 0 (transparent)
 
     /* Create "Click Back" button in Open AP settings */
+    
     ui_WIFI_Button2 = lv_btn_create(ui_WIFI_OPEN_AP_);
     lv_obj_set_width(ui_WIFI_Button2, 140);                                                              // Set button width to 120
     lv_obj_set_height(ui_WIFI_Button2, 50);                                                              // Set button height to 50
@@ -351,6 +357,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_font(ui_WIFI_Label2, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     /* Create container for AP settings information */
+    
     ui_WIFI_AP_Information = lv_obj_create(ui_WIFI_OPEN_AP_);
     lv_obj_set_width(ui_WIFI_AP_Information, lv_pct(55));                                                           // Set width to 55% of parent container
     lv_obj_set_height(ui_WIFI_AP_Information, lv_pct(84));                                                          // Set height to 84% of parent container
@@ -362,6 +369,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_border_opa(ui_WIFI_AP_Information, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set border opacity to 0 (transparent)
 
     /* Create AP name input field */
+    
     ui_WIFI_AP_NAME = lv_textarea_create(ui_WIFI_AP_Information);
     lv_obj_set_width(ui_WIFI_AP_NAME, 295);                                                                // Set width to 295
     lv_obj_set_height(ui_WIFI_AP_NAME, LV_SIZE_CONTENT);                                                   // Set height based on content (70)
@@ -377,6 +385,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_bg_opa(ui_WIFI_AP_NAME, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                          // Set background opacity to 0 (transparent)
 
     /* Create AP password input field */
+    
     ui_WIFI_AP_Password = lv_textarea_create(ui_WIFI_AP_Information);
     lv_obj_set_width(ui_WIFI_AP_Password, 295);                                                                // Set width to 295
     lv_obj_set_height(ui_WIFI_AP_Password, LV_SIZE_CONTENT);                                                   // Set height based on content (70)
@@ -480,6 +489,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_opa(ui_WIFI_AP_MAC_List, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to fully opaque
 
     /* Create label for connection status (whether AP is started or not) */
+    
     ui_WIFI_AP_CON_NUM = lv_label_create(ui_WIFI_AP_MAC_ADDR);
     lv_obj_set_width(ui_WIFI_AP_CON_NUM, LV_SIZE_CONTENT);                                                    // Set width to content size
     lv_obj_set_height(ui_WIFI_AP_CON_NUM, LV_SIZE_CONTENT);                                                   // Set height to content size
@@ -492,6 +502,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_font(ui_WIFI_AP_CON_NUM, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     /* Create a switch to enable or disable the Wi-Fi AP */
+    
     ui_WIFI_AP_OPEN = lv_switch_create(ui_WIFI_OPEN_AP_);
     lv_obj_set_width(ui_WIFI_AP_OPEN, 50);                 // Set width of the switch to 50 pixels
     lv_obj_set_height(ui_WIFI_AP_OPEN, 30);                // Set height of the switch to 30 pixels
@@ -500,6 +511,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_align(ui_WIFI_AP_OPEN, LV_ALIGN_TOP_RIGHT); // Align the switch to the top right of the parent container
 
     /* Create a label to display input error message */
+    
     ui_WIFI_AP_INPUT_ERROR = lv_label_create(ui_WIFI_OPEN_AP_);
     lv_obj_set_width(ui_WIFI_AP_INPUT_ERROR, LV_SIZE_CONTENT);                                                    // Set width to content size
     lv_obj_set_height(ui_WIFI_AP_INPUT_ERROR, LV_SIZE_CONTENT);                                                   // Set height to content size
@@ -510,6 +522,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_opa(ui_WIFI_AP_INPUT_ERROR, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to fully opaque
 
     /* Create a keyboard for input */
+    
     ui_WIFI_AP_Keyboard = lv_keyboard_create(ui_WIFI_AP);
     lv_obj_set_width(ui_WIFI_AP_Keyboard, lv_pct(100));                                                        // Set keyboard width to 100% of the parent container
     lv_obj_set_height(ui_WIFI_AP_Keyboard, lv_pct(50));                                                        // Set keyboard height to 50% of the parent container
@@ -522,6 +535,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_font(ui_WIFI_AP_Keyboard, &lv_font_montserrat_14, LV_PART_ITEMS | LV_STATE_DEFAULT); // Set text font to Montserrat 14
 
     /* Add event callbacks for various buttons and input fields */
+    
     lv_obj_add_event_cb(ui_WIFI_Button0, ui_event_WIFI_Button0, LV_EVENT_ALL, NULL);                     // Button0 event handler
     lv_obj_add_event_cb(ui_WIFI_OPEN, ui_event_WIFI_OPEN, LV_EVENT_ALL, NULL);                           // Wi-Fi Open switch event handler
     lv_obj_add_event_cb(ui_WIFI_Connection_BUTTON, ui_event_WIFI_Connection_BUTTON, LV_EVENT_ALL, NULL); // Connection button event handler
@@ -552,6 +566,7 @@ void ui_Wifi_Screen_init(void)
 
 
     /* Additional event handlers for Wi-Fi AP settings */
+    
     lv_obj_add_event_cb(ui_WIFI_Button2, ui_event_WIFI_Button2, LV_EVENT_ALL, NULL);         // Button2 event handler
     lv_obj_add_event_cb(ui_WIFI_AP_NAME, ui_event_WIFI_AP_NAME, LV_EVENT_ALL, NULL);         // AP Name input field event handler
     lv_obj_add_event_cb(ui_WIFI_AP_EYE, ui_event_WIFI_AP_EYE, LV_EVENT_ALL, NULL);           // Eye icon for AP Name event handler

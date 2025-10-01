@@ -95,8 +95,11 @@ extern bool found_saved_ap;
 
 bool user_selected_wifi = false;
 
+extern int refresh_index;
+
 /////wifi
 
+extern int reconnect2;
 
 // EVENTS
 lv_obj_t * ui____initial_actions0;
@@ -197,15 +200,33 @@ void ui_WIFI_list_event_cb(lv_event_t * e)
         // Get the button that was pressed (the selected Wifi network)
         WIFI_List_Button = lv_event_get_target(e);  
         wifi_index = (int)lv_event_get_user_data(e);  // Get the index of the selected Wifi network
+
+        //////////
+
+      
+
+
+
+
+        ///////////
         printf("index:%d\r\n",wifi_index);
 
         // If the selected network is the currently connected one, show the IP address
-        if (WIFI_CONNECTION == wifi_index) {
+       // if ((reconnect2>0)&&(wifi_index==0))
+        //{
+            /* code */
+          //   _ui_flag_modify(ui_WIFI_IP, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);  
+        //}
+        
+       // else
+        //{//
+        if ((WIFI_CONNECTION == wifi_index)&&connection_flag) {//
             _ui_flag_modify(ui_WIFI_IP, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);  
         } else {
             // Otherwise, hide the IP address display
             _ui_flag_modify(ui_WIFI_IP, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         }
+   // }//
         
         // Clear the password input field
         lv_textarea_set_text(ui_WIFI_INPUT_PWD, "");

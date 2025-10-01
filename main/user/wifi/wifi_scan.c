@@ -41,7 +41,30 @@ typedef struct {
  lv_obj_t *wifi_last_Button = NULL;   //
  int8_t wifi_last_index=-1;//
 
+ lv_obj_t *wifi_refresh_Button = NULL;   //
 
+ extern int connect_success;
+
+ int refresh_index=-1;
+
+/////
+void swap_buttons(lv_obj_t *list, int idx1, int idx2) {
+    // Lấy đối tượng button
+    lv_obj_t *btn1 = lv_obj_get_child(list, idx1);
+    lv_obj_t *btn2 = lv_obj_get_child(list, idx2);
+
+    if(!btn1 || !btn2) return;
+
+    // Di chuyển btn1 sang vị trí idx2
+    lv_obj_move_to_index(btn1, idx2);
+
+    // Vì sau khi di chuyển btn1 thì index có thể thay đổi,
+    // ta cần lấy lại btn2 từ list
+    btn2 = lv_obj_get_child(list, idx1);
+
+    // Di chuyển btn2 sang vị trí idx1
+    lv_obj_move_to_index(btn2, idx1);
+}
 
 void wifi_set_last_button(lv_obj_t *btn) {
     wifi_last_Button = btn;
@@ -51,8 +74,23 @@ lv_obj_t* wifi_get_last_button(void) {
     return wifi_last_Button;
 }
 
+void wifi_set_refresh_button(lv_obj_t *btn) {
+    wifi_refresh_Button = btn;
+}
+lv_obj_t* wifi_get_refresh_button(void) {
+    return wifi_refresh_Button;
+}
+
 void wifi_set_last_index(int idx) {
     wifi_last_index = idx;
+}
+
+void wifi_set_wifi_index(int idx) {
+    wifi_index = idx;
+}
+
+int wifi_get_wifi_index(void) {
+    return wifi_index;
 }
 
 
@@ -254,9 +292,12 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
            // đọc ssid và password của wifi đã lưu trước đó
           esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_password, &password_len,saved_bssid);
           if (err==ESP_OK){
-            ESP_LOGI("NVS", "có SSID đã lưu trong nvs");
+            ESP_LOGI("NVS", "Have a saved wifi network in NVS");
             
         }
+
+        lv_obj_clean(ui_WIFI_SCAN_List);//
+
 
       
     // Show the loading spinner while updating the Wi-Fi list
@@ -325,9 +366,11 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
         lv_obj_set_style_bg_opa(WIFI_List_Button, 0, LV_PART_MAIN | LV_STATE_DEFAULT);  // Set background opacity to 0 (transparent)
         lv_obj_set_style_text_color(WIFI_List_Button, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);  // Set text color to white
         lv_obj_set_style_text_opa(WIFI_List_Button, 255, LV_PART_MAIN | LV_STATE_DEFAULT);  // Set text opacity to full (255)
-
+        
+        
+        
         // Add event callback for each button
-        lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)i);  // Pass index as user data
+       // lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)i);  // Pass index as user data
 
           ////////////
 
@@ -351,18 +394,39 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
                  }//
 
                  else {// cnt>1, đã chuyển từ main screen sang wifi screen sau khi reconnect và switch wifi đang on
-                    if ((reconnect==1)&&(reconnect2==0)){// nếu đã reconnect wifi cũ thành công thì lần scan tiếp theo chỉ cập nhật icon ok cho button list của wifi được connect
+                    if ((reconnect==1)&&(reconnect2==0)&&connection_flag&&connect_success){// nếu đã reconnect wifi cũ thành công thì lần scan tiếp theo chỉ cập nhật icon ok cho button list của wifi được connect
                         reconnect=0;
                    // WIFI_List_Button = lv_list_add_btn(ui_WIFI_SCAN_List, &ui_img_ok_png, (const char *)ap_info[i].ssid);
+                       //wifi_index=0;//
+                       WIFI_CONNECTION = i;//
+                     //refresh_index=i;
                       lv_obj_t *img = lv_obj_get_child(WIFI_List_Button, 0);
+                      
                       lv_img_set_src(img, &ui_img_ok_png);  // Set success icon
-                      lv_obj_move_to_index(WIFI_List_Button, 0);
-                      reconnect2++;
+                     // wifi_set_wifi_index(i);
+                     
+                      lv_obj_move_to_index(WIFI_List_Button, 0);//
+                     // WIFI_CONNECTION=i;
+                     // wifi_set_refresh_button(WIFI_List_Button);
+                     //lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)wifi_index);  // Pass index as user data//
+                     //swap_buttons(WIFI_List_Button, 0, i);
+
+                     reconnect2++;
                     }
-                    else if (reconnect2>0){
+                    else if ((reconnect2>0)&&connection_flag&&connect_success){//
+                      //wifi_index=0;//
+                      WIFI_CONNECTION = i;//
+                     //refresh_index=i;
                       lv_obj_t *img = lv_obj_get_child(WIFI_List_Button, 0);
                       lv_img_set_src(img, &ui_img_ok_png);  // Set success icon
-                      lv_obj_move_to_index(WIFI_List_Button, 0);
+                      
+                      lv_obj_move_to_index(WIFI_List_Button, 0);//
+                      
+                     // wifi_set_refresh_button(WIFI_List_Button);
+                      //swap_buttons(WIFI_List_Button, 0, i);
+
+                      //wifi_index=0;//
+                      //lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)i);  // Pass index as user data//
                       reconnect2++;
 
                     }
@@ -387,13 +451,22 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
 
             }
 
-
+         lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)i);  // Pass index as user data//
         
     }
 
+     
+
 if (found_saved_ap){
    WIFI_List_Button = wifi_get_last_button();
+   wifi_index=wifi_get_wifi_index();
 }
+
+
+   
+
+
+
    
 }
 

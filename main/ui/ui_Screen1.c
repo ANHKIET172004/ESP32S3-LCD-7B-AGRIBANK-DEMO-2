@@ -64,6 +64,8 @@ int mesh_enb=0;
 const char *SCREEN1_TAG ="Feedback"; 
 int score=0;
    uint8_t tx_buf[1469];
+
+   extern int cnt;
 void change_screen(lv_timer_t *timer){
 
     lv_timer_del(timer);
@@ -158,6 +160,21 @@ static void area_click_event_cb(lv_event_t *e) {
         click_count = 0;
         change=1;//
         _ui_screen_change(&ui_Main_WIFI, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Wifi_Screen_init);
+
+
+        /////////
+        if (cnt!=0){
+
+    // Bắt đầu scan Wi-Fi (non-blocking)
+    //wifi_scan();
+    _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);//
+    lv_obj_clean(ui_WIFI_SCAN_List);
+    _ui_flag_modify(ui_WIFI_Details_Win, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
+     
+    WIFI_SCAN_FLAG=true;
+}
+
     }
     
     last_click_time = current_time;
