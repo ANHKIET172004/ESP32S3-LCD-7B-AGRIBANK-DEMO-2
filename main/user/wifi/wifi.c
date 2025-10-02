@@ -159,11 +159,12 @@ void wifi_task(void *arg)
             vTaskDelay(20);  // Delay for a short while
               if (found_saved_ap)///// khi reset lại/ switch on thì kết nối lại với wifi được lưu trong nvs
             {/////
-               //found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on 
+               found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on 
                wifi_sta_init((uint8_t*)saved_ssid, (uint8_t*)saved_password, ap_info[wifi_index].authmode,ap_info[wifi_index].bssid);        
                 
              }/////// 
               else {// kết nối tới wifi chọn thủ công
+               // found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on
             //wifi_sta_init(ap_info[wifi_index].ssid, wifi_pwd, ap_info[wifi_index].authmode,NULL);  // Initialize Wi-Fi as STA and connect
             wifi_sta_init(ap_info[wifi_index].ssid, wifi_pwd, ap_info[wifi_index].authmode,ap_info[wifi_index].bssid);  // Initialize Wi-Fi as STA and connect//
              }//

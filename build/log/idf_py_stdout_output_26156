@@ -1,0 +1,414 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM10'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Sep 26 2025 21:34:30[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c150020 size=d4ebch (872124) map[0m
+[0;32mI (221) esp_image: segment 1: paddr=000e4ee4 vaddr=3fca6300 size=05fc4h ( 24516) load[0m
+[0;32mI (225) esp_image: segment 2: paddr=000eaeb0 vaddr=40374000 size=05168h ( 20840) load[0m
+[0;32mI (230) esp_image: segment 3: paddr=000f0020 vaddr=42000020 size=143c30h (1326128) map[0m
+[0;32mI (429) esp_image: segment 4: paddr=00233c58 vaddr=40379168 size=1d0e4h (119012) load[0m
+[0;32mI (452) esp_image: segment 5: paddr=00250d44 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (465) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (465) boot: Disabling RNG early entropy source...[0m
+[0;33mW (475) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (476) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (483) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (490) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (495) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (498) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (503) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (508) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (512) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (517) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (521) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (526) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (530) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (535) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (540) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (552) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (552) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (553) esp_psram: Speed: 120MHz[0m
+[0;32mI (592) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (662) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (662) cpu_start: Multicore app[0m
+[0;32mI (811) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (819) cpu_start: Pro cpu start user code[0m
+[0;32mI (819) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (820) app_init: Application information:[0m
+[0;32mI (820) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (824) app_init: App version:      bba0fe8-dirty[0m
+[0;32mI (828) app_init: Compile time:     Oct  1 2025 11:41:09[0m
+[0;32mI (833) app_init: ELF file SHA256:  f829c6c21...[0m
+[0;32mI (838) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (842) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (846) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (849) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (853) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (860) heap_init: At 3FCB7620 len 000320F0 (200 KiB): RAM[0m
+[0;32mI (865) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (870) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (875) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (880) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (887) esp_psram: Adding pool of 44K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (898) spi_flash: detected chip: generic[0m
+[0;32mI (902) spi_flash: flash io: qio[0m
+[0;32mI (905) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (911) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (918) coexist: coex firmware version: 831ec70[0m
+[0;32mI (931) coexist: coexist rom version e7ae62f[0m
+[0;32mI (931) main_task: Started on CPU0[0m
+[0;32mI (932) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (937) main_task: Calling app_main()[0m
+[0;33mW (949) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1356) GT911: Initialize I2C panel IO[0m
+[0;32mI (1356) GT911: Initialize touch controller GT911[0m
+[0;33mW (1356) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1358) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1361) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1365) example: Install RGB LCD panel driver[0m
+[0;32mI (1405) example: Initialize RGB LCD panel[0m
+[0;32mI (1407) lv_port: Create LVGL task[0m
+[0;32mI (1434) main: Display LVGL demos[0m
+[0;32mI (1596) pp: pp rom version: e7ae62f[0m
+[0;32mI (1596) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1597) BLE_INIT: BT controller compile version [4713a69][0m
+[0;32mI (1598) wifi:wifi driver task: 3fcd7b1c, prio:23, stack:6656, core=0[0m
+[0;32mI (1598) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (1612) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1616) wifi:W (1598) RSSI: Not connected to any AP[0m
+wifi certification version: v7.0
+[0;32mI (1624) wifi:I (1598) main: API task started[0m
+[0;32mI (1628) main: Waiting for WiFi...[0m
+[0;32mI (1614) BLE_INIT: Bluetooth MAC: 10:20:ba:01:48:aa[0m
+config NVS flash: enabled
+[0;32mI (1638) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1638) wifi:config nano formatting: disabled[0m
+[0;32mI (1648) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1653) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1657) wifi:Init management short buffer num: 32[0m
+[0;32mI (1662) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1666) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1669) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1674) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1678) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1682) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1686) wifi_init: rx ba win: 16[0m
+[0;32mI (1689) wifi_init: accept mbox: 6[0m
+[0;32mI (1692) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1695) wifi_init: udp mbox: 6[0m
+[0;32mI (1698) wifi_init: tcp mbox: 6[0m
+[0;32mI (1701) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1701) BLE_SERVER: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1701) BLE_SERVER: ***** BLE GATT SERVER STARTED *****[0m
+[0;33mW (1710) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1714) BLE_SERVER: ***** WAITING FOR CLIENT CONNECTION *****[0m
+[1;31mE (1720) BLE_INIT: Malloc failed[0m
+[0;32mI (1704) wifi_init: tcp rx win: 5760[0m
+[0;33mW (1729) BT_BTM: BTM_BleWriteScanRsp, Partial data write into ADV[0m
+[0;32mI (1732) wifi_init: tcp mss: 1440[0m
+[1;31mE (1738) BT_HCI: CC evt: op=0x2008, status=0x7[0m
+[0;32mI (1738) BLE_SERVER: CREATE_SERVICE_EVT, status 0,  service_handle 40[0m
+[0;32mI (1740) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1755) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1753) BLE_SERVER: Advertising started successfully[0m
+[0;32mI (1758) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1763) BLE_SERVER: ADD_CHAR_EVT, status 0,  attr_handle 42, service_handle 40[0m
+Wi-Fi event handler registered.
+[0;32mI (1598) main_task: Returned from app_main()[0m
+[0;32mI (1777) wifi:mode : null[0m
+[0;33mW (3621) RSSI: Not connected to any AP[0m
+[0;32mI (3631) main: Waiting for WiFi...[0m
+[0;33mW (5621) RSSI: Not connected to any AP[0m
+[0;32mI (5631) main: Waiting for WiFi...[0m
+[0;33mW (7621) RSSI: Not connected to any AP[0m
+[0;32mI (7631) main: Waiting for WiFi...[0m
+[0;33mW (9621) RSSI: Not connected to any AP[0m
+[0;32mI (9631) main: Waiting for WiFi...[0m
+[0;33mW (11621) RSSI: Not connected to any AP[0m
+[0;32mI (11631) main: Waiting for WiFi...[0m
+[0;33mW (13621) RSSI: Not connected to any AP[0m
+[0;32mI (13631) main: Waiting for WiFi...[0m
+[0;33mW (15621) RSSI: Not connected to any AP[0m
+[0;32mI (15631) main: Waiting for WiFi...[0m
+[0;33mW (17621) RSSI: Not connected to any AP[0m
+[0;32mI (17631) main: Waiting for WiFi...[0m
+[0;33mW (19621) RSSI: Not connected to any AP[0m
+[0;32mI (19631) main: Waiting for WiFi...[0m
+[0;33mW (21621) RSSI: Not connected to any AP[0m
+[0;32mI (21631) main: Waiting for WiFi...[0m
+[0;33mW (23621) RSSI: Not connected to any AP[0m
+[0;32mI (23631) main: Waiting for WiFi...[0m
+[0;33mW (25621) RSSI: Not connected to any AP[0m
+[0;32mI (25631) main: Waiting for WiFi...[0m
+[0;33mW (27621) RSSI: Not connected to any AP[0m
+[0;32mI (27631) main: Waiting for WiFi...[0m
+[0;33mW (29621) RSSI: Not connected to any AP[0m
+[0;32mI (29631) main: Waiting for WiFi...[0m
+[0;33mW (31621) RSSI: Not connected to any AP[0m
+[0;32mI (31631) main: Waiting for WiFi...[0m
+[0;33mW (33621) RSSI: Not connected to any AP[0m
+[0;32mI (33631) main: Waiting for WiFi...[0m
+[0;33mW (35621) RSSI: Not connected to any AP[0m
+[0;32mI (35631) main: Waiting for WiFi...[0m
+[0;33mW (37621) RSSI: Not connected to any AP[0m
+[0;32mI (37631) main: Waiting for WiFi...[0m
+[0;33mW (39621) RSSI: Not connected to any AP[0m
+[0;32mI (39631) main: Waiting for WiFi...[0m
+[0;33mW (41621) RSSI: Not connected to any AP[0m
+[0;32mI (41631) main: Waiting for WiFi...[0m
+[0;33mW (43621) RSSI: Not connected to any AP[0m
+[0;32mI (43631) main: Waiting for WiFi...[0m
+[0;33mW (45621) RSSI: Not connected to any AP[0m
+[0;32mI (45631) main: Waiting for WiFi...[0m
+[0;33mW (47621) RSSI: Not connected to any AP[0m
+[0;32mI (47631) main: Waiting for WiFi...[0m
+[0;33mW (49621) RSSI: Not connected to any AP[0m
+[0;32mI (49631) main: Waiting for WiFi...[0m
+[0;33mW (51621) RSSI: Not connected to any AP[0m
+[0;32mI (51631) main: Waiting for WiFi...[0m
+[0;33mW (53621) RSSI: Not connected to any AP[0m
+[0;32mI (53631) main: Waiting for WiFi...[0m
+[0;32mI (55145) wifi:flush txq[0m
+[0;32mI (55145) wifi:stop sw txq[0m
+[0;32mI (55145) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (55148) wifi:mode : sta (10:20:ba:01:48:a8)[0m
+[0;32mI (55148) wifi:enable tsf[0m
+[0;33mW (55621) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (55621) RSSI: Not connected to any AP[0m
+[0;32mI (55631) main: Waiting for WiFi...[0m
+[0;33mW (57621) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (57621) RSSI: Not connected to any AP[0m
+[0;32mI (57631) main: Waiting for WiFi...[0m
+[0;33mW (59621) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (59621) RSSI: Not connected to any AP[0m
+[0;32mI (59631) main: Waiting for WiFi...[0m
+[0;32mI (60054) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (60054) wifi_scan: Total APs scanned = 16, actual AP number ap_info holds = 16[0m
+[0;32mI (60155) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (60164) wifi_scan: [0m
+[0;32mI (60164) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (60164) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (60295) WiFi Sta: Connecting to specific BSSID: 12:5F:02:15:27:1E[0m
+[0;32mI (60395) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (60395) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (60395) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (60401) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (60406) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (60413) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (60420) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (60435) wifi:connected with Namtrung 2.4G, aid = 23, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (60436) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (60439) wifi:pm start, type: 1[0m
+
+[0;32mI (60441) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (60449) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (60468) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (61409) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (61409) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (61506) esp_netif_handlers: sta ip: 10.10.1.57, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (61621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (61631) main: Waiting for WiFi...[0m
+[0;32mI (62419) WiFi: Connected with IP: 10.10.1.57[0m
+[0;32mI (62419) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (62521) NVS: last index: 3[0m
+[0;32mI (62521) NVS: wifi index: 3[0m
+[0;32mI (63621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (63631) main: Waiting for WiFi...[0m
+[0;32mI (65621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (65631) main: Waiting for WiFi...[0m
+[0;32mI (67621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (67631) main: Waiting for WiFi...[0m
+[0;32mI (69621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (69631) main: Waiting for WiFi...[0m
+[0;32mI (70610) Feedback: diem danh gia: 3[0m
+
+[0;32mI (71621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (71631) main: Waiting for WiFi...[0m
+[0;32mI (73621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (73631) main: Waiting for WiFi...[0m
+[0;32mI (74232) Feedback: diem danh gia: 1[0m
+
+[0;32mI (75621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (75631) main: Waiting for WiFi...[0m
+[0;32mI (77621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (77631) main: Waiting for WiFi...[0m
+[0;32mI (79621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (79631) main: Waiting for WiFi...[0m
+[0;32mI (81621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (81631) main: Waiting for WiFi...[0m
+[0;32mI (83621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (83631) main: Waiting for WiFi...[0m
+[0;32mI (85621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (85631) main: Waiting for WiFi...[0m
+[0;32mI (87621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (87631) main: Waiting for WiFi...[0m
+[0;32mI (89621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (89631) main: Waiting for WiFi...[0m
+[0;32mI (91621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (91631) main: Waiting for WiFi...[0m
+[0;32mI (93621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (93631) main: Waiting for WiFi...[0m
+[0;32mI (95621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (95631) main: Waiting for WiFi...[0m
+[0;32mI (97621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (97631) main: Waiting for WiFi...[0m
+[0;32mI (99621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (99631) main: Waiting for WiFi...[0m
+[0;32mI (101621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (101631) main: Waiting for WiFi...[0m
+[0;32mI (103621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (103631) main: Waiting for WiFi...[0m
+[0;32mI (105621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (105631) main: Waiting for WiFi...[0m
+[0;32mI (107621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (107631) main: Waiting for WiFi...[0m
+[0;32mI (109621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (109631) main: Waiting for WiFi...[0m
+[0;32mI (111621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (111631) main: Waiting for WiFi...[0m
+[0;32mI (113621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (113631) main: Waiting for WiFi...[0m
+[0;32mI (115053) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (115621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-58 dBm[0m
+[0;32mI (115631) main: Waiting for WiFi...[0m
+[0;32mI (117621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (117631) main: Waiting for WiFi...[0m
+[0;32mI (119621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (119631) main: Waiting for WiFi...[0m
+[0;32mI (121621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (121631) main: Waiting for WiFi...[0m
+[0;32mI (123621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (123631) main: Waiting for WiFi...[0m
+[0;32mI (125621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (125631) main: Waiting for WiFi...[0m
+[0;32mI (127621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (127631) main: Waiting for WiFi...[0m
+[0;32mI (129621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (129631) main: Waiting for WiFi...[0m
+[0;32mI (131621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (131631) main: Waiting for WiFi...[0m
+[0;32mI (133621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (133631) main: Waiting for WiFi...[0m
+[0;32mI (135621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-58 dBm[0m
+[0;32mI (135631) main: Waiting for WiFi...[0m
+[0;32mI (137621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (137631) main: Waiting for WiFi...[0m
+[0;32mI (139621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (139631) main: Waiting for WiFi...[0m
+[0;32mI (141621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (141631) main: Waiting for WiFi...[0m
+[0;32mI (143621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (143631) main: Waiting for WiFi...[0m
+[0;32mI (145621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (145631) main: Waiting for WiFi...[0m
+[0;32mI (147621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (147631) main: Waiting for WiFi...[0m
+[0;32mI (149621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (149631) main: Waiting for WiFi...[0m
+[0;32mI (151621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (151631) main: Waiting for WiFi...[0m
+[0;32mI (153621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (153631) main: Waiting for WiFi...[0m
+[0;32mI (155621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (155631) main: Waiting for WiFi...[0m
+[0;32mI (157621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (157631) main: Waiting for WiFi...[0m
+[0;32mI (159621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (159631) main: Waiting for WiFi...[0m
+[0;32mI (161621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (161631) main: Waiting for WiFi...[0m
+[0;32mI (163621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (163631) main: Waiting for WiFi...[0m
+[0;32mI (165621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (165631) main: Waiting for WiFi...[0m
+[0;32mI (167621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-54 dBm[0m
+[0;32mI (167631) main: Waiting for WiFi...[0m
+[0;32mI (169621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (169631) main: Waiting for WiFi...[0m
+[0;32mI (171621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (171631) main: Waiting for WiFi...[0m
+[0;32mI (173621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (173631) main: Waiting for WiFi...[0m
+[0;32mI (175621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (175631) main: Waiting for WiFi...[0m
+[0;32mI (177621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (177631) main: Waiting for WiFi...[0m
+[0;32mI (179621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (179631) main: Waiting for WiFi...[0m
+[0;32mI (181621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-58 dBm[0m
+[0;32mI (181631) main: Waiting for WiFi...[0m
+[0;32mI (183621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (183631) main: Waiting for WiFi...[0m
+[0;32mI (185621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (185631) main: Waiting for WiFi...[0m
+[0;32mI (187621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (187631) main: Waiting for WiFi...[0m
+[0;32mI (189621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (189631) main: Waiting for WiFi...[0m
+[0;32mI (191621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (191631) main: Waiting for WiFi...[0m
+[0;32mI (193621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (193631) main: Waiting for WiFi...[0m
+[0;32mI (195621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-60 dBm[0m
+[0;32mI (195631) main: Waiting for WiFi...[0m
+[0;32mI (197621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (197631) main: Waiting for WiFi...[0m
+[0;32mI (199621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (199631) main: Waiting for WiFi...[0m
+[0;32mI (201621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (201631) main: Waiting for WiFi...[0m
+[0;32mI (203621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (203631) main: Waiting for WiFi...[0m
+[0;32mI (205621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (205631) main: Waiting for WiFi...[0m
+[0;32mI (207621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (207631) main: Waiting for WiFi...[0m
+[0;32mI (209621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-56 dBm[0m
+[0;32mI (209631) main: Waiting for WiFi...[0m
+[0;32mI (211621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-57 dBm[0m
+[0;32mI (211631) main: Waiting for WiFi...[0m
+[0;32mI (213621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-55 dBm[0m
+[0;32mI (213631) main: Waiting for WiFi...[0m
+[0;32mI (215621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (215631) main: Waiting for WiFi...[0m
+[0;32mI (217621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-61 dBm[0m
+[0;32mI (217631) main: Waiting for WiFi...[0m
+[0;32mI (219621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-58 dBm[0m
+[0;32mI (219631) main: Waiting for WiFi...[0m
+[0;32mI (221621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-60 dBm[0m
+[0;32mI (221631) main: Waiting for WiFi...[0m
+[0;32mI (223621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-63 dBm[0m
+[0;32mI (223631) main: Waiting for WiFi...[0m
+[0;32mI (225621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-60 dBm[0m
+[0;32mI (225631) main: Waiting for WiFi...[0m
+[0;32mI (227621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-60 dBm[0m
+[0;32mI (227631) main: Waiting for WiFi...[0m
+[0;32mI (229621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-60 dBm[0m
+[0;32mI (229631) main: Waiting for WiFi...[0m
+[0;32mI (231621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-58 dBm[0m
+[0;32mI (231631) main: Waiting for WiFi...[0m
+[0;32mI (233621) RSSI: Connected SSID:Namtrung 2.4G, BSSID:12:5F:02:15:27:1E, RSSI:-59 dBm[0m
+[0;32mI (233631) main: Waiting for WiFi...[0m

@@ -96,7 +96,7 @@ extern bool found_saved_ap;
 bool user_selected_wifi = false;
 
 extern int refresh_index;
-
+extern int rate;
 /////wifi
 
 extern int reconnect2;

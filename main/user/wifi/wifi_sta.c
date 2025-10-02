@@ -22,12 +22,16 @@ extern bool user_selected_wifi;
 int reconnect=0;
 extern int cnt;
 
+ EventGroupHandle_t wifi_event_group;
+int WIFI_CONNECTED_BIT = BIT0;
 
+int start_api=0;
 
+extern void api_task(void *pvParameters);
 extern void wifi_update_list_cb(lv_timer_t * timer) ;
 
 //////////////// lưu ssid,pass và bssid
-\
+
 void save_wifi_credentials (const char *ssid, const char *password, const uint8_t* bssid) {
     nvs_handle_t my_handle;
     esp_err_t err = nvs_open("wifi_cred", NVS_READWRITE, &my_handle);
@@ -181,6 +185,10 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
 
 {    
     //wifi_event_sta_connected_t* event = (wifi_event_sta_connected_t*) event_data;//
+    wifi_config_t sta_config;
+
+    // Get the current Wi-Fi station configuration
+    ESP_ERROR_CHECK(esp_wifi_get_config(WIFI_IF_STA, &sta_config));
 
 
      if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED)
@@ -192,20 +200,43 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
    
         ESP_LOGI(TAG_STA, "WIFI STA_DISCONNECTED.");
        
-            
+         //xEventGroupClearBits(wifi_event_group, WIFI_CONNECTED_BIT);//
         
         lv_timer_t *t = lv_timer_create(wif_disconnected_cb, 100, NULL); // Create a timer to handle disconnection
         lv_timer_set_repeat_count(t, 1);  // Run the callback once
 
         
-    }  
+    } 
+    
+   
+
 
     
       else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ESP_LOGI(TAG_STA, "WIFI GOT_IP.");  
+        
+
+        //xEventGroupSetBits(wifi_event_group, WIFI_CONNECTED_BIT);//
+
+       // xTaskCreate(&api_task, "api_task", 8192, NULL, 5, NULL);
+
 
         }
+/*
+      else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_CONNECTED) {
+    wifi_event_sta_connected_t* event = (wifi_event_sta_connected_t*) event_data;
 
+    ESP_LOGI(TAG_STA, "WIFI STA_CONNECTED to SSID:%s, BSSID:%02X:%02X:%02X:%02X:%02X:%02X, channel:%d",
+             event->ssid,
+             event->bssid[0], event->bssid[1], event->bssid[2],
+             event->bssid[3], event->bssid[4], event->bssid[5],
+             event->channel);
+
+
+    save_wifi_credentials((char*)event->ssid, (char*)sta_config.sta.password, event->bssid);
+}
+  
+*/
    
 }
 
@@ -258,7 +289,7 @@ void wifi_wait_connect()
                 // If the IP is valid, call the Wi-Fi success callback and update the UI
                 lv_timer_t *t = lv_timer_create(wifi_ok_cb, 100, NULL);  // Update UI every 100ms
                 lv_timer_set_repeat_count(t, 1);
-
+                 start_api=1;//
                 // Log the obtained IP address and indicate successful connection
                 ESP_LOGI("WiFi", "Connected with IP: " IPSTR, IP2STR(&ip_info.ip));
                 ESP_LOGI(TAG_STA, "Connected to AP SSID:%s, password:%s, bssid:%s", sta_config.sta.ssid, sta_config.sta.password,(uint8_t*)ap_info_bssid);
@@ -269,18 +300,22 @@ void wifi_wait_connect()
                 }
                 if (user_selected_wifi){// nếu connect bằng cách nhập pass thì lưu pass, ngược lại ko lưu
                   user_selected_wifi=false;
-                //save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
+              //  save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
                   save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,sta_config.sta.bssid);
+              //    ESP_LOGI(TAG_STA,"Saved AP SSID:%s, password:%s, bssid:%s",sta_config.sta.ssid, sta_config.sta.password,(uint8_t*)ap_info_bssid);
            }  
 
                 //lv_obj_add_flag(ui_Image7, LV_OBJ_FLAG_HIDDEN);     /// Flags
                 //lv_obj_clear_flag(ui_Image19, LV_OBJ_FLAG_HIDDEN);//
                 s_retry_num = 0;  // Reset retry counter on successful connection
                 ////
-                  if (found_saved_ap){
-                     found_saved_ap=false;
-                 }
+               //   if (found_saved_ap){
+                 //   found_saved_ap=false;
+                 //}
                 ////
+                memset(sta_config.sta.ssid, 0, sizeof(sta_config.sta.ssid));
+                memset(sta_config.sta.password, 0, sizeof(sta_config.sta.password));
+                memset(sta_config.sta.bssid, 0, sizeof(sta_config.sta.bssid));
                 break;  // Exit the loop since the connection is successful
             } else {
                 // Log the failure to connect or obtain an IP address
@@ -300,15 +335,18 @@ void wifi_wait_connect()
                     ESP_LOGI(TAG_STA, "Failed to connect to SSID:%s, password:%s",
                             sta_config.sta.ssid, sta_config.sta.password);
                     //lv_obj_add_flag(ui_Image19, LV_OBJ_FLAG_HIDDEN);     /// Flags
+                        memset(sta_config.sta.ssid, 0, sizeof(sta_config.sta.ssid));
+                        memset(sta_config.sta.password, 0, sizeof(sta_config.sta.password));
+                        memset(sta_config.sta.bssid, 0, sizeof(sta_config.sta.bssid));
 
                      ////
-                 if (found_saved_ap){
-                    found_saved_ap=false;
-                 }
+                 //  if (found_saved_ap){
+                   // found_saved_ap=false;
+                 //}
 
                  if (user_selected_wifi){// nếu connect bằng cách nhập pass thì lưu pass, ngược lại ko lưu
                   user_selected_wifi=false;
-                    // save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
+                    // save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,ap_info->bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
                   //save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,sta_config.sta.bssid);
              }  
                 ////
@@ -332,7 +370,11 @@ void wifi_wait_connect()
 
 
 void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  const uint8_t *bssid)
-{
+{   
+
+  
+
+
     if (connection_flag)  // Check if already connected
     {
         printf("esp_wifi_disconnect \r\n");  // Log disconnection
@@ -341,7 +383,7 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
     }
     esp_wifi_disconnect();//
 
-    vTaskDelay(pdMS_TO_TICKS(1000));  //
+    //vTaskDelay(pdMS_TO_TICKS(1000));  //
     
     wifi_config_t wifi_config = {              
         .sta = {                                
@@ -350,7 +392,7 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
     };
     
    
-
+/*
 if (found_saved_ap){//
      
 
@@ -362,8 +404,9 @@ if (found_saved_ap){//
 
 
 }  
+*/    
 //
-  else {//
+ // else {//
 
     strncpy((char *)wifi_config.sta.ssid, (const char *)ssid, sizeof(wifi_config.sta.ssid) - 1);
     wifi_config.sta.ssid[sizeof(wifi_config.sta.ssid) - 1] = '\0';
@@ -371,7 +414,7 @@ if (found_saved_ap){//
     strncpy((char *)wifi_config.sta.password, (const char *)pwd, sizeof(wifi_config.sta.password) - 1);
     wifi_config.sta.password[sizeof(wifi_config.sta.password) - 1] = '\0';
     
- }//
+ //}//
 
 
     if (bssid != NULL) {
@@ -388,9 +431,10 @@ if (found_saved_ap){//
 
     // Set WiFi configuration
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
-    //esp_wifi_stop();  // Stop WiFi module
+    esp_wifi_stop();  // Stop WiFi module
     //esp_wifi_disconnect();//
-    //esp_wifi_start(); // Start WiFi with the new configuration
+    vTaskDelay(pdMS_TO_TICKS(1000));  //
+    esp_wifi_start(); // Start WiFi with the new configuration
     ESP_ERROR_CHECK(esp_wifi_connect());  // Attempt to connect to the WiFi
     wifi_wait_connect();  // Wait for the connection to establish
     //是否需要阻塞，会有部分wifi无法连接上
@@ -399,6 +443,9 @@ if (found_saved_ap){//
         vTaskDelay(pdMS_TO_TICKS(100));
     }
     WIFI_CONNECTION_DONE = false;
+     
+
+
     
 }
 

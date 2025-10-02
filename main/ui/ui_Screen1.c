@@ -50,6 +50,7 @@ lv_obj_t *area=NULL;
 static int click_count = 0;
 static uint32_t last_click_time = 0;
 int change=0;
+int rate=0;
 //////
 
  lv_timer_t* mytimer;
@@ -82,6 +83,7 @@ void ui_event_Image1(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         //char mess[20];
+        rate=1;
         score=4;
         snprintf(mess,sizeof(mess),"client:%d",score);
         mesh_enb=1;
@@ -98,6 +100,7 @@ void ui_event_Image2(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
+        rate=1;
         score=3;
         snprintf(mess,sizeof(mess),"client:%d",score);
         mesh_enb=1;
@@ -112,6 +115,7 @@ void ui_event_Image3(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
+        rate=1;
         score=2;
         snprintf(mess,sizeof(mess),"client:%d",score);
         mesh_enb=1;
@@ -136,6 +140,7 @@ void ui_event_Image5(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
+        rate=1;
         score=1;
         snprintf(mess,sizeof(mess),"client:%d",score);
         mesh_enb=1;
