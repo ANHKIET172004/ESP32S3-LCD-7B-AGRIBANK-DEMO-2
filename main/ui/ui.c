@@ -8,7 +8,11 @@
 #include "stdio.h"
 #include "wifi.h"
 
+
+
 ///////////////////// VARIABLES ////////////////////
+
+extern int reconnect;
 
 ///////////////////// VARIABLES ////////////////////
 // SCREEN: ui_Main_WIFI

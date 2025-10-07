@@ -27,7 +27,7 @@ int found=-1;
  int cnt=0;
 
 extern int reconnect;
-int reconnect2=0;
+int refresh=0;
 
 // Cấu trúc để truyền tham số an toàn 
 typedef struct {
@@ -349,9 +349,9 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
 
           ////////////
 
-    if (strcmp((const char *)ap_info[i].ssid, saved_ssid) == 0) {//
+    if (strcmp((const char *)ap_info[i].ssid,(const char *) saved_ssid) == 0) {//
 
-        if (memcmp(ap_info[i].bssid, saved_bssid, 6) == 0) {   //
+        if (memcmp((const uint8_t*)ap_info[i].bssid,(const uint8_t*) saved_bssid, 6) == 0) {   //
                 ESP_LOGI(TAG, "" );
                 ESP_LOGI(TAG, "Found saved wifi network in scan list, ssid: %s",(const char *)ap_info[i].ssid );
                 ESP_LOGI(TAG, "BSSID %02X:%02X:%02X:%02X:%02X:%02X",ap_info[i].bssid[0],ap_info[i].bssid[1]
@@ -363,13 +363,19 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
                 wifi_set_last_button(WIFI_List_Button);
                 wifi_set_last_index(i);
                  wifi_index=i;
-                 cnt++;//
+                 if (cnt<10){
+                    cnt++;//
+                 }
+                 else {
+                    cnt=2;
+                 }
+                 
                  if (cnt<2){// chỉ reconnect khi reset/ switch wifi
                     WIFI_STA_FLAG = true;
                  }//
 
                  else {// cnt>1, đã chuyển từ main screen sang wifi screen sau khi reconnect và switch wifi đang on
-                    if ((reconnect==1)&&(reconnect2==0)&&connection_flag&&connect_success){// nếu đã reconnect wifi cũ thành công thì lần scan tiếp theo chỉ cập nhật icon ok cho button list của wifi được connect
+                    if ((reconnect==1)&&(refresh==0)&&connection_flag&&connect_success){// nếu đã reconnect wifi cũ thành công thì lần scan tiếp theo chỉ cập nhật icon ok cho button list của wifi được connect
                         reconnect=0;
                    
                        WIFI_CONNECTION = i;//
@@ -379,10 +385,15 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
                      
                       lv_obj_move_to_index(WIFI_List_Button, 0);//
 
-
-                     reconnect2++;
+                    if(refresh<10){
+                     refresh++;
                     }
-                    else if ((reconnect2>0)&&connection_flag&&connect_success){//
+                    else {
+                        refresh=1;
+                    }
+                     
+                    }
+                    else if ((refresh>0)&&connection_flag&&connect_success){//
                       WIFI_CONNECTION = i;//
                       lv_obj_t *img = lv_obj_get_child(WIFI_List_Button, 0);
                       lv_img_set_src(img, &ui_img_ok_png);  // Set success icon
@@ -390,7 +401,7 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
                       lv_obj_move_to_index(WIFI_List_Button, 0);//
                       
                      
-                      reconnect2++;
+                      refresh++;
 
                     }
                  }//

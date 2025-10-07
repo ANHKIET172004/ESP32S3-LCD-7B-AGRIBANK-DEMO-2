@@ -7,3 +7,5 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 include_directories($ENV{IDF_PATH}/components/esp_system/include)
 add_compile_options("-Wno-attributes")
 project(16_LVGL_UI)
+
+

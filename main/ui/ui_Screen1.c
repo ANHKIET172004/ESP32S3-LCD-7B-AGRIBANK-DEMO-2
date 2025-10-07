@@ -6,6 +6,9 @@
 #include "ui.h"
 #include "stdio.h"
 #include "esp_log.h"
+#include "mqtt_client.h"
+#include "esp_mac.h"
+
 
 lv_obj_t * ui_Screen1 = NULL;
 lv_obj_t * ui_Panel1 = NULL;
@@ -67,6 +70,12 @@ int score=0;
    uint8_t tx_buf[1469];
 
    extern int cnt;
+
+
+extern esp_mqtt_client_handle_t mqttClient;
+
+
+
 void change_screen(lv_timer_t *timer){
 
     lv_timer_del(timer);
@@ -85,11 +94,30 @@ void ui_event_Image1(lv_event_t * e)
         //char mess[20];
         rate=1;
         score=4;
-        snprintf(mess,sizeof(mess),"client:%d",score);
-        mesh_enb=1;
+       // snprintf(mess,sizeof(mess),"client:%d",score);
+
+
+        uint8_t mac[6];
+        esp_read_mac(mac, ESP_MAC_WIFI_STA);
+
+       snprintf(mess,sizeof(mess),"%02X:%02X:%02X:%02X:%02X:%02X:%d",mac[0],mac[1],mac[2],
+                                     mac[3],mac[4],mac[5],score); 
+
+       mesh_enb=1;
         
         lv_event_stop_bubbling(e);
         ESP_LOGI(SCREEN1_TAG, "diem danh gia : %d\n",score);
+
+		int msg_id = esp_mqtt_client_publish(mqttClient, "demo/laravel", mess, 0, 0, 0);
+
+
+        if (msg_id == -1)
+         ESP_LOGE("MQTT", "Failed to send data");
+          else
+         ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
+
+
+
         mytimer=lv_timer_create(change_screen, 2500, NULL);
         _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen5_screen_init);
     }
@@ -102,9 +130,19 @@ void ui_event_Image2(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         rate=1;
         score=3;
-        snprintf(mess,sizeof(mess),"client:%d",score);
-        mesh_enb=1;
+        uint8_t mac[6];
+        esp_read_mac(mac, ESP_MAC_WIFI_STA);
+
+       snprintf(mess,sizeof(mess),"%02X:%02X:%02X:%02X:%02X:%02X:%d",mac[0],mac[1],mac[2],
+                                     mac[3],mac[4],mac[5],score);         mesh_enb=1;
         ESP_LOGI(SCREEN1_TAG, "diem danh gia: %d\n",score);
+        int msg_id = esp_mqtt_client_publish(mqttClient, "demo/laravel", mess, 0, 0, 0);
+
+        if (msg_id == -1)
+         ESP_LOGE("MQTT", "Failed to send data");
+          else
+         ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
+
         mytimer=lv_timer_create(change_screen, 2500, NULL);
        _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen5_screen_init);
     }
@@ -117,9 +155,20 @@ void ui_event_Image3(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         rate=1;
         score=2;
-        snprintf(mess,sizeof(mess),"client:%d",score);
-        mesh_enb=1;
+        uint8_t mac[6];
+        esp_read_mac(mac, ESP_MAC_WIFI_STA);
+
+       snprintf(mess,sizeof(mess),"%02X:%02X:%02X:%02X:%02X:%02X:%d",mac[0],mac[1],mac[2],
+                                     mac[3],mac[4],mac[5],score);         mesh_enb=1;
         ESP_LOGI(SCREEN1_TAG, "diem danh gia: %d\n",score);
+
+		int msg_id = esp_mqtt_client_publish(mqttClient, "demo/laravel", mess, 0, 0, 0);
+        if (msg_id == -1)
+         ESP_LOGE("MQTT", "Failed to send data");
+          else
+         ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
+
+
         mytimer=lv_timer_create(change_screen, 2500, NULL);
         _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen5_screen_init);
     }
@@ -142,9 +191,20 @@ void ui_event_Image5(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         rate=1;
         score=1;
-        snprintf(mess,sizeof(mess),"client:%d",score);
-        mesh_enb=1;
+        uint8_t mac[6];
+        esp_read_mac(mac, ESP_MAC_WIFI_STA);
+
+       snprintf(mess,sizeof(mess),"%02X:%02X:%02X:%02X:%02X:%02X:%d",mac[0],mac[1],mac[2],
+                                     mac[3],mac[4],mac[5],score);         mesh_enb=1;
         ESP_LOGI(SCREEN1_TAG, "diem danh gia: %d\n",score);
+
+		int msg_id = esp_mqtt_client_publish(mqttClient, "demo/laravel", mess, 0, 0, 0);
+
+        if (msg_id == -1)
+         ESP_LOGE("MQTT", "Failed to send data");
+          else
+         ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
+
         mytimer=lv_timer_create(change_screen, 1000, NULL);
         _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen5_screen_init);
     }
