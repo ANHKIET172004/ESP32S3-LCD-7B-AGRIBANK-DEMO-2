@@ -6,6 +6,7 @@ file(GLOB_RECURSE srcs *.c
                    user/wifi/*.c
                    gatt_server/*.c
                    gatt_client/*.c
+                   esp_mqtt_client/*.c
                    #user/rs485/*.c
                    #user/can/*.c
                    #user/pwm/*.c
@@ -18,14 +19,19 @@ set(include_dirs
    user/wifi
    gatt_server
    gatt_client
+   esp_mqtt_client
    #user/rs485
    #user/can
    #user/pwm
    #user/sd_card
+   
                           
                        
    )
 idf_component_register( SRCS ${srcs} INCLUDE_DIRS ${include_dirs})
+
 idf_component_get_property(lvgl_lib lvgl__lvgl COMPONENT_LIB)
 target_compile_options(${lvgl_lib} PRIVATE -Wno-format)
+#target_include_directories(${COMPONENT_LIB} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})//
+
 

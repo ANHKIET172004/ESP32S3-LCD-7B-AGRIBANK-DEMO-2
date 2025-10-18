@@ -67,9 +67,10 @@ if (cnt!=0){
 void ui_Wifi_Screen_init(void)
 {
     // Create the main Wi-Fi screen container
+    
     ui_Main_WIFI = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Main_WIFI, LV_OBJ_FLAG_SCROLLABLE); // Disable scrolling
-
+/*
     // Create tab view for Wi-Fi settings
     ui_WIFI = lv_tabview_create(ui_Main_WIFI, LV_DIR_TOP, 50);
     lv_obj_set_width(ui_WIFI, lv_pct(100));                                                      // Full width
@@ -78,7 +79,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_clear_flag(ui_WIFI, LV_OBJ_FLAG_SCROLLABLE);                                          // Disable scrolling for the tabview
    // lv_obj_set_style_bg_img_src(ui_WIFI, &ui_img_log_on_png, LV_PART_MAIN | LV_STATE_DEFAULT);   // Set background image
     lv_obj_set_style_bg_img_src(ui_WIFI, NULL, LV_PART_MAIN | LV_STATE_DEFAULT); // 
-    lv_obj_set_style_bg_color(ui_WIFI, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Đặt màu nền là trắng//
+    lv_obj_set_style_bg_color(ui_WIFI, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Äáº·t mÃ u ná»n lÃ  tráº¯ng//
     // lv_obj_set_style_text_font(ui_WIFI, &ui_font_Chinese_Font, LV_PART_MAIN | LV_STATE_DEFAULT); // Set text font//
     lv_obj_set_style_text_font(ui_WIFI, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
     // Style tab buttons
@@ -86,15 +87,23 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_opa(lv_tabview_get_tab_btns(ui_WIFI), 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity
     lv_obj_set_style_bg_color(lv_tabview_get_tab_btns(ui_WIFI), lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);   // Set background color
     lv_obj_set_style_bg_opa(lv_tabview_get_tab_btns(ui_WIFI), 0, LV_PART_MAIN | LV_STATE_DEFAULT);                          // Set background opacity
+*/
+     //Create the "STA" (station) tab
+   // ui_WIFI_STA = lv_tabview_add_tab(ui_WIFI, "STA");
+    //lv_obj_set_style_bg_color(ui_WIFI_STA, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set background color
+    //lv_obj_set_style_bg_opa(ui_WIFI_STA, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set background opacity
 
-    // Create the "STA" (station) tab
-    ui_WIFI_STA = lv_tabview_add_tab(ui_WIFI, "STA");
-    lv_obj_set_style_bg_color(ui_WIFI_STA, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set background color
-    lv_obj_set_style_bg_opa(ui_WIFI_STA, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set background opacity
+    
+    lv_obj_t *ui_WIFI_STA = lv_obj_create(ui_Main_WIFI);
+    lv_obj_set_size(ui_WIFI_STA, 1024, 600);
+    lv_obj_center(ui_WIFI_STA);
 
+    
+    
     // Create scan container for "STA" tab
     
     ui_WIFI_SCAN_STA = lv_obj_create(ui_WIFI_STA);
+    //ui_WIFI_SCAN_STA = lv_obj_create(ui_WIFI);
     lv_obj_set_width(ui_WIFI_SCAN_STA, lv_pct(100));                                                          // Full width
     lv_obj_set_height(ui_WIFI_SCAN_STA, lv_pct(100));                                                         // Full height
     lv_obj_clear_flag(ui_WIFI_SCAN_STA, LV_OBJ_FLAG_SCROLLABLE);                                              // Disable scrolling
@@ -110,8 +119,9 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_height(ui_WIFI_Button0, 50);                                                              // Set button height
     lv_obj_add_flag(ui_WIFI_Button0, LV_OBJ_FLAG_SCROLL_ON_FOCUS);                                       // Enable scrolling on focus
     lv_obj_clear_flag(ui_WIFI_Button0, LV_OBJ_FLAG_SCROLLABLE);                                          // Disable scrolling
-    lv_obj_set_style_bg_color(ui_WIFI_Button0, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set button background color
-    lv_obj_set_style_bg_opa(ui_WIFI_Button0, 100, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set button background opacity
+    //lv_obj_set_style_bg_color(ui_WIFI_Button0, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set button background color
+    lv_obj_set_style_bg_color(ui_WIFI_Button0, lv_color_hex(0x0080FF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    //lv_obj_set_style_bg_opa(ui_WIFI_Button0, 100, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set button background opacity
 
     // Create label for "Click Back" button
     ui_WIFI_Label0 = lv_label_create(ui_WIFI_Button0);
@@ -119,7 +129,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_height(ui_WIFI_Label0, LV_SIZE_CONTENT);                                                   // Set label height based on content
     lv_obj_set_align(ui_WIFI_Label0, LV_ALIGN_CENTER);                                                    // Align label at the center
     lv_label_set_text(ui_WIFI_Label0, "Click Back");                                                      // Set button label text
-    lv_obj_set_style_text_color(ui_WIFI_Label0, lv_color_hex(0xEE00FF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color
+    //lv_obj_set_style_text_color(ui_WIFI_Label0, lv_color_hex(0xEE00FF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color
+    lv_obj_set_style_text_color(ui_WIFI_Label0, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); 
     lv_obj_set_style_text_opa(ui_WIFI_Label0, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity
     lv_obj_set_style_text_font(ui_WIFI_Label0, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
     
@@ -183,7 +194,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_y(ui_WIFI_Name, 30);                                                                     // Set y position to 30
     lv_label_set_long_mode(ui_WIFI_Name, LV_LABEL_LONG_SCROLL);                                         // Enable horizontal scrolling for long text
     lv_label_set_text(ui_WIFI_Name, "SSID JSBPI");                                                      // Set the text to display SSID
-    lv_obj_set_style_text_color(ui_WIFI_Name, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_Name, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_Name, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_Name, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create and configure Authentication mode label */
@@ -194,7 +206,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_y(ui_WIFI_Aurhmode, 60);                                                                     // Set y position to 60
     lv_label_set_long_mode(ui_WIFI_Aurhmode, LV_LABEL_LONG_SCROLL);                                         // Enable horizontal scrolling for long text
     lv_label_set_text(ui_WIFI_Aurhmode, "Authmode WIFI_AUTH_WPA2_PSK");                                     // Set text to show authentication mode
-    lv_obj_set_style_text_color(ui_WIFI_Aurhmode, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_Aurhmode, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_Aurhmode, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_Aurhmode, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create and configure Pairwise Cipher label */
@@ -205,7 +218,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_y(ui_WIFI_Pairwise, 90);                                                                     // Set y position to 90
     lv_label_set_text(ui_WIFI_Pairwise, "Pairwise Cipher WIFI_CIPHER_TYPE_CCMP");                           // Set text to show pairwise cipher
     lv_label_set_long_mode(ui_WIFI_Pairwise, LV_LABEL_LONG_SCROLL);                                         // Enable horizontal scrolling for long text
-    lv_obj_set_style_text_color(ui_WIFI_Pairwise, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_Pairwise, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_Pairwise, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_Pairwise, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create Group Cipher label */
@@ -216,7 +230,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_y(ui_WIFI_Group, 120);                                                                    // Set y position to 120
     lv_label_set_long_mode(ui_WIFI_Group, LV_LABEL_LONG_SCROLL);                                         // Enable horizontal scrolling for long text
     lv_label_set_text(ui_WIFI_Group, "Group Cipher WIFI_CIPHER_TYPE_CCMP");                              // Set text to show group cipher
-    lv_obj_set_style_text_color(ui_WIFI_Group, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_Group, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_Group, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_Group, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create Channel label */
@@ -227,7 +242,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_y(ui_WIFI_Channel, 150);                                                                    // Set y position to 150
     lv_label_set_long_mode(ui_WIFI_Channel, LV_LABEL_LONG_SCROLL);                                         // Enable horizontal scrolling for long text
     lv_label_set_text(ui_WIFI_Channel, "Channel 5");                                                       // Set text to show Wi-Fi channel
-    lv_obj_set_style_text_color(ui_WIFI_Channel, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_Channel, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_Channel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_Channel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create IP address label */
@@ -236,7 +252,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_height(ui_WIFI_IP, LV_SIZE_CONTENT);                                                   // Set height to content size
     lv_label_set_text(ui_WIFI_IP, "IP 192.168.10.161");                                               // Set text to show IP address
     lv_obj_add_flag(ui_WIFI_IP, LV_OBJ_FLAG_HIDDEN);                                                  // Initially hide the label
-    lv_obj_set_style_text_color(ui_WIFI_IP, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    //lv_obj_set_style_text_color(ui_WIFI_IP, lv_color_hex(0xFFA500), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
+    lv_obj_set_style_text_color(ui_WIFI_IP, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_WIFI_IP, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
 
     /* Create Wi-Fi connection button */
@@ -255,7 +272,9 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_height(ui_Connection, LV_SIZE_CONTENT);                                                   // Set height to content size
     lv_obj_set_align(ui_Connection, LV_ALIGN_CENTER);                                                    // Align label to the center of the button
     lv_label_set_text(ui_Connection, "Connection");                                                      // Set label text to "Connection"
-    lv_obj_set_style_text_color(ui_Connection, lv_color_hex(0xEE00FF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to grey
+    //lv_obj_set_style_text_color(ui_Connection, lv_color_hex(0xEE00FF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to grey
+    lv_obj_set_style_text_color(ui_Connection, lv_color_hex(0x0080FF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    
     lv_obj_set_style_text_opa(ui_Connection, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
     lv_obj_set_style_text_font(ui_Connection, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
@@ -265,7 +284,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_height(ui_WIFI_INPUT_PWD, LV_SIZE_CONTENT);                                                     // Set input field height to content size
     lv_obj_set_align(ui_WIFI_INPUT_PWD, LV_ALIGN_CENTER);                                                      // Align input field to the center of the parent container
     lv_textarea_set_max_length(ui_WIFI_INPUT_PWD, 1024);                                                       // Set maximum length for input to 1024 characters
-    lv_textarea_set_placeholder_text(ui_WIFI_INPUT_PWD, "Enter password...");                                  // Set placeholder text
+    lv_textarea_set_placeholder_text(ui_WIFI_INPUT_PWD, "Enter password...");   
+    lv_obj_set_style_text_font(ui_WIFI_INPUT_PWD, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);//                                 // Set placeholder text
     lv_textarea_set_one_line(ui_WIFI_INPUT_PWD, true);                                                         // Set the input field to one line mode
     lv_textarea_set_password_mode(ui_WIFI_INPUT_PWD, WIFI_DIS_PWD);                                            // Set password mode (hides text)
     lv_obj_add_flag(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN);                                                    // Initially hide the input field
@@ -313,7 +333,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_x(ui_WIFI_PWD_Error, 0);                                                                      // Set x position to 0
     lv_obj_set_y(ui_WIFI_PWD_Error, 80);                                                                     // Set y position to 80
     lv_obj_set_align(ui_WIFI_PWD_Error, LV_ALIGN_TOP_MID);                                                   // Align label to the top center of parent container
-    lv_label_set_text(ui_WIFI_PWD_Error, "Wrong password");                                                  // Set label text to "Wrong password"
+    lv_label_set_text(ui_WIFI_PWD_Error, "Connection Failed");                                                  // Set label text to "Wrong password"
     lv_obj_add_flag(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN);                                                  // Initially hide the error label
     lv_obj_set_style_text_color(ui_WIFI_PWD_Error, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to red
     lv_obj_set_style_text_opa(ui_WIFI_PWD_Error, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to 255 (fully opaque)
@@ -390,12 +410,15 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_width(ui_WIFI_AP_Password, 295);                                                                // Set width to 295
     lv_obj_set_height(ui_WIFI_AP_Password, LV_SIZE_CONTENT);                                                   // Set height based on content (70)
     lv_obj_set_x(ui_WIFI_AP_Password, 50);                                                                     // Set x position to 50
-    lv_obj_set_y(ui_WIFI_AP_Password, -70);                                                                    // Set y position to -70
+    lv_obj_set_y(ui_WIFI_AP_Password, -70); 
+    //lv_obj_set_x(ui_WIFI_AP_Password, 50);                                                                     // Set x position to 50
+    //lv_obj_set_y(ui_WIFI_AP_Password, 70);                                                                     // Set y position to -70
     lv_obj_set_align(ui_WIFI_AP_Password, LV_ALIGN_CENTER);                                                    // Align to the center of the parent container
     lv_textarea_set_text(ui_WIFI_AP_Password, "66668888");                                                     // Set default password
     lv_textarea_set_placeholder_text(ui_WIFI_AP_Password, "Please enter Password...");                         // Set placeholder text
     lv_textarea_set_one_line(ui_WIFI_AP_Password, true);                                                       // Allow only one line for input
-    lv_textarea_set_password_mode(ui_WIFI_AP_Password, WIFI_AP_PWD);                                           // Set password mode for masking input
+    lv_textarea_set_password_mode(ui_WIFI_AP_Password, WIFI_AP_PWD);   
+    //lv_obj_set_style_text_font(ui_WIFI_AP_Password, &lv_font_montserrat_44, LV_PART_MAIN | LV_STATE_DEFAULT);//                                        // Set password mode for masking input
     lv_obj_set_style_text_color(ui_WIFI_AP_Password, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT); // Set text color to white
     lv_obj_set_style_text_opa(ui_WIFI_AP_Password, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                      // Set text opacity to fully opaque
     lv_obj_set_style_bg_color(ui_WIFI_AP_Password, lv_color_hex(0x001A40), LV_PART_MAIN | LV_STATE_DEFAULT);   // Set background color to white
@@ -548,10 +571,10 @@ void ui_Wifi_Screen_init(void)
     lv_obj_t *ui_WIFI_Rescan_Button = lv_btn_create(ui_WIFI_SCAN_STA);
     lv_obj_set_width(ui_WIFI_Rescan_Button, 140);
     lv_obj_set_height(ui_WIFI_Rescan_Button, 50);
-  //  lv_obj_set_x(ui_WIFI_Rescan_Button, 10);   // đặt bên trái
-   /// lv_obj_set_y(ui_WIFI_Rescan_Button, 10);   // phía trên
+  //  lv_obj_set_x(ui_WIFI_Rescan_Button, 10);   // Ä‘áº·t bÃªn trÃ¡i
+   /// lv_obj_set_y(ui_WIFI_Rescan_Button, 10);   // phÃ­a trÃªn
     //lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_TOP_LEFT);
-    //lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_BOTTOM_RIGHT);  // đặt ở góc trên cùng bên phải
+    //lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_BOTTOM_RIGHT);  // Ä‘áº·t á»Ÿ gÃ³c trÃªn cÃ¹ng bÃªn pháº£i
 
     lv_obj_set_align(ui_WIFI_Rescan_Button, LV_ALIGN_TOP_MID);
      
@@ -559,6 +582,8 @@ void ui_Wifi_Screen_init(void)
 
     lv_obj_set_style_bg_color(ui_WIFI_Rescan_Button, lv_color_hex(0x0080FF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_WIFI_Rescan_Button, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_WIFI_Rescan_Button, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
+
 
     lv_obj_t *label_rescan = lv_label_create(ui_WIFI_Rescan_Button);
     lv_label_set_text(label_rescan, "Refresh");
@@ -575,13 +600,14 @@ void ui_Wifi_Screen_init(void)
     lv_obj_add_event_cb(ui_WIFI_AP_OPEN, ui_event_WIFI_AP_OPEN, LV_EVENT_ALL, NULL);         // AP Open switch event handler
     lv_keyboard_set_textarea(ui_WIFI_AP_Keyboard, ui_WIFI_AP_NAME);        // Set the AP Name input field as the keyboard's text area
 
-    //lv_obj_add_event_cb(ui_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
-        // Gắn sự kiện cho button Refresh
+    //lv_obj_add_event_cb(ui_Main_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
+        // Gáº¯n sá»± kiá»‡n cho button Refresh
     lv_obj_add_event_cb(ui_WIFI_Rescan_Button, ui_event_WIFI_Refresh_Button, LV_EVENT_CLICKED, NULL);
 
 
       
 }
+
 
 void ui_Wifi_Screen_destroy(){
     if(ui_Main_WIFI) lv_obj_del(ui_Main_WIFI);

@@ -1,0 +1,919 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c140020 size=4d390h (316304) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0005d3b8 vaddr=3fca6400 size=02c60h ( 11360) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=00060020 vaddr=42000020 size=13e304h (1303300) map[0m
+[0;32mI (336) esp_image: segment 3: paddr=0019e32c vaddr=3fca9060 size=032e4h ( 13028) load[0m
+[0;32mI (338) esp_image: segment 4: paddr=001a1618 vaddr=40374000 size=2230ch (140044) load[0m
+[0;32mI (366) esp_image: segment 5: paddr=001c392c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;33mW (389) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (390) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (397) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (404) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (409) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (413) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (418) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (422) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (426) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (431) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (435) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (440) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (445) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (449) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (454) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (466) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (466) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (467) esp_psram: Speed: 120MHz[0m
+[0;32mI (483) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (549) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (549) cpu_start: Multicore app[0m
+[0;32mI (714) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (723) cpu_start: Pro cpu start user code[0m
+[0;32mI (723) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (723) app_init: Application information:[0m
+[0;32mI (723) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (727) app_init: App version:      b442d3f-dirty[0m
+[0;32mI (732) app_init: Compile time:     Oct 10 2025 10:28:46[0m
+[0;32mI (737) app_init: ELF file SHA256:  161f78b83...[0m
+[0;32mI (741) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (745) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (749) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (753) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (757) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (763) heap_init: At 3FCB6248 len 000334C8 (205 KiB): RAM[0m
+[0;32mI (768) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (773) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (779) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (784) esp_psram: Adding pool of 6592K of PSRAM memory to heap allocator[0m
+[0;32mI (790) esp_psram: Adding pool of 11K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (802) spi_flash: detected chip: generic[0m
+[0;32mI (805) spi_flash: flash io: qio[0m
+[0;32mI (808) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (814) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (821) coexist: coex firmware version: 831ec70[0m
+[0;32mI (834) coexist: coexist rom version e7ae62f[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (835) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (840) main_task: Calling app_main()[0m
+[0;32mI (843) MAIN: === ESP32 MQTT 7 BUTTONS ===[0m
+[0;32mI (855) MAIN: ✓ NVS OK[0m
+[0;33mW (855) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1265) GT911: Initialize I2C panel IO[0m
+[0;32mI (1265) GT911: Initialize touch controller GT911[0m
+[0;33mW (1265) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1267) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1270) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1274) MAIN: ✓ Touch OK[0m
+[0;32mI (1276) example: Install RGB LCD panel driver[0m
+[0;32mI (1316) example: Initialize RGB LCD panel[0m
+[0;32mI (1317) MAIN: ✓ LCD OK[0m
+[0;32mI (1319) lv_port: Create LVGL task[0m
+[0;32mI (1345) MAIN: ✓ LVGL OK[0m
+[0;32mI (1346) MAIN: ✓ Queue OK[0m
+[0;32mI (1346) BLE_INIT: BT controller compile version [4713a69][0m
+[0;32mI (1346) BLE_INIT: Feature Config, ADV:1, BLE_50:1, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (1353) BLE_INIT: Bluetooth MAC: 10:20:ba:05:9b:9e[0m
+[0;32mI (1358) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1417) BLE_CLIENT: REG_EVT[0m
+[0;32mI (1418) BLE_CLIENT: ***** SCANNING FOR ESP32-Server *****[0m
+[0;32mI (1419) MAIN: ✓ BLE OK[0m
+[0;32mI (1426) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (1429) MAIN: UI với 7 nút đã tạo[0m
+[0;32mI (1430) MAIN: ✓ UI OK[0m
+[0;32mI (1430) MAIN: LVGL update task khởi động[0m
+[0;32mI (1431) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (1438) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (1444) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (1450) MAIN: ✓ Task OK[0m
+[0;32mI (1466) pp: pp rom version: e7ae62f[0m
+[0;32mI (1467) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1468) wifi:wifi driver task: 3fce0454, prio:23, stack:6656, core=0[0m
+[0;32mI (1480) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (1492) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1493) wifi:wifi certification version: v7.0[0m
+[0;32mI (1493) wifi:config NVS flash: enabled[0m
+[0;32mI (1493) wifi:config nano formatting: disabled[0m
+[0;32mI (1497) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1503) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1507) wifi:Init management short buffer num: 32[0m
+[0;32mI (1511) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1516) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1519) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1523) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1527) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1531) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1537) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1541) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1547) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1553) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1559) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1565) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1571) wifi_init: rx ba win: 16[0m
+[0;32mI (1573) wifi_init: accept mbox: 6[0m
+[0;32mI (1577) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1580) wifi_init: udp mbox: 6[0m
+[0;32mI (1583) wifi_init: tcp mbox: 6[0m
+[0;32mI (1585) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1589) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1592) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1598) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1604) wifi_init: tcp mss: 1440[0m
+[0;32mI (1607) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1611) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1614) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1619) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1622) wifi:enable tsf[0m
+[0;32mI (1626) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (1626) MAIN: WiFi bắt đầu kết nối[0m
+[0;32mI (1635) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1640) MAIN: WiFi init xong[0m
+[0;32mI (1677) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1678) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1691) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1704) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1753) wifi:connected with NamTrung, aid = 22, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (1753) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (1756) wifi:pm start, type: 1[0m
+
+[0;32mI (1758) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1766) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1779) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1873) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (1937) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (1973) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (2068) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (2078) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2088) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (2091) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2114) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2128) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2129) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2173) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (2174) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (2232) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2235) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2270) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2371) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2458) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (2465) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (2474) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (2475) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2479) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2661) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2666) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (2715) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2724) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (2732) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (2754) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (2820) esp_netif_handlers: sta ip: 10.10.1.98, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2820) MAIN: Đã có IP: 10.10.1.98[0m
+[0;32mI (2820) MAIN: Kết nối WiFi thành công[0m
+[0;32mI (2825) MAIN: ✓ MQTT OK[0m
+[0;32mI (2826) MAIN: === SYSTEM READY - 7 BUTTONS ===[0m
+[0;32mI (2830) main_task: Returned from app_main()[0m
+[0;32mI (2847) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (2861) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (2861) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (2869) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (2951) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2962) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (2980) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3020) MQTT: MQTT đã kết nối[0m
+[0;32mI (3068) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (3068) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (3101) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (3169) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3173) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (3271) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3408) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3496) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (3600) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (3600) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3701) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3706) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (3803) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (3803) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (3812) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (3813) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (3816) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (3908) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (3909) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (3910) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4010) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4053) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (4057) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (4106) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4110) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4113) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (4158) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4295) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (4301) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4303) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (4342) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4359) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4384) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4385) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4388) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4391) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (4396) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (4402) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4408) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (4532) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4688) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4704) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4731) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (4783) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4783) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (4786) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (4796) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4892) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (4892) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (4905) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (4905) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (4932) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (4934) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (5025) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (5025) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5080) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (5086) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5089) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (5127) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (5129) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (5134) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5143) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (5147) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (5237) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (5237) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (5244) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5245) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5295) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (5330) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (5334) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5341) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (5343) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (5346) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5349) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5389) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5425) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5445) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (5630) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (5643) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (5734) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5738) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5836) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (5841) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (5931) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (5935) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (5978) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (5982) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (5992) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6014) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (6027) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (6028) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6029) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6036) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (6040) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (6046) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (6070) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6071) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (6071) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (6082) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (6089) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6114) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6166) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6169) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (6170) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (6263) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6274) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (6274) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (6316) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (6320) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (6336) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6361) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (6365) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6374) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6421) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6437) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6468) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6472) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (6474) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6528) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6532) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6536) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6558) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (6567) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6628) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6633) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6674) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6762) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6773) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6776) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (6872) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (6959) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (6979) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (6980) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (7030) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7070) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7075) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7079) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (7125) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (7151) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7157) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7209) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7222) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (7249) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7253) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (7278) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7299) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (7313) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7354) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7363) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7416) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7421) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7447) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7454) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7458) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7463) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7556) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (7556) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7571) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7572) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7605) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7647) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7659) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7663) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7668) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (7673) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7697) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7723) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7763) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (7765) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (7771) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7799) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7801) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (7806) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7811) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7855) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (7858) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7864) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (7866) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (7901) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7945) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (7949) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (7954) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7954) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (7969) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (8004) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (8015) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (8057) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8069) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (8100) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8111) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (8163) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8166) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (8199) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (8291) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8305) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (8306) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (8308) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8312) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (8389) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (8399) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (8461) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (8462) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8463) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (8494) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (8587) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (8594) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (8598) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (8699) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (8733) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (8799) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (8802) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (8804) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (8809) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (8836) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (8905) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (8935) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (8983) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (8998) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (8999) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (9003) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9007) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9037) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9039) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9080) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9083) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (9099) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (9105) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9187) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (9187) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (9203) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9298) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (9301) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (9301) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9336) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (9379) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9383) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (9386) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (9425) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (9445) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (9548) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (9548) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9594) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (9598) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (9625) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (9625) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (9632) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9697) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (9699) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (9724) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (9725) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (9733) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (9742) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9798) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (9884) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (9887) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (9892) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (9894) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (9919) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10020) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (10021) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (10115) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10116) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10124) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10216) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10222) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10231) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10235) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (10318) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (10321) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10334) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (10334) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10341) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (10366) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (10427) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (10427) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10433) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10435) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (10441) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10468) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (10523) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10524) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (10531) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10533) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (10565) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10611) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (10636) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10672) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10758) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10759) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10773) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (10774) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (10776) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10836) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (10859) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10862) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10873) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (10877) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (10923) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (10961) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10966) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (10967) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (10974) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (11056) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11060) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (11070) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (11071) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (11072) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (11077) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11083) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (11131) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11167) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11175) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (11257) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11263) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (11268) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (11270) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11279) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (11362) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (11374) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11468) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (11521) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11560) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (11568) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (11599) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (11599) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (11655) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (11701) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (11702) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (11800) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (11800) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11846) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11852) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11853) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (11868) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (11869) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (11954) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11970) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (11970) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (11971) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (11997) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (11998) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (12098) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (12112) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (12113) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12162) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (12255) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (12259) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12260) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (12262) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (12303) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (12342) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (12348) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (12348) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (12408) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (12408) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (12462) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (12463) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (12563) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (12563) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (12613) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12613) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (12788) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (12788) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12853) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (12886) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (12887) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (12893) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12991) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12991) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (12993) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (12998) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13004) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13010) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13034) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (13035) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13104) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (13104) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13106) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (13177) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13177) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13185) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13186) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13190) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13205) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13206) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (13282) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (13284) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (13286) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (13289) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13295) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (13302) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13307) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (13335) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13335) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (13336) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (13377) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13377) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13395) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13474) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (13476) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (13488) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (13488) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13497) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13497) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13525) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13526) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13545) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (13595) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13601) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13601) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13636) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13740) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13745) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13748) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (13794) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13797) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (13834) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13834) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (13847) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13847) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (13891) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (13891) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (13928) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13940) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (13941) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14023) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (14023) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (14032) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (14034) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (14036) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (14042) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14084) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (14122) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14124) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14140) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (14140) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14215) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14223) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (14226) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14276) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14276) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (14281) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (14313) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (14314) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14330) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14366) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (14427) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (14440) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14441) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14468) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (14483) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (14490) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (14511) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (14524) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14535) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (14562) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (14562) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14629) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (14630) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (14658) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14761) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (14761) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14775) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (14833) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14870) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (14871) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14872) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (14911) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (14933) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (14967) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (14976) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15057) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15058) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (15077) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15081) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15081) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15170) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15259) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15261) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15261) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15362) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (15369) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15370) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15377) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (15378) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (15549) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (15550) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15574) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15611) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (15622) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15623) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (15625) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15661) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (15661) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (15672) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15723) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (15724) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15755) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (15767) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (15767) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (15798) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (15893) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (15893) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (15951) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (15964) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (15965) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (16043) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16098) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (16099) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (16152) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (16152) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16157) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16162) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (16259) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (16260) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (16260) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16267) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16291) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (16301) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (16302) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (16304) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16309) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16395) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (16396) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (16398) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (16405) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16442) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16442) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16444) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16462) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (16463) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (16464) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (16490) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16502) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (16561) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (16562) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16590) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16600) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (16601) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16606) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (16612) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16648) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (16651) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (16651) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16657) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16737) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (16751) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (16752) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (16757) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16796) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16797) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16797) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (16805) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (16838) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16845) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (16854) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (16892) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16903) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (16946) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16981) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (16983) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (16989) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17005) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (17006) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (17078) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17092) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (17097) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17181) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (17182) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (17182) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (17188) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17194) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17201) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17276) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17278) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (17290) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17292) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17325) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (17326) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17387) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (17387) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17395) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17429) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17496) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (17497) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17539) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17550) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (17574) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (17574) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17600) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17633) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17636) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17639) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17679) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (17727) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17731) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (17738) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17792) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17820) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (17838) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (17843) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17888) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (17892) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (17936) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (17940) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17945) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (17989) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (18017) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 0[0m
+[0;32mI (18018) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18033) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18120) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18123) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (18126) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (18127) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18217) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (18221) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18225) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18316) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (18324) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (18329) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18333) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (18417) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (18422) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (18430) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (18434) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (18437) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18437) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (18514) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (18518) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (18523) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (18526) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18613) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (18629) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18635) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (18712) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (18721) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (18757) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18760) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (18829) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (18857) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (18861) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (18865) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (18869) BLE_CLIENT: searched Adv Data Len 24, Scan Response Len 0[0m
+[0;32mI (18919) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (18959) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (18964) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19023) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19023) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (19053) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (19068) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (19071) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19076) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19123) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (19152) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19176) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (19180) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19208) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19218) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19260) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19266) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19267) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (19273) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (19313) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (19314) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19409) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19420) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19425) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19428) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (19469) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (19470) BLE_CLIENT: searched Adv Data Len 8, Scan Response Len 0[0m
+[0;32mI (19525) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (19757) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19863) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19905) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (19947) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19951) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (19997) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20042) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (20093) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (20094) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (20095) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20151) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20161) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20163) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (20252) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (20252) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (20256) BLE_CLIENT: searched Adv Data Len 19, Scan Response Len 0[0m
+[0;32mI (20266) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20268) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20297) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (20305) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (20306) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20316) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20317) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20345) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20359) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (20365) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20447) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 0[0m
+[0;32mI (20447) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20454) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20462) BLE_CLIENT: searched Adv Data Len 17, Scan Response Len 0[0m
+[0;32mI (20496) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20499) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20502) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20550) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (20564) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20592) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m
+[0;32mI (20601) BLE_CLIENT: searched Adv Data Len 25, Scan Response Len 0[0m
+[0;32mI (20646) BLE_CLIENT: searched Adv Data Len 31, Scan Response Len 0[0m
+[0;32mI (20651) BLE_CLIENT: searched Adv Data Len 27, Scan Response Len 0[0m
+[0;32mI (20657) BLE_CLIENT: searched Adv Data Len 29, Scan Response Len 31[0m
+[0;32mI (20662) BLE_CLIENT: searched Adv Data Len 20, Scan Response Len 31[0m

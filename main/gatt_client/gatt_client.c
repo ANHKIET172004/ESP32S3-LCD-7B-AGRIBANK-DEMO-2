@@ -4,6 +4,13 @@
 extern int mesh_enb;
 extern char mess[20];
 
+typedef struct {
+    int number;
+} display_message_t;
+ 
+
+extern display_message_t msg;//
+
  bool connect = false;
  bool get_server = false;
  esp_gattc_char_elem_t *char_elem_result = NULL;
@@ -446,7 +453,8 @@ void send_message_task(void *pvParameters)
             //snprintf(message, sizeof(message), "Hello from Client #%d", message_count++);
             mesh_enb=0;
             //snprintf(message, sizeof(message),mess);
-            snprintf(message, sizeof(message), "%s", mess);
+            //snprintf(message, sizeof(message), "%s", mess);
+            snprintf(message, sizeof(message), "%s", (char*)msg.number);
 
 
 
