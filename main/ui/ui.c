@@ -11,6 +11,7 @@
 
 
 
+
 ///////////////////// VARIABLES ////////////////////
 
 extern int reconnect;
@@ -87,7 +88,7 @@ lv_obj_t * WIFI_List_Button;
 
 lv_obj_t *ui_WIFI_AP_MAC_List;
 
-
+extern lv_obj_t*ui_WIFI_Rescan_Button;
 extern int cnt;//
 extern int change;
 
@@ -103,6 +104,12 @@ bool user_selected_wifi = false;
 extern int refresh_index;
 extern int rate;
 
+extern int start_cnt;
+
+extern uint8_t no_wifi;
+
+
+bool user_manual=false;
 extern esp_mqtt_client_handle_t mqttClient;
 
 
@@ -143,6 +150,8 @@ const lv_img_dsc_t * ui_imgset_wifi_[4] = {&ui_img_wifi_1_png, &ui_img_wifi_2_pn
 
 /******************WIFI*********************** */
 
+
+
 // Event handler for the Wifi button (WiFi settings screen)
 void ui_event_Wifi(lv_event_t * e)
 {
@@ -165,7 +174,8 @@ void ui_event_WIFI_Button0(lv_event_t * e)
         // Change the screen back to the main screen with a fade animation
         //_ui_screen_change(&ui_Main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Main_screen_init);
         //_ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
-        _ui_screen_change(&ui_Screen7, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
+        //_ui_screen_change(&ui_Screen7, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
+        _ui_screen_change(&ui_Screen9, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Screen9_screen_init);
     }
 }
 
@@ -178,8 +188,13 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
     // When the switch is turned ON (checked state)
     if(event_code == LV_EVENT_VALUE_CHANGED && lv_obj_has_state(target, LV_STATE_CHECKED)) {
 
+        lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
+
         found_saved_ap=false;//
+
         cnt=0;// 
+        _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+
        ////
 /*
   if (mqttClient) {
@@ -192,13 +207,18 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
        /////
         // Remove the hidden flag from the Wifi scan list (show the list)
         _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
+        no_wifi=0;
         WIFIOPEN(e);  // Open Wifi functionality
     }
     
     // When the switch is turned OFF (unchecked state)
     if(event_code == LV_EVENT_VALUE_CHANGED && !lv_obj_has_state(target, LV_STATE_CHECKED)) {
         found_saved_ap=false;//
+        lv_obj_clear_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
+
         cnt=0;//
+        _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+
 /////
 /*
      if (mqttClient) {
@@ -212,8 +232,12 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
         // Add the hidden flag to the Wifi scan list (hide the list)
         _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
 
+
+        no_wifi=1;
         
         WIFICLOSE(e);  // Close Wifi functionality
+        
+
     }
 }
 
@@ -241,7 +265,7 @@ void ui_WIFI_list_event_cb(lv_event_t * e)
 
 
         ///////////
-        printf("index:%d\r\n",wifi_index);
+        //printf("index:%d\r\n",wifi_index);
 
         // If the selected network is the currently connected one, show the IP address
        // if ((reconnect2>0)&&(wifi_index==0))
@@ -277,17 +301,18 @@ void ui_WIFI_list_event_cb(lv_event_t * e)
 
         lv_label_set_text(ui_WIFI_Name,bssid_str);
         */
-        print_bssid(ap_info[wifi_index]);
+        //print_bssid(ap_info[wifi_index]);
         //
 
         // Print authentication mode (e.g., WPA2, WPA3)
-        print_auth_mode(ap_info[wifi_index].authmode);
+        //print_auth_mode(ap_info[wifi_index].authmode);
 
         // If the network is not using WEP, display cipher types
+        /*
         if (ap_info[wifi_index].authmode != WIFI_AUTH_WEP) {
             print_cipher_type(ap_info[wifi_index].pairwise_cipher, ap_info[wifi_index].group_cipher);
         }
-
+        */
         // Display the Wifi channel
         sprintf(result, "Channel \t\t%d", ap_info[wifi_index].primary);
         lv_label_set_text(ui_WIFI_Channel,result);
@@ -329,6 +354,7 @@ void ui_event_WIFI_INPUT_PWD(lv_event_t * e)
     
     // Triggered when the user has finished entering the password
     if(event_code == LV_EVENT_READY) {
+        user_manual=true;
         user_selected_wifi=true;
         // Attempt to connect to Wifi with the provided password
         WIFIConnection(e);
@@ -396,6 +422,7 @@ void ui_event_WIFI_AP_NAME(lv_event_t * e)
 
     // Triggered when the user finishes entering the AP name
     if(event_code == LV_EVENT_READY) {
+        
         // Change focus to the password field after entering the AP name
         _ui_state_modify(ui_WIFI_AP_NAME, LV_STATE_FOCUSED, _UI_MODIFY_STATE_REMOVE);
         _ui_state_modify(ui_WIFI_AP_Password, LV_STATE_FOCUSED, _UI_MODIFY_STATE_ADD);
@@ -507,8 +534,10 @@ void ui_init(void)
     //ui_Screen3_screen_init();
     //ui_Screen4_screen_init();
    // ui_Screen5_screen_init();
-    ui_Screen6_screen_init();
+   // ui_Screen6_screen_init();
     ui_Screen7_screen_init();
+    ui_Screen9_screen_init();
+    ui_Screen10_screen_init();
     ui_Wifi_Screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Screen7);
@@ -521,7 +550,9 @@ void ui_destroy(void)
     //ui_Screen3_screen_destroy();
     //ui_Screen4_screen_destroy();
    // ui_Screen5_screen_destroy();
-   ui_Screen6_screen_destroy();
+  // ui_Screen6_screen_destroy();
    ui_Screen7_screen_destroy();
+    ui_Screen9_screen_destroy();
+   ui_Screen10_screen_destroy();
     
 }

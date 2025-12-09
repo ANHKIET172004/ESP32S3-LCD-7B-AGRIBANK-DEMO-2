@@ -75,12 +75,12 @@ const char *SCREEN1_TAG ="Feedback";
 int score=0;
    uint8_t tx_buf[1469];
 
-   extern int cnt;
+  // extern int cnt;
 
 
 extern esp_mqtt_client_handle_t mqttClient;
 
-extern void backup_mqtt_data(const char *topic, const char *payload);
+//extern void backup_mqtt_data(const char *topic, const char *payload);
 
 void change_screen(lv_timer_t *timer){
 
@@ -120,7 +120,7 @@ void ui_event_Image1(lv_event_t * e)
 
         if (msg_id == -1){
          ESP_LOGE("MQTT", "Failed to send data");
-         backup_mqtt_data("feedback",mess);//
+         //backup_mqtt_data("feedback",mess);//
         }
           else
          ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
@@ -158,7 +158,7 @@ void ui_event_Image2(lv_event_t * e)
 
         if (msg_id == -1){
          ESP_LOGE("MQTT", "Failed to send data");
-         backup_mqtt_data("feedback",mess);//
+         //backup_mqtt_data("feedback",mess);//
          }
           else
          ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
@@ -191,7 +191,7 @@ void ui_event_Image3(lv_event_t * e)
 		int msg_id = esp_mqtt_client_publish(mqttClient, "feedback", mess, 0, 0, 0);
         if (msg_id == -1){
          ESP_LOGE("MQTT", "Failed to send data");
-         backup_mqtt_data("feedback",mess);//
+         //backup_mqtt_data("feedback",mess);//
          }
           else
          ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
@@ -236,7 +236,7 @@ void ui_event_Image5(lv_event_t * e)
 
         if (msg_id == -1){
          ESP_LOGE("MQTT", "Failed to send data");
-         backup_mqtt_data("feedback",mess);//
+         //backup_mqtt_data("feedback",mess);//
          }
           else
          ESP_LOGI("MQTT", "Message sent successfully, msg_id=%d", msg_id);
@@ -263,9 +263,11 @@ static void area_click_event_cb(lv_event_t *e) {
         click_count = 0;
         change=1;//
         _ui_screen_change(&ui_Main_WIFI, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Wifi_Screen_init);
+       // _ui_screen_change(&ui_Screen9, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen9_screen_init);
 
 
         /////////
+       /*
 if (cnt!=0){
 
     // Bắt đầu scan Wi-Fi (non-blocking)
@@ -277,6 +279,7 @@ if (cnt!=0){
      
     WIFI_SCAN_FLAG=true;
 }
+    */
 
     }
     

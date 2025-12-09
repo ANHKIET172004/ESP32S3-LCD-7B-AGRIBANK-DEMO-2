@@ -4,11 +4,15 @@
 // Project name: SquareLine_Project
 
 #include "ui.h"
+#include "nvs_flash.h"
+#include "esp_mqtt_client.h"
 
 lv_obj_t * ui_Screen7 = NULL;
 lv_obj_t * ui_Label26 = NULL;
 lv_obj_t * ui_Panel16 = NULL;
 lv_obj_t * ui_Image40 = NULL;
+lv_obj_t * ui_Image70 = NULL;
+
 
 
 static int click_count = 0;
@@ -19,6 +23,28 @@ static int change=0;
 // event funtions
 
 // build funtions
+char prev_number[5]={0};
+size_t prev_number_len=sizeof(prev_number);
+
+char display_number[5]={0};
+
+esp_err_t read_current_number_from_nvs(char *number, size_t *number_len_ptr) {
+    nvs_handle_t my_handle;
+    esp_err_t err = nvs_open("number_cred", NVS_READONLY, &my_handle);
+    if (err != ESP_OK) return err;
+
+    if (number_len_ptr && *number_len_ptr > 0) {
+        size_t tmp = *number_len_ptr;
+        err = nvs_get_str(my_handle, "current_number", number, &tmp);
+        if (err != ESP_OK) {
+            nvs_close(my_handle);
+            return err;
+        }
+        *number_len_ptr = tmp;
+    }
+    nvs_close(my_handle);
+    return ESP_OK;
+}
 
 static void area_click_event_cb(lv_event_t *e) {
         uint32_t current_time = lv_tick_get();
@@ -33,21 +59,28 @@ static void area_click_event_cb(lv_event_t *e) {
     if (click_count >= 7) {
         click_count = 0;
         //change=1;//
-        _ui_screen_change(&ui_Main_WIFI, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Wifi_Screen_init);
+        //_ui_screen_change(&ui_Main_WIFI, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Wifi_Screen_init);
+        _ui_screen_change(&ui_Screen9, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen9_screen_init);
+
 
 
         /////////
+        /*
  if (cnt!=0){
 
     // Bắt đầu scan Wi-Fi (non-blocking)
     //wifi_scan();
+    
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);//
     lv_obj_clean(ui_WIFI_SCAN_List);
     _ui_flag_modify(ui_WIFI_Details_Win, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
+    _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
      
     WIFI_SCAN_FLAG=true;
-}
+    
+    
+  }
+    */
 
     }
     
@@ -55,7 +88,17 @@ static void area_click_event_cb(lv_event_t *e) {
 }
 
 void ui_Screen7_screen_init(void)
-{
+{    
+    
+    if (read_current_number_from_nvs(prev_number,&prev_number_len)==ESP_OK){
+         
+        strcpy(display_number,prev_number);
+
+    }
+    else {
+         strcpy(display_number,"0000");
+    }
+
     ui_Screen7 = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Screen7, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_Screen7, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -65,10 +108,33 @@ void ui_Screen7_screen_init(void)
     lv_obj_set_width(ui_Label26, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label26, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label26, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label26, "1002");
+    //lv_label_set_text(ui_Label26, "1002");
+    char closed_status[4];
+    size_t closed_status_len=sizeof(closed_status);
+    read_status(closed_status,closed_status_len);
+
+    
+    if (strcmp(closed_status,"YES")==0){
+
+    lv_label_set_text(ui_Label26, "QUẦY TẠM THỜI ĐÓNG");
+
+    }
+    else {
+    lv_label_set_text(ui_Label26, display_number);
+    }
+
     lv_obj_set_style_text_color(ui_Label26, lv_color_hex(0xD74949), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label26, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    if (strcmp(closed_status,"YES")!=0){
+
+
     lv_obj_set_style_text_font(ui_Label26, &ui_font_BOLDVN250, LV_PART_MAIN | LV_STATE_DEFAULT);
+    }
+    else {
+
+    lv_obj_set_style_text_font(ui_Label26, &ui_font_BOLDVN80, LV_PART_MAIN | LV_STATE_DEFAULT);
+    }
+
 
     ui_Panel16 = lv_obj_create(ui_Screen7);
     lv_obj_set_width(ui_Panel16, 1028);
@@ -89,6 +155,18 @@ void ui_Screen7_screen_init(void)
     lv_obj_set_align(ui_Image40, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Image40, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_Image40, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    
+    ui_Image70 = lv_img_create(ui_Screen7);
+    lv_img_set_src(ui_Image70, &ui_img_red_circle_20x20_png);
+    lv_obj_set_width(ui_Image70, LV_SIZE_CONTENT);   /// 20
+    lv_obj_set_height(ui_Image70, LV_SIZE_CONTENT);    /// 20
+    lv_obj_set_x(ui_Image70, 476);
+    lv_obj_set_y(ui_Image70, 275);
+    lv_obj_set_align(ui_Image70, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Image70, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_clear_flag(ui_Image70, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(ui_Image70, LV_OBJ_FLAG_HIDDEN ); //
 
 
 

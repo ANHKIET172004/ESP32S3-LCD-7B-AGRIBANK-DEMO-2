@@ -1,0 +1,953 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=132f44h (1257284) map[0m
+[0;32mI (278) esp_image: segment 1: paddr=00142f6c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (282) esp_image: segment 2: paddr=00148714 vaddr=40374000 size=07904h ( 30980) load[0m
+[0;32mI (288) esp_image: segment 3: paddr=00150020 vaddr=42000020 size=d75e4h (882148) map[0m
+[0;32mI (420) esp_image: segment 4: paddr=0022760c vaddr=4037b904 size=10f7ch ( 69500) load[0m
+[0;32mI (434) esp_image: segment 5: paddr=00238590 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (444) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (444) boot: Disabling RNG early entropy source...[0m
+[0;33mW (454) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (454) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (461) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (469) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (473) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (477) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (482) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (487) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (491) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (495) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (499) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (504) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (509) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (514) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (519) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (531) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (531) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (532) esp_psram: Speed: 120MHz[0m
+[0;32mI (587) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (633) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (633) cpu_start: Multicore app[0m
+[0;32mI (784) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (792) cpu_start: Pro cpu start user code[0m
+[0;32mI (792) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (792) app_init: Application information:[0m
+[0;32mI (792) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (797) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (801) app_init: Compile time:     Oct 18 2025 22:22:17[0m
+[0;32mI (806) app_init: ELF file SHA256:  595d5b993...[0m
+[0;32mI (810) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (815) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (818) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (822) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (826) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (832) heap_init: At 3FCB3390 len 00036380 (216 KiB): RAM[0m
+[0;32mI (838) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (843) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (848) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (853) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (860) esp_psram: Adding pool of 52K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (871) spi_flash: detected chip: generic[0m
+[0;32mI (875) spi_flash: flash io: qio[0m
+[0;32mI (878) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (884) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (890) coexist: coex firmware version: 831ec70[0m
+[0;32mI (903) coexist: coexist rom version e7ae62f[0m
+[0;32mI (904) main_task: Started on CPU0[0m
+[0;32mI (905) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (910) main_task: Calling app_main()[0m
+[0;33mW (921) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1329) GT911: Initialize I2C panel IO[0m
+[0;32mI (1329) GT911: Initialize touch controller GT911[0m
+[0;33mW (1329) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1331) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1334) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1338) example: Install RGB LCD panel driver[0m
+[0;32mI (1378) example: Initialize RGB LCD panel[0m
+[0;32mI (1379) lv_port: Create LVGL task[0m
+[0;32mI (1483) MAIN: create main UI successfully[0m
+[0;32mI (1485) pp: pp rom version: e7ae62f[0m
+[0;32mI (1485) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1486) wifi:wifi driver task: 3fccdeec, prio:23, stack:6656, core=0[0m
+[0;32mI (1516) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1516) wifi:wifi certification version: v7.0[0m
+[0;32mI (1517) wifi:config NVS flash: enabled[0m
+[0;32mI (1517) wifi:config nano formatting: disabled[0m
+[0;32mI (1521) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1526) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1532) wifi:Init management short buffer num: 32[0m
+[0;32mI (1535) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1539) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1543) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1547) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1551) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1555) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1559) wifi_init: rx ba win: 16[0m
+[0;32mI (1562) wifi_init: accept mbox: 6[0m
+[0;32mI (1565) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1568) wifi_init: udp mbox: 6[0m
+[0;32mI (1571) wifi_init: tcp mbox: 6[0m
+[0;32mI (1574) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1577) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1580) wifi_init: tcp mss: 1440[0m
+[0;32mI (1583) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1587) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1591) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1598) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1644) wifi:mode : null[0m
+[0;32mI (1645) MQTT: Other event id:7[0m
+[1;31mE (1646) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (1646) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (1649) mqtt_client: Error transport connect[0m
+[0;32mI (1653) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1656) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (1662) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (1666) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (1670) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1674) main_task: Returned from app_main()[0m
+[0;32mI (11674) MQTT: Other event id:7[0m
+[1;31mE (11674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11675) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11677) mqtt_client: Error transport connect[0m
+[0;32mI (11681) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11684) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11690) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11694) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11698) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (21702) MQTT: Other event id:7[0m
+[1;31mE (21702) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21703) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21705) mqtt_client: Error transport connect[0m
+[0;32mI (21709) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21712) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21718) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21722) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21727) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (31730) MQTT: Other event id:7[0m
+[1;31mE (31730) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (31731) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (31733) mqtt_client: Error transport connect[0m
+[0;32mI (31737) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (31740) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (31746) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (31750) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (31755) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41758) MQTT: Other event id:7[0m
+[1;31mE (41758) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (41759) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (41761) mqtt_client: Error transport connect[0m
+[0;32mI (41765) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (41768) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (41774) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (41778) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (41783) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (51786) MQTT: Other event id:7[0m
+[1;31mE (51786) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (51787) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (51789) mqtt_client: Error transport connect[0m
+[0;32mI (51793) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (51796) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (51802) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (51806) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (51811) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (61814) MQTT: Other event id:7[0m
+[1;31mE (61814) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (61815) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (61817) mqtt_client: Error transport connect[0m
+[0;32mI (61821) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (61824) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (61830) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (61834) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (61839) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (71842) MQTT: Other event id:7[0m
+[1;31mE (71842) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (71843) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (71845) mqtt_client: Error transport connect[0m
+[0;32mI (71849) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (71852) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (71858) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (71862) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (71866) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (81870) MQTT: Other event id:7[0m
+[1;31mE (81870) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (81871) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (81873) mqtt_client: Error transport connect[0m
+[0;32mI (81877) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (81880) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (81886) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (81890) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (81894) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (91898) MQTT: Other event id:7[0m
+[1;31mE (91898) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (91899) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (91901) mqtt_client: Error transport connect[0m
+[0;32mI (91905) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (91908) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (91914) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (91918) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (91922) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (101926) MQTT: Other event id:7[0m
+[1;31mE (101926) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (101927) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (101929) mqtt_client: Error transport connect[0m
+[0;32mI (101934) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (101937) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (101942) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (101947) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (101951) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (111955) MQTT: Other event id:7[0m
+[1;31mE (111955) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (111956) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (111958) mqtt_client: Error transport connect[0m
+[0;32mI (111963) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (111966) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (111971) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (111976) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (111980) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (121984) MQTT: Other event id:7[0m
+[1;31mE (121984) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (121985) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (121987) mqtt_client: Error transport connect[0m
+[0;32mI (121992) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (121995) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (122000) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (122005) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (122009) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (132013) MQTT: Other event id:7[0m
+[1;31mE (132013) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (132014) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (132016) mqtt_client: Error transport connect[0m
+[0;32mI (132021) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (132024) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (132029) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (132034) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (132038) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (136010) wifi:flush txq[0m
+[0;32mI (136010) wifi:stop sw txq[0m
+[0;32mI (136010) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (136013) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (136013) wifi:enable tsf[0m
+[0;32mI (138532) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (138533) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+[0;32mI (138634) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (138636) wifi_scan: [0m
+[0;32mI (138637) wifi_scan: Found saved wifi network in scan list, ssid: NamTrung[0m
+[0;32mI (138637) wifi_scan: BSSID 10:5F:02:75:1E:9A[0m
+[0;32mI (138663) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (138664) wifi:flush txq[0m
+[0;32mI (138665) wifi:stop sw txq[0m
+[0;32mI (138665) wifi:lmac stop hw txq[0m
+[0;32mI (138667) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (138671) wifi:enable tsf[0m
+[0;32mI (138674) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (138680) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (138686) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (138698) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (138706) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (138744) wifi:connected with NamTrung, aid = 20, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (138745) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (138748) wifi:pm start, type: 1[0m
+
+[0;32mI (138750) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (138758) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (138767) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (138823) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (139179) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (139179) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (139784) esp_netif_handlers: sta ip: 10.10.1.47, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (140689) WiFi: Connected with IP: 10.10.1.47[0m
+[0;32mI (140689) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (140791) NVS: last index: 0[0m
+[0;32mI (140791) NVS: wifi index: 0[0m
+[0;32mI (140874) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (140874) mqtt_client: Client has started[0m
+[0;32mI (140874) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (142042) MQTT: Other event id:7[0m
+[0;32mI (142054) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (142055) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (142057) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (142070) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (142073) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:3, winSize:64[0m
+[0;32mI (142075) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=37817, return code=0x00 [0m
+[0;32mI (142080) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=501, return code=0x00 [0m
+[0;32mI (142296) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=26796, return code=0x00 [0m
+[0;32mI (144763) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (151214) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (157255) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (160027) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (160027) MQTT: TOPIC=responsenumber[0m
+[0;32mI (160027) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4261","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3","device_name":"Quay 6"}[0m
+[0;32mI (160039) MQTT: Updated label with number: 4261[0m
+[0;32mI (160049) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (160070) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19554[0m
+[0;32mI (161677) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (161677) MQTT: TOPIC=responsenumber[0m
+[0;32mI (161677) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4262","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3","device_name":"Quay 6"}[0m
+[0;32mI (161689) MQTT: Updated label with number: 4262[0m
+[0;32mI (161694) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (161709) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16190[0m
+[0;32mI (163298) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (169442) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (176200) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (182241) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (188284) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (194253) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (194253) MQTT: TOPIC=closed[0m
+[0;32mI (194253) MQTT: DATA=closed[0m
+[0;32mI (194837) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (195969) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (195969) MQTT: TOPIC=responsenumber[0m
+[0;32mI (195969) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4263","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3","device_name":"Quay 6"}[0m
+[0;32mI (195981) MQTT: Updated label with number: 4263[0m
+[0;32mI (195987) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (195999) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11477[0m
+[0;32mI (199105) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (199105) MQTT: TOPIC=responsenumber[0m
+[0;32mI (199105) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4264","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3","device_name":"Quay 6"}[0m
+[0;32mI (199117) MQTT: Updated label with number: 4264[0m
+[0;32mI (199123) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (199154) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4301[0m
+[0;32mI (201083) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (207125) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (211234) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (211234) MQTT: TOPIC=closed[0m
+[0;32mI (211234) MQTT: DATA=closed[0m
+[0;32mI (213270) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (214914) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (214914) MQTT: TOPIC=responsenumber[0m
+[0;32mI (214914) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4265","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3","device_name":"Quay 6"}[0m
+[0;32mI (214926) MQTT: Updated label with number: 4265[0m
+[0;32mI (214931) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (214958) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62009[0m
+[0;32mI (219515) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (226069) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (232417) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (238460) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (244603) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (250645) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (256789) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (263035) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (269077) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (275121) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (281366) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (287409) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (293448) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (296834) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (296834) MQTT: TOPIC=responsenumber[0m
+[0;32mI (296834) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4266","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (296844) MQTT: Updated label with number: 4266[0m
+[0;32mI (296851) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (296876) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39294[0m
+[0;32mI (300002) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (306044) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (308933) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (308933) MQTT: TOPIC=responsenumber[0m
+[0;32mI (308933) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4267","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (308943) MQTT: Updated label with number: 4267[0m
+[0;32mI (308953) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (308972) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44360[0m
+[0;32mI (312086) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (312105) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (312105) MQTT: TOPIC=responsenumber[0m
+[0;32mI (312105) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4268","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (312115) MQTT: Updated label with number: 4268[0m
+[0;32mI (312120) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (312147) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28831[0m
+[0;32mI (318229) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (324373) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (330927) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (333402) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (333402) MQTT: TOPIC=responsenumber[0m
+[0;32mI (333402) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4269","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (333412) MQTT: Updated label with number: 4269[0m
+[0;32mI (333417) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (333447) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41079[0m
+[0;32mI (337173) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (341184) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (341185) MQTT: TOPIC=responsenumber[0m
+[0;32mI (341185) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4270","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (341194) MQTT: Updated label with number: 4270[0m
+[0;32mI (341200) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (341225) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33368[0m
+[0;32mI (343215) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (349257) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (352032) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (352032) MQTT: TOPIC=responsenumber[0m
+[0;32mI (352032) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4271","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (352042) MQTT: Updated label with number: 4271[0m
+[0;32mI (352047) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (352076) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39558[0m
+[0;32mI (355298) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (361442) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (367791) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (373836) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (380181) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (386428) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (392470) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (398716) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (405287) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (411721) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (417765) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (422179) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (422179) MQTT: TOPIC=responsenumber[0m
+[0;32mI (422179) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4272","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (422189) MQTT: Updated label with number: 4272[0m
+[0;32mI (422194) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (422219) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59467[0m
+[0;32mI (423907) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (430255) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (435485) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (435485) MQTT: TOPIC=responsenumber[0m
+[0;32mI (435485) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4273","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (435495) MQTT: Updated label with number: 4273[0m
+[0;32mI (435500) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (435521) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57240[0m
+[0;32mI (436298) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (442646) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (448790) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (454139) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (454139) MQTT: TOPIC=responsenumber[0m
+[0;32mI (454139) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4274","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (454149) MQTT: Updated label with number: 4274[0m
+[0;32mI (454154) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (454185) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22726[0m
+[0;32mI (454831) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (460976) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (467120) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (473264) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (479305) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (485347) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (491389) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (492726) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (492726) MQTT: TOPIC=responsenumber[0m
+[0;32mI (492727) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4275","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (492736) MQTT: Updated label with number: 4275[0m
+[0;32mI (492742) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (492756) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47545[0m
+[0;32mI (497430) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (503574) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (508094) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (508094) MQTT: TOPIC=responsenumber[0m
+[0;32mI (508094) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4276","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (508104) MQTT: Updated label with number: 4276[0m
+[0;32mI (508109) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (508133) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54220[0m
+[0;32mI (509525) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (509525) MQTT: TOPIC=responsenumber[0m
+[0;32mI (509525) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4277","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (509535) MQTT: Updated label with number: 4277[0m
+[0;32mI (509557) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (509562) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27036[0m
+[0;32mI (510128) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (510581) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (510581) MQTT: TOPIC=responsenumber[0m
+[0;32mI (510581) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4278","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (510591) MQTT: Updated label with number: 4278[0m
+[0;32mI (510596) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (510624) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56534[0m
+[0;32mI (514545) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (514545) MQTT: TOPIC=responsenumber[0m
+[0;32mI (514545) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4277","device_name":"Quay 6"}[0m
+[0;32mI (514549) MQTT: Updated label with number: 4277[0m
+[0;32mI (514554) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (514584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31479[0m
+[0;32mI (516272) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (522416) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (528560) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (535113) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (541258) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (547710) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (548954) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (548954) MQTT: TOPIC=responsenumber[0m
+[0;32mI (548954) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4279","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (548964) MQTT: Updated label with number: 4279[0m
+[0;32mI (548969) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (549001) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13946[0m
+[0;32mI (553751) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (559894) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (564415) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (564415) MQTT: TOPIC=responsenumber[0m
+[0;32mI (564415) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4280","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (564425) MQTT: Updated label with number: 4280[0m
+[0;32mI (564430) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (564442) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62605[0m
+[0;32mI (566243) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (570653) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (570653) MQTT: TOPIC=responsenumber[0m
+[0;32mI (570653) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4281","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (570663) MQTT: Updated label with number: 4281[0m
+[0;32mI (570668) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (570690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63568[0m
+[0;32mI (572490) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (572509) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (572510) MQTT: TOPIC=responsenumber[0m
+[0;32mI (572510) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4282","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (572520) MQTT: Updated label with number: 4282[0m
+[0;32mI (572525) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (572551) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20969[0m
+[0;32mI (578543) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (581107) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (581107) MQTT: TOPIC=responsenumber[0m
+[0;32mI (581107) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4281","device_name":"Quay 6"}[0m
+[0;32mI (581111) MQTT: Updated label with number: 4281[0m
+[0;32mI (581116) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (581131) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7563[0m
+[0;32mI (587031) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (593175) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (599319) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (601377) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (601377) MQTT: TOPIC=responsenumber[0m
+[0;32mI (601377) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (602294) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (602295) MQTT: TOPIC=responsenumber[0m
+[0;32mI (602295) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (605463) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (611607) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (617853) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (620936) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (620936) MQTT: TOPIC=responsenumber[0m
+[0;32mI (620936) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4283","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (620946) MQTT: Updated label with number: 4283[0m
+[0;32mI (620951) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (620978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27896[0m
+[0;32mI (623397) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (623398) MQTT: TOPIC=responsenumber[0m
+[0;32mI (623398) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4284","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (623408) MQTT: Updated label with number: 4284[0m
+[0;32mI (623413) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (623431) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22158[0m
+[0;32mI (624202) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (630551) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (636900) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (643044) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (649188) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (650321) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (650321) MQTT: TOPIC=responsenumber[0m
+[0;32mI (650321) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4285","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (650331) MQTT: Updated label with number: 4285[0m
+[0;32mI (650355) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (650361) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10886[0m
+[0;32mI (655332) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (661373) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (668030) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (674071) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (680215) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (686257) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (692503) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (699159) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (705201) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (711242) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (717284) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (723940) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (729712) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (729713) MQTT: TOPIC=responsenumber[0m
+[0;32mI (729713) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4286","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (729723) MQTT: Updated label with number: 4286[0m
+[0;32mI (729728) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (729736) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1204[0m
+[0;32mI (729982) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (736126) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (742475) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (748721) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (749167) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (749167) MQTT: TOPIC=responsenumber[0m
+[0;32mI (749167) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4289","device_name":null}[0m
+[0;32mI (749171) MQTT: Updated label with number: 4289[0m
+[0;32mI (749176) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (749201) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65518[0m
+[0;32mI (755275) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (760197) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (760197) MQTT: TOPIC=responsenumber[0m
+[0;32mI (760197) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4287","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (760207) MQTT: Updated label with number: 4287[0m
+[0;32mI (760212) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (760240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34251[0m
+[0;32mI (761419) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (767574) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (774014) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (780260) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (787224) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (790924) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (790925) MQTT: TOPIC=responsenumber[0m
+[0;32mI (790925) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4288","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (790935) MQTT: Updated label with number: 4288[0m
+[0;32mI (790961) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (790966) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23173[0m
+[0;32mI (791644) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (791644) MQTT: TOPIC=responsenumber[0m
+[0;32mI (791644) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4290","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai","device_name":"Quay 6"}[0m
+[0;32mI (791654) MQTT: Updated label with number: 4290[0m
+[0;32mI (791674) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (791995) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13044[0m
+[0;32mI (793368) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (798388) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (798388) MQTT: TOPIC=responsenumber[0m
+[0;32mI (798388) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4289","device_name":"Quay 6"}[0m
+[0;32mI (798392) MQTT: Updated label with number: 4289[0m
+[0;32mI (798397) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (798405) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5547[0m
+[0;32mI (799614) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (805656) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (812209) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (818251) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (822261) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (822261) MQTT: TOPIC=responsenumber[0m
+[0;32mI (822262) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4291","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (822272) MQTT: Updated label with number: 4291[0m
+[0;32mI (822277) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (822304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63853[0m
+[0;32mI (825112) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (831256) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (836594) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (836594) MQTT: TOPIC=responsenumber[0m
+[0;32mI (836594) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4292","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (836605) MQTT: Updated label with number: 4292[0m
+[0;32mI (836610) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (836637) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9835[0m
+[0;32mI (837213) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (837214) MQTT: TOPIC=responsenumber[0m
+[0;32mI (837214) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (837605) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (844159) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (850200) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (856446) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (862489) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (865579) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (865579) MQTT: TOPIC=responsenumber[0m
+[0;32mI (865579) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4293","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (865589) MQTT: Updated label with number: 4293[0m
+[0;32mI (865594) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (865606) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31517[0m
+[0;32mI (867110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (867111) MQTT: TOPIC=responsenumber[0m
+[0;32mI (867111) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4294","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (867121) MQTT: Updated label with number: 4294[0m
+[0;32mI (867126) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (867159) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31798[0m
+[0;32mI (868530) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (872228) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (872228) MQTT: TOPIC=responsenumber[0m
+[0;32mI (872228) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4293","device_name":"Quay 6"}[0m
+[0;32mI (872232) MQTT: Updated label with number: 4293[0m
+[0;32mI (872237) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (872248) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8676[0m
+[0;32mI (874571) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (880720) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (886962) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (893003) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (899762) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (905803) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (911947) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (917989) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (924236) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (928247) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (928247) MQTT: TOPIC=responsenumber[0m
+[0;32mI (928247) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4295","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (928257) MQTT: Updated label with number: 4295[0m
+[0;32mI (928297) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (928304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5141[0m
+[0;32mI (930380) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (937445) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (937657) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (937657) MQTT: TOPIC=responsenumber[0m
+[0;32mI (937657) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4296","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (937667) MQTT: Updated label with number: 4296[0m
+[0;32mI (937672) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (937707) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6992[0m
+[0;32mI (938583) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (938583) MQTT: TOPIC=responsenumber[0m
+[0;32mI (938583) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4297","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (938594) MQTT: Updated label with number: 4297[0m
+[0;32mI (938599) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (938628) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21438[0m
+[0;32mI (944101) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (944430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (944431) MQTT: TOPIC=responsenumber[0m
+[0;32mI (944431) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4296","device_name":"Quay 6"}[0m
+[0;32mI (944434) MQTT: Updated label with number: 4296[0m
+[0;32mI (944463) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (944469) MQTT: MQTT_EVENT_PUBLISHED, msg_id=702[0m
+[0;32mI (950143) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (956185) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (962226) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (968268) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (969100) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (969101) MQTT: TOPIC=responsenumber[0m
+[0;32mI (969101) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4298","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (969111) MQTT: Updated label with number: 4298[0m
+[0;32mI (969116) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (969141) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2806[0m
+[0;32mI (970015) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (970015) MQTT: TOPIC=responsenumber[0m
+[0;32mI (970015) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4299","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (970025) MQTT: Updated label with number: 4299[0m
+[0;32mI (970031) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (970062) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19240[0m
+[0;32mI (974309) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (980351) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (986393) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (989983) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (989983) MQTT: TOPIC=responsenumber[0m
+[0;32mI (989983) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4300","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (989993) MQTT: Updated label with number: 4300[0m
+[0;32mI (990000) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (990024) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38660[0m
+[0;32mI (992537) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (999501) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1005542) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1008825) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1008825) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1008825) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (1012198) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1018239) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1024383) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1031039) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1037593) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1043737) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1050086) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1056127) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1062271) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1068313) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1074355) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1080601) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1086643) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1092889) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1098931) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1105075) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1111629) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1117875) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1124224) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1130470) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1136512) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1142861) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1149005) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1153118) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1153118) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1153119) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4301","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1153129) MQTT: Updated label with number: 4301[0m
+[0;32mI (1153134) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1153176) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36723[0m
+[0;32mI (1155046) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1161703) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1168051) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1171549) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1171549) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1171549) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4304","device_name":null}[0m
+[0;32mI (1171553) MQTT: Updated label with number: 4304[0m
+[0;32mI (1171558) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1171590) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53424[0m
+[0;32mI (1174195) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1179634) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1179634) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1179634) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4302","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1179644) MQTT: Updated label with number: 4302[0m
+[0;32mI (1179654) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1179673) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54580[0m
+[0;32mI (1180237) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1185276) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1185276) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1185276) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4303","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1185287) MQTT: Updated label with number: 4303[0m
+[0;32mI (1185292) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1185321) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43389[0m
+[0;32mI (1186586) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1192935) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1199079) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1205224) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1211265) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1217306) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1223349) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1230208) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1236250) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1242395) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1245790) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1245790) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1245790) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4305","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1245801) MQTT: Updated label with number: 4305[0m
+[0;32mI (1245806) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1245816) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11597[0m
+[0;32mI (1248743) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1255092) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1261133) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1267789) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1273933) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1280180) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1286733) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1288590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1288590) MQTT: TOPIC=reset_number[0m
+[0;32mI (1288590) MQTT: DATA=reset[0m
+[0;32mI (1293084) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1294732) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1294732) MQTT: TOPIC=closed[0m
+[0;32mI (1294732) MQTT: DATA=closed[0m
+[0;32mI (1299124) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1306190) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1312231) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1318375) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1324519) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1330561) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1336603) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1342644) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1348686) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1354728) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1360872) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1367220) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1373262) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1379304) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1385550) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1391899) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1398043) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1404187) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1410331) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1416373) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1422414) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1428662) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1434702) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1440744) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1446990) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1452229) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1452229) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1452229) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4306","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1452239) MQTT: Updated label with number: 4306[0m
+[0;32mI (1452245) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1452268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57155[0m
+[0;32mI (1453134) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1459278) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1465320) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1471362) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1477608) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1483650) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1489794) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1496757) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1502901) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1508943) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1514984) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1521026) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1527170) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1533212) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1539765) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1546421) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1552463) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1558607) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1564649) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1571202) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1578063) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1584207) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1590351) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1596496) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1602844) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1609398) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1615439) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1622095) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1628240) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1634281) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1640937) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1646979) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1653123) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1659164) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1665206) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1671452) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1677494) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1684150) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1690294) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1696848) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1702992) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1709034) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1715280) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1721424) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1727568) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1734531) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1741187) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1747536) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1753987) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1760234) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1766585) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1773136) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1779178) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1785219) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1791261) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1797303) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1803344) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1809693) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1816247) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1822391) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1828740) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1834781) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1840823) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1847172) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1853213) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1858856) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1858856) MQTT: TOPIC=closed[0m
+[0;32mI (1858856) MQTT: DATA=closed[0m
+[0;32mI (1859257) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1865399) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1867563) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1867563) MQTT: TOPIC=reset_number[0m
+[0;32mI (1867564) MQTT: DATA=reset[0m
+[0;32mI (1871646) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1874729) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1874729) MQTT: TOPIC=responsenumber[0m
+[0;32mI (1874729) MQTT: DATA={"device_id":"A8:42:E3:4C:7C:BC","number":"4307","service_name":"Khai ho\u1ea3 - Khai ho\u1ea3 - Khai ho\u1ea3 - Khai hoa","device_name":"Quay 6"}[0m
+[0;32mI (1874740) MQTT: Updated label with number: 4307[0m
+[0;32mI (1874745) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (1874757) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15819[0m
+[0;32mI (1878199) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1884241) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1891204) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1897246) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1903287) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1909329) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1915473) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1921719) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1927761) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1934007) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1940049) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1946193) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1952337) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1958481) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1965239) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1971383) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1977732) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1984184) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1990225) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1996369) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2002923) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2009067) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2015211) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2022174) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2028216) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2034258) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2040301) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2046341) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2052485) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2058834) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2065183) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2071941) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (2078188) wifi:bcn_timeout,ap_probe_send_start[0m

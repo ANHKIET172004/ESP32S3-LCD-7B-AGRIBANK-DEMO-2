@@ -1,0 +1,43 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM7 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM7 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40375ff1: [0;33mpanic_abort[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037e7e1: [0;33mesp_system_abort[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40386401: [0;33m__assert_func[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/assert.c[0m[0m:[1;31m80[0m
+[0m--- 0x40384636: [0;33mremove_free_block[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m372[0m
+[0m--- (inlined by) [0;33mblock_locate_free[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m619[0m
+[0m--- (inlined by) [0;33mtlsf_malloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf.c[0m[0m:[1;31m444[0m
+[0m--- 0x4038407b: [0;33mmulti_heap_malloc_impl[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/multi_heap.c[0m[0m:[1;31m216[0m
+[0m--- 0x40376a4b: [0;33maligned_or_unaligned_alloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m93[0m
+[0m--- (inlined by) [0;33mheap_caps_aligned_alloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m175[0m
+[0m--- 0x40376a6d: [0;33mheap_caps_malloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m202[0m
+[0m--- 0x403765ec: [0;33mheap_caps_malloc_default[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps.c[0m[0m:[1;31m118[0m
+[0m--- 0x40386481: [0;33mmalloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/heap.c[0m[0m:[1;31m24[0m
+[0m--- 0x42091194: [0;33miterator_create[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/partition.c[0m[0m:[1;31m291[0m
+[0m--- (inlined by) [0;33mesp_partition_find[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/partition.c[0m[0m:[1;31m316[0m
+[0m--- 0x42091428: [0;33mesp_partition_is_flash_region_writable[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/partition_target.c[0m[0m:[1;31m207[0m
+[0m--- 0x4038c47f: [0;33mmain_flash_region_protected[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m236[0m
+[0m--- 0x4038a280: [0;33mesp_flash_write[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m1016[0m
+[0m--- 0x42091246: [0;33mesp_partition_write[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/partition_target.c[0m[0m:[1;31m78[0m
+[0m--- 0x420484c9: [0;33mnvs::NVSPartition::write(unsigned int, void const*, unsigned int)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m51[0m
+[0m--- (inlined by) [0;33mnvs::NVSPartition::write(unsigned int, void const*, unsigned int)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m45[0m
+[0m--- 0x4204600e: [0;33mnvs::Page::writeEntry(nvs::Item const&)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m106[0m
+[0m--- 0x42046311: [0;33mnvs::Page::writeItem(unsigned char, nvs::ItemType, char const*, void const*, unsigned int, unsigned char)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m215[0m
+[0m--- 0x42047cfe: [0;33mnvs::Storage::writeItem(unsigned char, nvs::ItemType, char const*, void const*, unsigned int)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m507[0m
+[0m--- 0x4204844b: [0;33mnvs::NVSHandleSimple::set_typed_item(nvs::ItemType, char const*, void const*, unsigned int)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_handle_simple.cpp[0m[0m:[1;31m21[0m
+[0m--- (inlined by) [0;33mnvs::NVSHandleSimple::set_typed_item(nvs::ItemType, char const*, void const*, unsigned int)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_handle_simple.cpp[0m[0m:[1;31m16[0m
+[0m--- 0x42045cfa: [0;33mint nvs::NVSHandle::set_item<unsigned char>(char const*, unsigned char)[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/include/nvs_handle.hpp[0m[0m:[1;31m301[0m
+[0m--- (inlined by) [0;33mnvs_set<unsigned char>[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m368[0m
+[0m--- (inlined by) [0;33mnvs_set_u8[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m378[0m
+[0m--- 0x4207543e: [0;33mwifi_nvs_set[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42078439: [0;33mwifi_set_mode_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42076b7e: [0;33mieee80211_ioctl_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40386fbd: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40375f54: [0;33mesp_restart_noos[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

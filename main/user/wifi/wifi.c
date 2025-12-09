@@ -7,6 +7,8 @@
 #include "esp_mesh_internal.h"
 #include "esp_mac.h"
 #include "esp_log.h"
+#include "nvs_flash.h"
+#include "esp_mqtt_client.h"
 
 
 const char *TAG_AP = "WiFi SoftAP";  // Tag for SoftAP mode
@@ -25,6 +27,45 @@ extern char saved_password[64];//
 extern bool found_saved_ap;
 extern int change;
 extern int cnt;
+
+uint8_t no_wifi=1;
+
+extern esp_netif_t *sta_netif;
+
+
+ char saved_ssid1[32]={0} ;
+ char saved_pass1[32]={0} ;
+ size_t ssid_len1=sizeof(saved_pass1);
+ size_t password_len1=sizeof(saved_pass1) ;
+
+
+esp_err_t read_wifi_credentials_from_nvs1(char *ssid, size_t *ssid_len, char *password, size_t *password_len,uint8_t* bssid) {
+    nvs_handle_t my_handle;
+    esp_err_t err;
+    err = nvs_open("wifi_cred", NVS_READONLY, &my_handle);
+    if (err != ESP_OK) {
+        return err;
+    }
+    err = nvs_get_str(my_handle, "ssid", ssid, ssid_len);
+    if (err != ESP_OK) {
+        nvs_close(my_handle);
+        return err;
+    }
+    err = nvs_get_str(my_handle, "password", password, password_len);
+    if (err != ESP_OK) {
+        nvs_close(my_handle);
+        return err;
+    }
+    size_t bssid_len = 6;
+    err = nvs_get_blob(my_handle, "bssid", bssid, &bssid_len);
+    if (err != ESP_OK) {
+        nvs_close(my_handle);
+        return err;
+    }
+    nvs_close(my_handle);
+    return ESP_OK;
+}
+
 
 // Callback function to update UI when Wi-Fi connection is established
 /*
@@ -81,7 +122,7 @@ static void wifi_ap_cb(lv_timer_t *timer)
 }
 
 // Initialize Wi-Fi for STA (Station) and AP (Access Point) modes
-void wifi_init(void)
+void wifi_init1(void)
 {
     // Initialize the TCP/IP stack
     ESP_ERROR_CHECK(esp_netif_init());
@@ -94,6 +135,8 @@ void wifi_init(void)
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
 
+
+
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_NULL));  // Set Wi-Fi mode to null initially
     start_wifi_events();  // Start handling Wi-Fi events
     ESP_ERROR_CHECK(esp_wifi_start());  // Start the Wi-Fi driver
@@ -104,6 +147,73 @@ void wifi_init(void)
 
 
 }
+
+void wifi_init(void) {
+   // s_wifi_event_group = xEventGroupCreate();
+
+    char saved_ssid[32] = {0};
+    char saved_pass[64] = {0};
+    uint8_t saved_bssid[6] = {0};
+    size_t ssid_len = sizeof(saved_ssid);
+    size_t pass_len = sizeof(saved_pass);
+
+    esp_err_t err = read_wifi_credentials_from_nvs1(saved_ssid, &ssid_len, 
+                                                    saved_pass, &pass_len, 
+                                                    saved_bssid);
+
+    // Initialize the TCP/IP stack
+    ESP_ERROR_CHECK(esp_netif_init());
+    
+    // Create the default event loop
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+    //esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();// QUAN TRỌNG
+
+    sta_netif = esp_netif_create_default_wifi_sta();// QUAN TRỌNG
+
+
+
+    // WiFi init
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
+    //start_wifi_events();
+
+
+    
+
+    // Cấu hình WiFi
+    wifi_config_t wifi_config = {0};
+    
+    if (err == ESP_OK && strlen(saved_ssid) > 0) {
+        ESP_LOGI("reconnect", "Found saved WiFi: %s", saved_ssid);
+        strncpy((char *)wifi_config.sta.ssid, saved_ssid, sizeof(wifi_config.sta.ssid) - 1);
+        strncpy((char *)wifi_config.sta.password, saved_pass, sizeof(wifi_config.sta.password) - 1);
+        
+        
+    } 
+    
+    wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
+ //   wifi_config.sta.pmf_cfg.capable = true;
+ //   wifi_config.sta.pmf_cfg.required = false;
+
+ //if (no_wifi==1){
+
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    start_wifi_events();  // Start handling Wi-Fi events
+    
+    ESP_ERROR_CHECK( esp_wifi_stop());
+    ESP_ERROR_CHECK(esp_wifi_start());
+
+    ESP_ERROR_CHECK(esp_wifi_connect());//
+
+    ESP_LOGI("reconnect", "WiFi init complete, waiting for connection...");
+    wifi_wait_connect(); //
+    
+ }
+    //mqtt_start();//
+//}
 
 // Set DNS address for the SoftAP mode
 void wifi_ap_set_dns_addr(esp_netif_t *sta_netif, esp_netif_t *ap_netif)
@@ -134,6 +244,8 @@ void wifi_task(void *arg)
     wifi_init();  // Initialize the Wi-Fi
 
 
+    ///////
+
 
 
     static uint8_t connection_num = 0;  // Variable to track the number of connected stations
@@ -158,17 +270,16 @@ void wifi_task(void *arg)
             
             waveahre_rgb_lcd_set_pclk(12 * 1000 * 1000);  // Set pixel clock for the LCD
             vTaskDelay(20);  // Delay for a short while
-              if (found_saved_ap)///// khi reset lại/ switch on thì kết nối lại với wifi được lưu trong nvs
-            {/////
-               found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on 
-               wifi_sta_init((uint8_t*)saved_ssid, (uint8_t*)saved_password, ap_info[wifi_index].authmode,ap_info[wifi_index].bssid);        
+     //         if (found_saved_ap)///// khi reset lại/ switch on thì kết nối lại với wifi được lưu trong nvs
+     //       {/////
+      //         found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on 
+      //         wifi_sta_init((uint8_t*)saved_ssid, (uint8_t*)saved_password, ap_info[wifi_index].authmode,ap_info[wifi_index].bssid);        
                 
-             }/////// 
-              else {// kết nối tới wifi chọn thủ công
-               // found_saved_ap=false; // dừng kết nối cho các lần sau cho tới khi reset/swtich on
+      //       }/////// 
+        //      else {// kết nối tới wifi chọn thủ công
             //wifi_sta_init(ap_info[wifi_index].ssid, wifi_pwd, ap_info[wifi_index].authmode,NULL);  // Initialize Wi-Fi as STA and connect
             wifi_sta_init(ap_info[wifi_index].ssid, wifi_pwd, ap_info[wifi_index].authmode,ap_info[wifi_index].bssid);  // Initialize Wi-Fi as STA and connect//
-             }//
+         //    }//
             waveahre_rgb_lcd_set_pclk(EXAMPLE_LCD_PIXEL_CLOCK_HZ);  // Restore original pixel clock
 
 

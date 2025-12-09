@@ -1,0 +1,1501 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=146014h (1335316) map[0m
+[0;32mI (290) esp_image: segment 1: paddr=0015603c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (294) esp_image: segment 2: paddr=0015b7e4 vaddr=40374000 size=04834h ( 18484) load[0m
+[0;32mI (298) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=d79b0h (883120) map[0m
+[0;32mI (432) esp_image: segment 4: paddr=002379d8 vaddr=40378834 size=1404ch ( 81996) load[0m
+[0;32mI (448) esp_image: segment 5: paddr=0024ba2c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (458) boot: Disabling RNG early entropy source...[0m
+[0;33mW (468) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (468) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (475) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (483) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (487) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (491) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (496) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (501) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (505) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (509) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (513) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (518) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (523) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (528) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (533) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (545) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (545) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (546) esp_psram: Speed: 120MHz[0m
+[0;32mI (603) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (650) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (650) cpu_start: Multicore app[0m
+[0;32mI (799) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (807) cpu_start: Pro cpu start user code[0m
+[0;32mI (807) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (807) app_init: Application information:[0m
+[0;32mI (807) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (812) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (816) app_init: Compile time:     Nov 11 2025 11:08:19[0m
+[0;32mI (821) app_init: ELF file SHA256:  5b3f42511...[0m
+[0;32mI (825) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (830) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (833) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (837) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (841) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (847) heap_init: At 3FCB38E0 len 00035E30 (215 KiB): RAM[0m
+[0;32mI (853) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (858) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (863) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (868) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (875) esp_psram: Adding pool of 39K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (886) spi_flash: detected chip: generic[0m
+[0;32mI (890) spi_flash: flash io: qio[0m
+[0;32mI (893) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (899) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (905) coexist: coex firmware version: 831ec70[0m
+[0;32mI (918) coexist: coexist rom version e7ae62f[0m
+[0;32mI (919) main_task: Started on CPU0[0m
+[0;32mI (920) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (925) main_task: Calling app_main()[0m
+[0;33mW (937) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1344) GT911: Initialize I2C panel IO[0m
+[0;32mI (1344) GT911: Initialize touch controller GT911[0m
+[0;33mW (1344) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1346) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1349) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1353) example: Install RGB LCD panel driver[0m
+[0;32mI (1393) example: Initialize RGB LCD panel[0m
+[0;32mI (1394) lv_port: Create LVGL task[0m
+[0;32mI (1428) TAG_NVS: Loaded JSON from NVS: [{"name":"Quay 2","device_id":"94:E6:86:09:A4:78"},{"name":"Quay 1","device_id":"A8:42:E3:4C:7C:BC"}][0m
+[0;32mI (1430) TAG_NVS: Loaded 2 devices from NVS[0m
+[0;32mI (1433) UI: Loaded 2 devices, showing...[0m
+[0;32mI (1439) LVGL: Displayed 2 devices[0m
+[0;32mI (1484) MAIN: create main UI successfully[0m
+[0;32mI (1543) pp: pp rom version: e7ae62f[0m
+[0;32mI (1543) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1544) main_task: Returned from app_main()[0m
+[0;32mI (1545) wifi:wifi driver task: 3fcd10bc, prio:23, stack:6656, core=0[0m
+[0;32mI (1556) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1556) wifi:wifi certification version: v7.0[0m
+[0;32mI (1558) wifi:config NVS flash: enabled[0m
+[0;32mI (1562) wifi:config nano formatting: disabled[0m
+[0;32mI (1566) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1571) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1575) wifi:Init management short buffer num: 32[0m
+[0;32mI (1580) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1584) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1587) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1592) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1596) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1599) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1605) wifi_init: rx ba win: 16[0m
+[0;32mI (1606) wifi_init: accept mbox: 6[0m
+[0;32mI (1609) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1613) wifi_init: udp mbox: 6[0m
+[0;32mI (1615) wifi_init: tcp mbox: 6[0m
+[0;32mI (1618) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1622) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1625) wifi_init: tcp mss: 1440[0m
+[0;32mI (1628) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1632) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1636) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1639) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1679) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1680) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1720) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1720) wifi:enable tsf[0m
+[0;32mI (1721) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1722) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (1727) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1734) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1746) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1753) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1781) wifi:connected with Namtrung 2.4G, aid = 21, channel 11, BW20, bssid = 12:5f:02:15:1e:9a[0m
+[0;32mI (1781) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (1785) wifi:pm start, type: 1[0m
+
+[0;32mI (1786) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1794) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1803) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1809) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (2238) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2238) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (2835) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2835) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2844) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2845) MQTT: Other event id:7[0m
+[0;32mI (2853) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (2863) wifi:I (2863) MQTT: MQTT_EVENT_CONNECTED[0m
+<ba-add>idx:1 (ifx:0, 12:5f:02:15:1e:9a), tid:0, ssn:4, winSize:64
+[0;32mI (2870) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=49593, return code=0x00 [0m
+[0;32mI (2872) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=47713, return code=0x00 [0m
+[0;32mI (3108) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=25649, return code=0x00 [0m
+[0;32mI (3110) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=17502, return code=0x01 [0m
+[0;32mI (3112) MQTT: Processing topic: device/list[0m
+[0;32mI (3114) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (3123) MQTT: Unhandled topic: device/list[0m
+[0;32mI (3748) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (3748) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:1E:9A[0m
+[0;32mI (3854) NVS: last index: -1[0m
+[0;32mI (3854) NVS: wifi index: 0[0m
+[0;33mW (3854) WIFI_UI: WIFI_List_Button is invalid[0m
+[0;32mI (10817) MQTT: Processing topic: responsenumber[0m
+[0;32mI (10817) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (10817) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12558) MQTT: Processing topic: responsenumber[0m
+[0;32mI (12558) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (12559) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (25971) MQTT: Processing topic: responsenumber[0m
+[0;32mI (25972) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1120","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (25977) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (25982) MQTT: Updated label with number: 1120[0m
+[0;32mI (25987) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (91307) MQTT: Processing topic: responsenumber[0m
+[0;32mI (91307) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1121","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (91312) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (91318) MQTT: Updated label with number: 1121[0m
+[0;32mI (91323) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (93365) MQTT: Processing topic: responsenumber[0m
+[0;32mI (93365) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1122","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (93370) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (93376) MQTT: Updated label with number: 1122[0m
+[0;32mI (93381) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (94991) MQTT: Processing topic: responsenumber[0m
+[0;32mI (94991) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1123","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (94996) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (95002) MQTT: Updated label with number: 1123[0m
+[0;32mI (95007) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (97243) MQTT: Processing topic: responsenumber[0m
+[0;32mI (97243) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1124","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (97248) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (97253) MQTT: Updated label with number: 1124[0m
+[0;32mI (97259) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (99804) MQTT: Processing topic: responsenumber[0m
+[0;32mI (99805) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1125","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (99810) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (99815) MQTT: Updated label with number: 1125[0m
+[0;32mI (99821) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (101442) MQTT: Processing topic: responsenumber[0m
+[0;32mI (101442) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1126","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (101448) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (101453) MQTT: Updated label with number: 1126[0m
+[0;32mI (101459) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (103083) MQTT: Processing topic: responsenumber[0m
+[0;32mI (103083) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1127","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (103088) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (103094) MQTT: Updated label with number: 1127[0m
+[0;32mI (103099) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (105946) MQTT: Processing topic: responsenumber[0m
+[0;32mI (105946) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1128","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (105952) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (105957) MQTT: Updated label with number: 1128[0m
+[0;32mI (105962) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (108918) MQTT: Processing topic: responsenumber[0m
+[0;32mI (108918) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1129","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (108923) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (108928) MQTT: Updated label with number: 1129[0m
+[0;32mI (108934) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (112810) MQTT: Processing topic: responsenumber[0m
+[0;32mI (112810) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1130","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (112815) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (112821) MQTT: Updated label with number: 1130[0m
+[0;32mI (112826) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (114446) MQTT: Processing topic: responsenumber[0m
+[0;32mI (114446) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1131","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (114451) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (114456) MQTT: Updated label with number: 1131[0m
+[0;32mI (114462) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (116201) MQTT: Processing topic: responsenumber[0m
+[0;32mI (116201) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1132","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (116206) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (116212) MQTT: Updated label with number: 1132[0m
+[0;32mI (116217) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (118671) MQTT: Processing topic: responsenumber[0m
+[0;32mI (118671) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1133","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (118676) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (118682) MQTT: Updated label with number: 1133[0m
+[0;32mI (118688) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (121000) MQTT: Processing topic: responsenumber[0m
+[0;32mI (121001) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1134","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (121006) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (121011) MQTT: Updated label with number: 1134[0m
+[0;32mI (121018) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (122638) MQTT: Processing topic: responsenumber[0m
+[0;32mI (122639) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1135","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (122644) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (122649) MQTT: Updated label with number: 1135[0m
+[0;32mI (122656) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (124482) MQTT: Processing topic: responsenumber[0m
+[0;32mI (124483) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1136","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (124488) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (124493) MQTT: Updated label with number: 1136[0m
+[0;32mI (124500) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (126223) MQTT: Processing topic: responsenumber[0m
+[0;32mI (126223) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1137","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (126228) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (126234) MQTT: Updated label with number: 1137[0m
+[0;32mI (126239) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (128066) MQTT: Processing topic: responsenumber[0m
+[0;32mI (128067) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1138","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (128072) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (128077) MQTT: Updated label with number: 1138[0m
+[0;32mI (128082) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (129812) MQTT: Processing topic: responsenumber[0m
+[0;32mI (129812) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1139","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (129817) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (129823) MQTT: Updated label with number: 1139[0m
+[0;32mI (129828) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (131650) MQTT: Processing topic: responsenumber[0m
+[0;32mI (131651) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1140","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (131656) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (131661) MQTT: Updated label with number: 1140[0m
+[0;32mI (131667) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (147112) MQTT: Processing topic: responsenumber[0m
+[0;32mI (147112) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1141","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (147117) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (147123) MQTT: Updated label with number: 1141[0m
+[0;32mI (147129) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (148954) MQTT: Processing topic: responsenumber[0m
+[0;32mI (148955) MQTT: Data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1142","service_name":"Giao dich tren 1 ty","device_name":"quay 1"}[0m
+[0;32mI (148960) LOAD_DEVICE_ID: Loaded device_id: A8:42:E3:4C:7C:BC[0m
+[0;32mI (148965) MQTT: Updated label with number: 1142[0m
+[0;32mI (148972) MQTT_BACKUP: current number saved successfully![0m
+STA:STA 
+[0;32mI (158204) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (158205) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+[0;32mI (158315) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (158318) wifi_scan: [0m
+[0;32mI (158319) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (158319) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (158464) NVS: Have a saved wifi network in NVS[0m
+esp_wifi_disconnect 
+[0;32mI (170447) wifi:state: run -> init (0x0)[0m
+[0;32mI (170448) wifi:pm stop, total sleep time: 137138519 us / 168662068 us[0m
+
+[0;32mI (170448) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (170451) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (170454) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (170463) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:27:1E[0m
+[0;32mI (170463) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (170463) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (170480) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (170488) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (170489) wifi:I (170491) MQTT: Last error code reported from esp-tls: 0x0[0m
+flush txqI (170498) MQTT: Last tls stack error number: 0x0
+
+[0;32mI (170503) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[0;32mI (170503) wifi:E (170510) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+stop sw txq
+[0;32mI (170519) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (170520) wifi:lmac stop hw txq[0m
+[0;32mI (170473) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (170532) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (170535) wifi:enable tsf[0m
+[0;32mI (170539) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (170551) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (170552) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (170561) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (170569) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (170587) wifi:connected with NamTrung, aid = 20, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (170587) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (170590) wifi:pm start, type: 1[0m
+
+[0;32mI (170592) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (170602) WiFi Sta: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (170628) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (171043) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (171043) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (171619) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (171619) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (171631) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (171631) mqtt_client: Client force reconnect requested[0m
+[0;32mI (171631) MQTT: Other event id:7[0m
+[0;32mI (171633) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (171640) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (171666) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (171675) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (171735) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=28478, return code=0x00 [0m
+[0;32mI (171737) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=33425, return code=0x00 [0m
+[0;32mI (171896) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=8036, return code=0x00 [0m
+[0;32mI (171899) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=17767, return code=0x01 [0m
+[0;32mI (171901) MQTT: Processing topic: device/list[0m
+[0;32mI (171902) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (171912) MQTT: Unhandled topic: device/list[0m
+[0;32mI (172553) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (172553) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:27:1E[0m
+[0;32mI (172659) NVS: last index: 1[0m
+[0;32mI (172659) NVS: wifi index: 0[0m
+[0;32mI (182815) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (182815) wifi_scan: Total APs scanned = 16, actual AP number ap_info holds = 16[0m
+[0;32mI (182928) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (182931) wifi_scan: [0m
+[0;32mI (182931) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (182932) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (183077) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (190966) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (190966) wifi_scan: Total APs scanned = 10, actual AP number ap_info holds = 10[0m
+[0;32mI (191069) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (191071) wifi_scan: [0m
+[0;32mI (191071) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (191071) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (191204) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (192433) wifi:state: run -> init (0x0)[0m
+[0;32mI (192434) wifi:pm stop, total sleep time: 11813678 us / 21841938 us[0m
+
+[0;32mI (192434) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (192435) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (192438) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (192446) wifi:mode : null[0m
+[0;32mI (192450) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (192451) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (192453) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (192460) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (192472) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (192475) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (192481) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (192485) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[1;31mE (192492) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (192489) wifi:flush txq[0m
+[0;32mI (192499) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (192501) wifi:stop sw txq[0m
+[0;32mI (192508) wifi:lmac stop hw txq[0m
+[0;33mW (192569) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (192991) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (192991) wifi:enable tsf[0m
+[0;32mI (195505) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (195505) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x420cbff3  PS      : 0x00060f30  A0      : 0x8202eb07  A1      : 0x3fcec540  
+A2      : 0x3fca3b88  A3      : 0x0007001e  A4      : 0x3fca38a4  A5      : 0x3fca4160  
+A6      : 0x00000158  A7      : 0x00000003  A8      : 0x00000018  A9      : 0x3fcec4c0  
+A10     : 0x00000010  A11     : 0x00000000  A12     : 0x3fca3b00  A13     : 0xfffffffe  
+A14     : 0x3fca3a80  A15     : 0x3fca3a80  SAR     : 0x0000000b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00070022  LBEG    : 0x400570e8  LEND    : 0x400570f3  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x420cbff0:0x3fcec540 0x4202eb04:0x3fcec560 0x4200ffe8:0x3fcec590
+
+
+
+
+ELF file SHA256: 5b3f42511
+
+Rebooting...
+� �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375f54
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.3[0m
+[0;32mI (36) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (40) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (56) boot: Partition Table:[0m
+[0;32mI (59) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (78) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (88) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=146014h (1335316) map[0m
+[0;32mI (294) esp_image: segment 1: paddr=0015603c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (298) esp_image: segment 2: paddr=0015b7e4 vaddr=40374000 size=04834h ( 18484) load[0m
+[0;32mI (302) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=d79b0h (883120) map[0m
+[0;32mI (436) esp_image: segment 4: paddr=002379d8 vaddr=40378834 size=1404ch ( 81996) load[0m
+[0;32mI (452) esp_image: segment 5: paddr=0024ba2c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (462) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (462) boot: Disabling RNG early entropy source...[0m
+[0;33mW (472) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (473) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (480) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (487) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (492) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (495) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (500) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (505) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (509) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (514) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (518) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (523) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (527) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (532) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (537) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (549) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (549) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (550) esp_psram: Speed: 120MHz[0m
+[0;32mI (607) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (654) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (654) cpu_start: Multicore app[0m
+[0;32mI (803) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (811) cpu_start: Pro cpu start user code[0m
+[0;32mI (812) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (812) app_init: Application information:[0m
+[0;32mI (812) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (816) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (820) app_init: Compile time:     Nov 11 2025 11:08:19[0m
+[0;32mI (825) app_init: ELF file SHA256:  5b3f42511...[0m
+[0;32mI (830) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (834) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (838) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (842) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (845) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (852) heap_init: At 3FCB38E0 len 00035E30 (215 KiB): RAM[0m
+[0;32mI (857) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (862) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (867) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (873) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (879) esp_psram: Adding pool of 39K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (890) spi_flash: detected chip: generic[0m
+[0;32mI (894) spi_flash: flash io: qio[0m
+[0;32mI (897) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (903) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (910) coexist: coex firmware version: 831ec70[0m
+[0;32mI (923) coexist: coexist rom version e7ae62f[0m
+[0;32mI (923) main_task: Started on CPU0[0m
+[0;32mI (924) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (929) main_task: Calling app_main()[0m
+[0;33mW (941) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1348) GT911: Initialize I2C panel IO[0m
+[0;32mI (1348) GT911: Initialize touch controller GT911[0m
+[0;33mW (1348) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1350) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1353) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1357) example: Install RGB LCD panel driver[0m
+[0;32mI (1397) example: Initialize RGB LCD panel[0m
+[0;32mI (1398) lv_port: Create LVGL task[0m
+[0;32mI (1432) TAG_NVS: Loaded JSON from NVS: [{"name":"Quay 2","device_id":"94:E6:86:09:A4:78"},{"name":"Quay 1","device_id":"A8:42:E3:4C:7C:BC"}][0m
+[0;32mI (1434) TAG_NVS: Loaded 2 devices from NVS[0m
+[0;32mI (1437) UI: Loaded 2 devices, showing...[0m
+[0;32mI (1443) LVGL: Displayed 2 devices[0m
+[0;32mI (1488) MAIN: create main UI successfully[0m
+[0;32mI (1547) pp: pp rom version: e7ae62f[0m
+[0;32mI (1548) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1548) main_task: Returned from app_main()[0m
+[0;32mI (1549) wifi:wifi driver task: 3fcd10bc, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1560) wifi:wifi certification version: v7.0[0m
+[0;32mI (1562) wifi:config NVS flash: enabled[0m
+[0;32mI (1566) wifi:config nano formatting: disabled[0m
+[0;32mI (1570) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1575) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1579) wifi:Init management short buffer num: 32[0m
+[0;32mI (1584) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1589) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1592) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1600) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1604) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1610) wifi_init: rx ba win: 16[0m
+[0;32mI (1611) wifi_init: accept mbox: 6[0m
+[0;32mI (1614) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1617) wifi_init: udp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp mbox: 6[0m
+[0;32mI (1623) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1629) wifi_init: tcp mss: 1440[0m
+[0;32mI (1632) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1640) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1644) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1658) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1659) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1695) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1696) wifi:enable tsf[0m
+[0;32mI (1697) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1698) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (1703) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1727) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1736) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1755) wifi:connected with Namtrung 2.4G, aid = 16, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1755) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (1760) wifi:pm start, type: 1[0m
+
+[0;32mI (1761) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1769) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1778) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (1819) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2214) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2214) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (2808) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2808) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2828) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2829) MQTT: Other event id:7[0m
+[0;32mI (2849) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (2862) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2878) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2884) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=48737, return code=0x00 [0m
+[0;32mI (2890) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=51393, return code=0x00 [0m
+[0;32mI (3083) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=53478, return code=0x00 [0m
+[0;32mI (3085) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=41770, return code=0x01 [0m
+[0;32mI (3088) MQTT: Processing topic: device/list[0m
+[0;32mI (3089) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (3099) MQTT: Unhandled topic: device/list[0m
+[0;32mI (3724) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (3724) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (3829) NVS: last index: -1[0m
+[0;32mI (3829) NVS: wifi index: 0[0m
+[0;33mW (3829) WIFI_UI: WIFI_List_Button is invalid[0m
+STA:STA 
+[0;32mI (41596) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (41596) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (41718) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (41721) wifi_scan: [0m
+[0;32mI (41722) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (41722) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (41866) NVS: Have a saved wifi network in NVS[0m
+esp_wifi_disconnect 
+[0;32mI (51091) wifi:state: run -> init (0x0)[0m
+[0;32mI (51092) wifi:pm stop, total sleep time: 29357534 us / 49331368 us[0m
+
+[0;32mI (51092) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (51095) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (51098) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (51106) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (51106) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (51107) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (51123) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (51131) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (51134) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (51140) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (51144) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[1;31mE (51151) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (51152) wifi:flush txq[0m
+[0;32mI (51158) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (51160) wifi:stop sw txq[0m
+[0;32mI (51166) wifi:lmac stop hw txq[0m
+[0;32mI (51116) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (51174) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (51177) wifi:enable tsf[0m
+[0;32mI (51181) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (51201) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (51201) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (51232) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (51240) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (51261) wifi:connected with NamTrung, aid = 21, channel 11, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (51261) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (51265) wifi:pm start, type: 1[0m
+
+[0;32mI (51266) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (51275) WiFi Sta: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (51302) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (51685) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (51685) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (52295) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (52295) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (52305) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (52305) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52305) MQTT: Other event id:7[0m
+[0;32mI (52307) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (52320) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (52474) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (52476) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (52531) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=64189, return code=0x00 [0m
+[0;32mI (52533) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=57623, return code=0x00 [0m
+[0;32mI (52570) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=2228, return code=0x00 [0m
+[0;32mI (52571) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=18350, return code=0x01 [0m
+[0;32mI (52573) MQTT: Processing topic: device/list[0m
+[0;32mI (52575) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (52585) MQTT: Unhandled topic: device/list[0m
+[0;32mI (53195) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (53195) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (53303) NVS: last index: 1[0m
+[0;32mI (53303) NVS: wifi index: 0[0m
+[0;32mI (57997) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (57997) wifi_scan: Total APs scanned = 13, actual AP number ap_info holds = 13[0m
+[0;32mI (58098) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (58101) wifi_scan: [0m
+[0;32mI (58101) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (58102) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (58233) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (60032) wifi:state: run -> init (0x0)[0m
+[0;32mI (60033) wifi:pm stop, total sleep time: 3942798 us / 8766843 us[0m
+
+[0;32mI (60033) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (60034) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (60037) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (60045) wifi:mode : null[0m
+[0;32mI (60048) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (60049) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (60051) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (60058) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (60071) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (60073) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (60079) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (60078) wifi:I (60083) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+flush txq
+[1;31mE (60091) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (60092) wifi:stop sw txq[0m
+[0;32mI (60099) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (60101) wifi:lmac stop hw txq[0m
+[0;33mW (60190) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (60613) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (60613) wifi:enable tsf[0m
+[0;32mI (63126) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (63126) wifi_scan: Total APs scanned = 12, actual AP number ap_info holds = 12[0m
+[0;32mI (63231) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (63364) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (66993) wifi:mode : null[0m
+[0;32mI (66994) wifi:flush txq[0m
+[0;32mI (66994) wifi:stop sw txq[0m
+[0;32mI (66994) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (67533) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (67533) wifi:enable tsf[0m
+[0;32mI (70038) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (70038) wifi_scan: Total APs scanned = 10, actual AP number ap_info holds = 10[0m
+[0;32mI (70139) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (70151) MQTT: Other event id:7[0m
+[1;31mE (70152) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (70152) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (70154) mqtt_client: Error transport connect[0m
+[0;32mI (70158) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (70161) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (70167) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (70171) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (70176) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (70276) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (74175) wifi:mode : null[0m
+[0;32mI (74176) wifi:flush txq[0m
+[0;32mI (74176) wifi:stop sw txq[0m
+[0;32mI (74176) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (74712) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (74712) wifi:enable tsf[0m
+[0;32mI (77130) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (77130) wifi_scan: Total APs scanned = 11, actual AP number ap_info holds = 11[0m
+[0;32mI (77246) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (77394) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (80266) MQTT: Other event id:7[0m
+[1;31mE (80267) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (80267) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (80269) mqtt_client: Error transport connect[0m
+[0;32mI (80273) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (80276) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (80282) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (80286) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (80291) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (89351) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (89352) wifi:flush txq[0m
+[0;32mI (89353) wifi:stop sw txq[0m
+[0;32mI (89353) wifi:lmac stop hw txq[0m
+[0;32mI (89355) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (89358) wifi:enable tsf[0m
+[0;32mI (89362) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (89371) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (89374) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (89381) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (89389) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (89410) wifi:connected with NamTrung, aid = 21, channel 11, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (89411) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (89413) wifi:pm start, type: 1[0m
+
+[0;32mI (89416) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (89425) WiFi Sta: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (89498) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (89866) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (89866) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (90294) MQTT: Other event id:7[0m
+[1;31mE (90294) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (90295) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (90297) mqtt_client: Error transport connect[0m
+[0;32mI (90301) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (90304) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (90310) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (90314) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (90318) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (90446) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (90446) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (90456) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (90456) mqtt_client: Client force reconnect requested[0m
+[0;32mI (90456) MQTT: Other event id:7[0m
+[0;32mI (90458) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (90469) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (90470) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (90477) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (90560) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=50307, return code=0x00 [0m
+[0;32mI (90561) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=25798, return code=0x00 [0m
+[0;32mI (90714) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=46374, return code=0x00 [0m
+[0;32mI (90716) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=53083, return code=0x01 [0m
+[0;32mI (90717) MQTT: Processing topic: device/list[0m
+[0;32mI (90720) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (90730) MQTT: Unhandled topic: device/list[0m
+[0;32mI (91376) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (91376) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (91484) NVS: last index: -1[0m
+[0;32mI (91484) NVS: wifi index: 0[0m
+[0;32mI (95998) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (95998) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (96103) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (96105) wifi_scan: [0m
+[0;32mI (96105) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (96105) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (96236) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (97323) wifi:state: run -> init (0x0)[0m
+[0;32mI (97324) wifi:pm stop, total sleep time: 3559300 us / 7908620 us[0m
+
+[0;32mI (97324) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (97325) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (97328) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (97336) wifi:mode : null[0m
+[0;32mI (97339) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (97340) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (97342) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (97349) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (97361) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (97364) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (97369) wifi:I (97369) MQTT: Last tls stack error number: 0x0[0m
+flush txqI (97375) MQTT: Last captured errno : 113 (Software caused connection abort)
+
+[1;31mE (97383) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (97383) wifi:stop sw txq[0m
+[0;32mI (97390) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (97392) wifi:lmac stop hw txq[0m
+[0;33mW (97452) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (97995) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (97995) wifi:enable tsf[0m
+[0;32mI (100507) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (100507) wifi_scan: Total APs scanned = 16, actual AP number ap_info holds = 16[0m
+[0;32mI (100626) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (100774) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (106808) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (106808) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (106914) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (107063) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (107442) MQTT: Other event id:7[0m
+[1;31mE (107442) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (107443) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (107445) mqtt_client: Error transport connect[0m
+[0;32mI (107450) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (107453) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (107458) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (107463) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (107467) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (110040) wifi:mode : null[0m
+[0;32mI (110041) wifi:flush txq[0m
+[0;32mI (110041) wifi:stop sw txq[0m
+[0;32mI (110041) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (110549) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (110549) wifi:enable tsf[0m
+[0;32mI (113067) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (113068) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+[0;32mI (113173) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (113322) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (117471) MQTT: Other event id:7[0m
+[1;31mE (117471) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (117472) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (117474) mqtt_client: Error transport connect[0m
+[0;32mI (117479) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (117482) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (117487) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (117492) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (117496) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (127500) MQTT: Other event id:7[0m
+[1;31mE (127500) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (127501) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (127503) mqtt_client: Error transport connect[0m
+[0;32mI (127508) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (127511) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (127516) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (127521) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (127525) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (137529) MQTT: Other event id:7[0m
+[1;31mE (137529) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (137530) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (137532) mqtt_client: Error transport connect[0m
+[0;32mI (137537) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (137540) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (137545) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (137550) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (137554) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (147558) MQTT: Other event id:7[0m
+[1;31mE (147558) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (147559) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (147561) mqtt_client: Error transport connect[0m
+[0;32mI (147566) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (147569) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (147574) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (147579) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (147583) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (157587) MQTT: Other event id:7[0m
+[1;31mE (157588) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (157588) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (157590) mqtt_client: Error transport connect[0m
+[0;32mI (157595) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (157598) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (157603) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (157608) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (157612) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (167616) MQTT: Other event id:7[0m
+[1;31mE (167616) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (167617) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (167619) mqtt_client: Error transport connect[0m
+[0;32mI (167624) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (167627) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (167632) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (167637) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (167641) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (177645) MQTT: Other event id:7[0m
+[1;31mE (177645) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (177646) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (177648) mqtt_client: Error transport connect[0m
+[0;32mI (177653) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (177656) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (177661) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (177666) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (177670) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (187674) MQTT: Other event id:7[0m
+[1;31mE (187674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (187675) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (187677) mqtt_client: Error transport connect[0m
+[0;32mI (187682) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (187685) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (187690) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (187695) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (187699) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (197703) MQTT: Other event id:7[0m
+[1;31mE (197703) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (197704) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (197706) mqtt_client: Error transport connect[0m
+[0;32mI (197711) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (197714) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (197719) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (197724) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (197728) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (207732) MQTT: Other event id:7[0m
+[1;31mE (207732) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (207733) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (207735) mqtt_client: Error transport connect[0m
+[0;32mI (207740) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (207743) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (207748) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (207753) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (207757) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (217761) MQTT: Other event id:7[0m
+[1;31mE (217761) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (217762) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (217764) mqtt_client: Error transport connect[0m
+[0;32mI (217769) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (217772) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (217777) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (217782) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (217786) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (227790) MQTT: Other event id:7[0m
+[1;31mE (227790) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (227791) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (227793) mqtt_client: Error transport connect[0m
+[0;32mI (227798) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (227801) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (227806) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (227811) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (227815) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (237819) MQTT: Other event id:7[0m
+[1;31mE (237819) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (237820) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (237822) mqtt_client: Error transport connect[0m
+[0;32mI (237827) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (237830) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (237835) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (237840) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (237844) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (247848) MQTT: Other event id:7[0m
+[1;31mE (247848) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (247849) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (247851) mqtt_client: Error transport connect[0m
+[0;32mI (247856) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (247859) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (247864) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (247869) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (247873) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (257877) MQTT: Other event id:7[0m
+[1;31mE (257877) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (257878) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (257880) mqtt_client: Error transport connect[0m
+[0;32mI (257885) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (257888) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (257893) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (257898) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (257902) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (267906) MQTT: Other event id:7[0m
+[1;31mE (267906) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (267907) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (267909) mqtt_client: Error transport connect[0m
+[0;32mI (267914) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (267917) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (267922) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (267927) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (267931) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (277935) MQTT: Other event id:7[0m
+[1;31mE (277935) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (277936) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (277938) mqtt_client: Error transport connect[0m
+[0;32mI (277943) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (277946) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (277951) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (277956) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (277960) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (287964) MQTT: Other event id:7[0m
+[1;31mE (287964) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (287965) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (287967) mqtt_client: Error transport connect[0m
+[0;32mI (287972) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (287975) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (287980) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (287985) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (287989) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (297993) MQTT: Other event id:7[0m
+[1;31mE (297993) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (297994) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (297996) mqtt_client: Error transport connect[0m
+[0;32mI (298001) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (298004) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (298009) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (298014) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (298018) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (308022) MQTT: Other event id:7[0m
+[1;31mE (308022) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (308023) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (308025) mqtt_client: Error transport connect[0m
+[0;32mI (308030) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (308033) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (308038) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (308043) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (308047) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (318051) MQTT: Other event id:7[0m
+[1;31mE (318052) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (318052) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (318054) mqtt_client: Error transport connect[0m
+[0;32mI (318059) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (318062) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (318067) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (318072) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (318076) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (328080) MQTT: Other event id:7[0m
+[1;31mE (328080) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (328081) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (328083) mqtt_client: Error transport connect[0m
+[0;32mI (328088) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (328091) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (328096) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (328101) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (328105) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (338109) MQTT: Other event id:7[0m
+[1;31mE (338109) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (338110) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (338112) mqtt_client: Error transport connect[0m
+[0;32mI (338117) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (338120) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (338125) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (338130) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (338134) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (348138) MQTT: Other event id:7[0m
+[1;31mE (348138) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (348139) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (348141) mqtt_client: Error transport connect[0m
+[0;32mI (348146) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (348149) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (348154) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (348159) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (348163) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (358167) MQTT: Other event id:7[0m
+[1;31mE (358167) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (358168) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (358170) mqtt_client: Error transport connect[0m
+[0;32mI (358175) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (358178) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (358183) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (358188) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (358192) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (368196) MQTT: Other event id:7[0m
+[1;31mE (368196) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (368197) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (368199) mqtt_client: Error transport connect[0m
+[0;32mI (368204) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (368207) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (368212) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (368217) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (368221) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (378225) MQTT: Other event id:7[0m
+[1;31mE (378225) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (378226) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (378228) mqtt_client: Error transport connect[0m
+[0;32mI (378233) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (378236) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (378242) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (378246) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (378251) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (379089) WiFi Sta: Connecting to wifi network, BSSID: 12:5F:02:15:1E:9A[0m
+[0;32mI (379106) wifi:flush txq[0m
+[0;32mI (379107) wifi:stop sw txq[0m
+[0;32mI (379107) wifi:lmac stop hw txq[0m
+[0;32mI (379108) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (379108) wifi:enable tsf[0m
+[0;32mI (379112) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (379117) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (379124) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (379131) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (379139) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (379166) wifi:connected with Namtrung 2.4G, aid = 21, channel 11, BW20, bssid = 12:5f:02:15:1e:9a[0m
+[0;32mI (379166) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (379171) wifi:pm start, type: 1[0m
+
+[0;32mI (379172) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (379181) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (379193) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (379616) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (379616) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (380214) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (380214) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (380231) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (380231) mqtt_client: Client force reconnect requested[0m
+[0;32mI (380231) MQTT: Other event id:7[0m
+[0;32mI (380233) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (380240) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (380248) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (380253) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (380306) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=50347, return code=0x00 [0m
+[0;32mI (380307) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=13649, return code=0x00 [0m
+[0;32mI (380505) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=18732, return code=0x00 [0m
+[0;32mI (380507) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=52373, return code=0x01 [0m
+[0;32mI (380509) MQTT: Processing topic: device/list[0m
+[0;32mI (380511) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (380521) MQTT: Unhandled topic: device/list[0m
+[0;32mI (381126) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (381126) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:1E:9A[0m
+[0;32mI (381230) NVS: last index: -1[0m
+[0;32mI (381230) NVS: wifi index: 1[0m
+[0;32mI (391358) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (391358) wifi_scan: Total APs scanned = 17, actual AP number ap_info holds = 17[0m
+[0;32mI (391469) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (391471) wifi_scan: [0m
+[0;32mI (391471) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (391471) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (391618) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (392637) wifi:state: run -> init (0x0)[0m
+[0;32mI (392638) wifi:pm stop, total sleep time: 8117501 us / 13466397 us[0m
+
+[0;32mI (392638) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (392639) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (392642) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (392650) wifi:mode : null[0m
+[0;32mI (392654) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (392655) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (392657) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (392664) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (392676) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (392679) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (392685) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (392689) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[1;31mE (392696) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (392703) wifi:flush txq[0m
+[0;32mI (392703) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (392705) wifi:stop sw txq[0m
+[0;32mI (392712) wifi:lmac stop hw txq[0m
+[0;33mW (392775) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (396167) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (396167) wifi:enable tsf[0m
+[0;32mI (398678) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (398678) wifi_scan: Total APs scanned = 19, actual AP number ap_info holds = 19[0m
+[0;32mI (398780) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (398944) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (402765) MQTT: Other event id:7[0m
+[1;31mE (402765) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (402766) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (402768) mqtt_client: Error transport connect[0m
+[0;32mI (402773) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (402776) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (402781) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (402786) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (402790) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (403169) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (403169) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (403275) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (403423) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (407070) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (407070) wifi_scan: Total APs scanned = 19, actual AP number ap_info holds = 19[0m
+[0;32mI (407170) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (407339) NVS: Have a saved wifi network in NVS[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=146014h (1335316) map[0m
+[0;32mI (290) esp_image: segment 1: paddr=0015603c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (294) esp_image: segment 2: paddr=0015b7e4 vaddr=40374000 size=04834h ( 18484) load[0m
+[0;32mI (298) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=d79b0h (883120) map[0m
+[0;32mI (432) esp_image: segment 4: paddr=002379d8 vaddr=40378834 size=1404ch ( 81996) load[0m
+[0;32mI (448) esp_image: segment 5: paddr=0024ba2c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (458) boot: Disabling RNG early entropy source...[0m
+[0;33mW (468) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (468) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (475) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (483) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (487) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (491) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (496) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (501) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (505) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (509) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (513) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (518) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (523) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (528) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (533) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (545) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (545) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (546) esp_psram: Speed: 120MHz[0m
+[0;32mI (603) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (650) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (650) cpu_start: Multicore app[0m
+[0;32mI (799) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (807) cpu_start: Pro cpu start user code[0m
+[0;32mI (807) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (807) app_init: Application information:[0m
+[0;32mI (807) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (812) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (816) app_init: Compile time:     Nov 11 2025 11:08:19[0m
+[0;32mI (821) app_init: ELF file SHA256:  5b3f42511...[0m
+[0;32mI (825) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (830) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (833) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (837) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (841) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (847) heap_init: At 3FCB38E0 len 00035E30 (215 KiB): RAM[0m
+[0;32mI (853) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (858) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (863) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (868) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (875) esp_psram: Adding pool of 39K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (886) spi_flash: detected chip: generic[0m
+[0;32mI (890) spi_flash: flash io: qio[0m
+[0;32mI (893) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (899) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (905) coexist: coex firmware version: 831ec70[0m
+[0;32mI (918) coexist: coexist rom version e7ae62f[0m
+[0;32mI (919) main_task: Started on CPU0[0m
+[0;32mI (920) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (925) main_task: Calling app_main()[0m
+[0;33mW (937) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1344) GT911: Initialize I2C panel IO[0m
+[0;32mI (1344) GT911: Initialize touch controller GT911[0m
+[0;33mW (1344) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1346) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1349) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1353) example: Install RGB LCD panel driver[0m
+[0;32mI (1393) example: Initialize RGB LCD panel[0m
+[0;32mI (1394) lv_port: Create LVGL task[0m
+[0;32mI (1428) TAG_NVS: Loaded JSON from NVS: [{"name":"Quay 2","device_id":"94:E6:86:09:A4:78"},{"name":"Quay 1","device_id":"A8:42:E3:4C:7C:BC"}][0m
+[0;32mI (1430) TAG_NVS: Loaded 2 devices from NVS[0m
+[0;32mI (1433) UI: Loaded 2 devices, showing...[0m
+[0;32mI (1439) LVGL: Displayed 2 devices[0m
+[0;32mI (1484) MAIN: create main UI successfully[0m
+[0;32mI (1543) pp: pp rom version: e7ae62f[0m
+[0;32mI (1544) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1544) main_task: Returned from app_main()[0m
+[0;32mI (1545) wifi:wifi driver task: 3fcd10bc, prio:23, stack:6656, core=0[0m
+[0;32mI (1556) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1556) wifi:wifi certification version: v7.0[0m
+[0;32mI (1558) wifi:config NVS flash: enabled[0m
+[0;32mI (1562) wifi:config nano formatting: disabled[0m
+[0;32mI (1566) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1571) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1575) wifi:Init management short buffer num: 32[0m
+[0;32mI (1580) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1585) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1588) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1592) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1596) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1600) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1606) wifi_init: rx ba win: 16[0m
+[0;32mI (1607) wifi_init: accept mbox: 6[0m
+[0;32mI (1610) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1613) wifi_init: udp mbox: 6[0m
+[0;32mI (1616) wifi_init: tcp mbox: 6[0m
+[0;32mI (1619) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1622) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1625) wifi_init: tcp mss: 1440[0m
+[0;32mI (1628) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1632) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1636) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1640) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1652) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1653) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1695) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1696) wifi:enable tsf[0m
+[0;32mI (1698) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1698) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (1703) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1719) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1728) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1753) wifi:connected with Namtrung 2.4G, aid = 16, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1753) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (1757) wifi:pm start, type: 1[0m
+
+[0;32mI (1758) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1766) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1775) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1781) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (2214) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2214) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (2807) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2807) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2824) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2825) MQTT: Other event id:7[0m
+[0;32mI (2838) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (2846) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2861) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2996) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=46118, return code=0x00 [0m
+[0;32mI (2999) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=40649, return code=0x00 [0m
+[0;32mI (3091) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=41326, return code=0x00 [0m
+[0;32mI (3093) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=17389, return code=0x01 [0m
+[0;32mI (3095) MQTT: Processing topic: device/list[0m
+[0;32mI (3096) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (3106) MQTT: Unhandled topic: device/list[0m
+[0;32mI (3724) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (3724) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (3824) NVS: last index: -1[0m
+[0;32mI (3824) NVS: wifi index: 0[0m
+[0;33mW (3824) WIFI_UI: WIFI_List_Button is invalid[0m
+STA:STA 
+[0;32mI (199649) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (199649) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (199753) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (199755) wifi_scan: [0m
+[0;32mI (199755) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (199755) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (199902) NVS: Have a saved wifi network in NVS[0m
+esp_wifi_disconnect 
+[0;32mI (210511) wifi:state: run -> init (0x0)[0m
+[0;32mI (210513) wifi:pm stop, total sleep time: 142496704 us / 208754980 us[0m
+
+[0;32mI (210514) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (210515) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (210518) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (210527) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:27:1E[0m
+[0;32mI (210527) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (210527) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (210544) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (210552) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (210555) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (210561) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (210565) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[1;31mE (210572) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (210576) wifi:flush txq[0m
+[0;32mI (210579) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (210582) wifi:stop sw txq[0m
+[0;32mI (210588) wifi:lmac stop hw txq[0m
+[0;32mI (210537) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (210596) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (210599) wifi:enable tsf[0m
+[0;32mI (210603) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (210612) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (210615) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (210621) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (210630) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (210663) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (210663) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (210666) wifi:pm start, type: 1[0m
+
+[0;32mI (210668) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (210679) WiFi Sta: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (210752) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (211107) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (211107) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (211702) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (211702) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (211720) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (211720) mqtt_client: Client force reconnect requested[0m
+[0;32mI (211720) MQTT: Other event id:7[0m
+[0;32mI (211722) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (211734) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64I (211734) MQTT: MQTT_EVENT_CONNECTED[0m
+
+[0;32mI (211736) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:4, winSize:64[0m
+[0;32mI (211809) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=25842, return code=0x00 [0m
+[0;32mI (211810) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=30102, return code=0x00 [0m
+[0;32mI (211992) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=23899, return code=0x00 [0m
+[0;32mI (211994) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=26354, return code=0x01 [0m
+[0;32mI (211996) MQTT: Processing topic: device/list[0m
+[0;32mI (211998) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (212008) MQTT: Unhandled topic: device/list[0m
+[0;32mI (212617) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (212617) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:27:1E[0m
+[0;32mI (212733) NVS: last index: 0[0m
+[0;32mI (212733) NVS: wifi index: 1[0m
+[0;32mI (217730) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (217730) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+[0;32mI (217841) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (217844) wifi_scan: [0m
+[0;32mI (217845) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (217845) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (217989) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (218889) wifi:state: run -> init (0x0)[0m
+[0;32mI (218890) wifi:pm stop, total sleep time: 3742333 us / 8221730 us[0m
+
+[0;32mI (218891) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (218891) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (218894) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (218902) wifi:mode : null[0m
+[0;32mI (218906) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (218906) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (218909) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (218916) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (218928) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (218931) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (218935) wifi:I (218936) MQTT: Last tls stack error number: 0x0[0m
+flush txqI (218942) MQTT: Last captured errno : 113 (Software caused connection abort)
+
+[1;31mE (218950) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (218950) wifi:stop sw txq[0m
+[0;32mI (218957) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (218960) wifi:lmac stop hw txq[0m
+[0;33mW (219027) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (219840) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (219840) wifi:enable tsf[0m
+[0;32mI (222352) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (222352) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+[0;32mI (222468) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (222616) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (227583) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (227584) wifi_scan: Total APs scanned = 19, actual AP number ap_info holds = 19[0m
+[0;32mI (227689) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (227837) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (229017) MQTT: Other event id:7[0m
+[1;31mE (229017) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (229018) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (229020) mqtt_client: Error transport connect[0m
+[0;32mI (229025) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (229028) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (229033) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (229038) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (229042) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (239046) MQTT: Other event id:7[0m
+[1;31mE (239046) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (239047) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (239049) mqtt_client: Error transport connect[0m
+[0;32mI (239055) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (239062) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (239064) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (239067) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (239071) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (243974) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (243985) wifi:flush txq[0m
+[0;32mI (243985) wifi:stop sw txq[0m
+[0;32mI (243985) wifi:lmac stop hw txq[0m
+[0;32mI (243987) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (243987) wifi:enable tsf[0m
+[0;32mI (243990) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (243999) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (244002) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (244009) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (244017) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (244038) wifi:connected with NamTrung, aid = 21, channel 11, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (244038) wifi:security: WPA2-PSK, phy: bgn, rssi: -52[0m
+[0;32mI (244042) wifi:pm start, type: 1[0m
+
+[0;32mI (244044) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (244053) WiFi Sta: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (244061) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (244494) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (244494) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (245086) esp_netif_handlers: sta ip: 10.10.2.237, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (245086) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (245086) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (245090) mqtt_client: Client force reconnect requested[0m
+[0;32mI (245095) MQTT: Other event id:7[0m
+[0;32mI (245099) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (245120) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (245129) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (245131) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:4, winSize:64[0m
+[0;32mI (245185) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=37916, return code=0x00 [0m
+[0;32mI (245187) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=57422, return code=0x00 [0m
+[0;32mI (245352) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=29703, return code=0x00 [0m
+[0;32mI (245354) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=55846, return code=0x01 [0m
+[0;32mI (245356) MQTT: Processing topic: device/list[0m
+[0;32mI (245358) MQTT: Data: [{"id":"94:E6:86:09:A4:78","name":"quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"quay 1"}][0m
+[0;32mI (245368) MQTT: Unhandled topic: device/list[0m
+[0;32mI (246004) WiFi: Connected with IP: 10.10.2.237[0m
+[0;32mI (246004) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (246109) NVS: last index: -1[0m
+[0;32mI (246109) NVS: wifi index: 0[0m
+[0;32mI (250506) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (250506) wifi_scan: Total APs scanned = 13, actual AP number ap_info holds = 13[0m
+[0;32mI (250623) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (250626) wifi_scan: [0m
+[0;32mI (250627) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (250627) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+[0;32mI (250772) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (260067) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (260067) wifi_scan: Total APs scanned = 17, actual AP number ap_info holds = 17[0m
+[0;32mI (260205) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (260210) wifi_scan: [0m
+[0;32mI (260210) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (260210) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (260353) NVS: Have a saved wifi network in NVS[0m

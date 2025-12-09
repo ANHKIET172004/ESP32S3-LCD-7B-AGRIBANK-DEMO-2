@@ -15,6 +15,8 @@
 #include <string.h>
 #include "esp_log.h" // Thêm thư viện log
 
+bool wifi_open=false;
+
 //static const char *TAG = "RECONNECT";
 
 // Hàm đọc thông tin Wi-Fi từ NVS
@@ -74,7 +76,8 @@ void reconnect_to_saved_wifi() {
 // Event callback for opening the WiFi STA (station) connection
 // This function opens a WiFi STA connection and modifies UI elements accordingly.
 void WIFIOPEN(lv_event_t * e)
-{
+{   
+    wifi_open=true;
     // Open WiFi in STA mode (station mode)
     wifi_open_sta();
     
@@ -97,7 +100,8 @@ void WIFIOPEN(lv_event_t * e)
 // Event callback for closing the WiFi STA connection
 // This function closes the WiFi STA connection and updates the UI.
 void WIFICLOSE(lv_event_t * e)
-{
+{   
+    wifi_open=false;
     // Close the WiFi STA connection
     wifi_close_sta();
     

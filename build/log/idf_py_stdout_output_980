@@ -1,0 +1,1224 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=146244h (1335876) map[0m
+[0;32mI (290) esp_image: segment 1: paddr=0015626c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (294) esp_image: segment 2: paddr=0015ba14 vaddr=40374000 size=04604h ( 17924) load[0m
+[0;32mI (298) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=d79d8h (883160) map[0m
+[0;32mI (432) esp_image: segment 4: paddr=00237a00 vaddr=40378604 size=1427ch ( 82556) load[0m
+[0;32mI (448) esp_image: segment 5: paddr=0024bc84 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (458) boot: Disabling RNG early entropy source...[0m
+[0;33mW (468) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (468) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (475) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (483) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (487) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (491) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (496) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (501) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (505) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (509) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (513) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (518) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (523) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (528) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (533) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (545) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (545) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (546) esp_psram: Speed: 120MHz[0m
+[0;32mI (603) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (650) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (650) cpu_start: Multicore app[0m
+[0;32mI (799) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (807) cpu_start: Pro cpu start user code[0m
+[0;32mI (807) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (807) app_init: Application information:[0m
+[0;32mI (808) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (812) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (816) app_init: Compile time:     Nov 11 2025 11:08:19[0m
+[0;32mI (821) app_init: ELF file SHA256:  7f3c5e69b...[0m
+[0;32mI (825) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (830) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (833) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (837) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (841) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (848) heap_init: At 3FCB38E0 len 00035E30 (215 KiB): RAM[0m
+[0;32mI (853) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (858) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (863) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (868) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (875) esp_psram: Adding pool of 39K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (886) spi_flash: detected chip: generic[0m
+[0;32mI (890) spi_flash: flash io: qio[0m
+[0;32mI (893) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (899) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (906) coexist: coex firmware version: 831ec70[0m
+[0;32mI (918) coexist: coexist rom version e7ae62f[0m
+[0;32mI (919) main_task: Started on CPU0[0m
+[0;32mI (920) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (925) main_task: Calling app_main()[0m
+[0;33mW (937) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1344) GT911: Initialize I2C panel IO[0m
+[0;32mI (1344) GT911: Initialize touch controller GT911[0m
+[0;33mW (1344) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1346) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1349) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1353) example: Install RGB LCD panel driver[0m
+[0;32mI (1393) example: Initialize RGB LCD panel[0m
+[0;32mI (1394) lv_port: Create LVGL task[0m
+[0;32mI (1428) TAG_NVS: Loaded JSON from NVS: [{"name":"Quay 2","device_id":"94:E6:86:09:A4:78"},{"name":"Quay 1","device_id":"A8:42:E3:4C:7C:BC"}][0m
+[0;32mI (1430) TAG_NVS: Loaded 2 devices from NVS[0m
+[0;32mI (1434) UI: Loaded 2 devices, showing...[0m
+[0;32mI (1439) LVGL: Displayed 2 devices[0m
+[0;32mI (1484) MAIN: create main UI successfully[0m
+[0;32mI (1546) pp: pp rom version: e7ae62f[0m
+[0;32mI (1546) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1546) main_task: Returned from app_main()[0m
+[0;32mI (1547) wifi:wifi driver task: 3fcd10bc, prio:23, stack:6656, core=0[0m
+[0;32mI (1558) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1559) wifi:wifi certification version: v7.0[0m
+[0;32mI (1561) wifi:config NVS flash: enabled[0m
+[0;32mI (1564) wifi:config nano formatting: disabled[0m
+[0;32mI (1568) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1573) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1578) wifi:Init management short buffer num: 32[0m
+[0;32mI (1584) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1587) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1590) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1594) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1598) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1602) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1607) wifi_init: rx ba win: 16[0m
+[0;32mI (1609) wifi_init: accept mbox: 6[0m
+[0;32mI (1612) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1615) wifi_init: udp mbox: 6[0m
+[0;32mI (1618) wifi_init: tcp mbox: 6[0m
+[0;32mI (1621) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1624) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1628) wifi_init: tcp mss: 1440[0m
+[0;32mI (1631) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1635) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1638) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1642) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1647) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1654) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1693) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1693) wifi:enable tsf[0m
+[0;32mI (1695) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1695) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (1701) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1708) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1724) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1730) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1749) wifi:connected with Namtrung 2.4G, aid = 31, channel 6, BW20, bssid = 12:5f:02:15:1e:9a[0m
+[0;32mI (1750) wifi:security: WPA2-PSK, phy: bgn, rssi: -50[0m
+[0;32mI (1752) wifi:pm start, type: 1[0m
+
+[0;32mI (1755) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1763) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1772) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:6[0m
+[0;32mI (1822) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2212) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2212) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (2791) esp_netif_handlers: sta ip: 10.10.1.45, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2791) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2806) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2807) MQTT: Other event id:7[0m
+[0;32mI (2818) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (2826) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2828) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:1e:9a), tid:0, ssn:4, winSize:64[0m
+[0;32mI (2831) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=26984, return code=0x00 [0m
+[0;32mI (2833) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=37434, return code=0x00 [0m
+[0;32mI (3060) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=53765, return code=0x00 [0m
+[0;32mI (3062) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=12089, return code=0x01 [0m
+[0;32mI (3064) MQTT_BACKUP: Processing topic: device/list[0m
+[0;32mI (3066) MQTT_BACKUP: Data: [{"id":"94:E6:86:09:A4:78","name":"Quay 2"},{"id":"A8:42:E3:4C:7C:BC","name":"Quay 1"}][0m
+[0;32mI (3077) MQTT_BACKUP: Unhandled topic: device/list[0m
+[0;32mI (3722) WiFi: Connected with IP: 10.10.1.45[0m
+[0;32mI (3722) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:1E:9A[0m
+[0;32mI (3741) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (3741) mqtt_client: Client has started[0m
+[0;32mI (3741) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (3826) NVS: last index: -1[0m
+[0;32mI (3826) NVS: wifi index: 0[0m
+[0;33mW (3826) WIFI_UI: WIFI_List_Button is invalid[0m
+[0;32mI (8078) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (8078) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1608","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (8084) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (8089) MQTT: Updated label with number: 1608[0m
+[0;32mI (8094) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (8688) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (8688) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1609","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (8693) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (8698) MQTT: Updated label with number: 1609[0m
+[0;32mI (8704) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (9203) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (9203) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1610","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (9208) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (9213) MQTT: Updated label with number: 1610[0m
+[0;32mI (9219) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (10429) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (10429) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1611","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (10434) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (10439) MQTT: Updated label with number: 1611[0m
+[0;32mI (10446) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (11602) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (11603) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1612","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (11608) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (11613) MQTT: Updated label with number: 1612[0m
+[0;32mI (11619) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (11638) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (11638) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1613","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (11643) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (11685) MQTT: Updated label with number: 1613[0m
+[0;32mI (11687) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (12785) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (12785) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1614","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (12790) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (12796) MQTT: Updated label with number: 1614[0m
+[0;32mI (12801) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (13402) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (13402) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1615","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (13407) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (13413) MQTT: Updated label with number: 1615[0m
+[0;32mI (13418) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (14015) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (14015) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1616","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (14020) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (14025) MQTT: Updated label with number: 1616[0m
+[0;32mI (14031) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (14529) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (14529) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1617","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (14534) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (14540) MQTT: Updated label with number: 1617[0m
+[0;32mI (14545) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (15146) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (15146) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1618","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (15152) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (15157) MQTT: Updated label with number: 1618[0m
+[0;32mI (15163) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (15856) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (15857) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1619","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (15862) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (15868) MQTT: Updated label with number: 1619[0m
+[0;32mI (15873) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (16483) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (16483) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1620","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (16489) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (16494) MQTT: Updated label with number: 1620[0m
+[0;32mI (16500) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (17084) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (17084) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1621","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (17090) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (17095) MQTT: Updated label with number: 1621[0m
+[0;32mI (17100) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (17709) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (17709) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1622","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (17715) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (17720) MQTT: Updated label with number: 1622[0m
+[0;32mI (17725) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (18317) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (18317) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1623","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (18323) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (18328) MQTT: Updated label with number: 1623[0m
+[0;32mI (18335) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (18829) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (18829) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1624","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (18835) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (18840) MQTT: Updated label with number: 1624[0m
+[0;32mI (18846) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (20055) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (20055) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1625","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (20060) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (20066) MQTT: Updated label with number: 1625[0m
+[0;32mI (20071) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (20672) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (20672) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1626","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (20677) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (20683) MQTT: Updated label with number: 1626[0m
+[0;32mI (20688) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (21702) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (21702) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1627","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (21707) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (21713) MQTT: Updated label with number: 1627[0m
+[0;32mI (21718) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (22317) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (22317) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1628","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (22322) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (22328) MQTT: Updated label with number: 1628[0m
+[0;32mI (22334) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (22819) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (22819) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1629","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (22824) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (22830) MQTT: Updated label with number: 1629[0m
+[0;32mI (22836) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (23438) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (23438) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1630","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (23444) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (23449) MQTT: Updated label with number: 1630[0m
+[0;32mI (23454) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (23961) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (23961) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1631","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (23967) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (23972) MQTT: Updated label with number: 1631[0m
+[0;32mI (23978) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (24457) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (24458) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1632","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (24463) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (24468) MQTT: Updated label with number: 1632[0m
+[0;32mI (24499) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (31318) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (31318) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1633","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (31323) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (31329) MQTT: Updated label with number: 1633[0m
+[0;32mI (31334) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (32343) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (32343) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1634","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (32348) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (32353) MQTT: Updated label with number: 1634[0m
+[0;32mI (32359) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (32960) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (32960) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1635","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (32966) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (32971) MQTT: Updated label with number: 1635[0m
+[0;32mI (32976) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (33367) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (33367) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1636","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (33373) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (33378) MQTT: Updated label with number: 1636[0m
+[0;32mI (33384) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (34083) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (34083) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1637","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (34088) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (34094) MQTT: Updated label with number: 1637[0m
+[0;32mI (34099) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (34699) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (34700) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1638","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (34705) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (34710) MQTT: Updated label with number: 1638[0m
+[0;32mI (34715) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (35415) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (35415) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1639","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (35420) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (35426) MQTT: Updated label with number: 1639[0m
+[0;32mI (35431) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (36442) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (36442) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1640","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (36448) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (36453) MQTT: Updated label with number: 1640[0m
+[0;32mI (36459) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (36977) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (36977) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1641","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (36982) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (36988) MQTT: Updated label with number: 1641[0m
+[0;32mI (36993) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (37570) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (37570) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1642","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (37576) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (37581) MQTT: Updated label with number: 1642[0m
+[0;32mI (37586) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (37976) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (37976) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1643","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (37982) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (37987) MQTT: Updated label with number: 1643[0m
+[0;32mI (37992) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (39022) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (39022) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1644","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (39028) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (39033) MQTT: Updated label with number: 1644[0m
+[0;32mI (39039) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (39633) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (39633) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1645","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (39638) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (39644) MQTT: Updated label with number: 1645[0m
+[0;32mI (39649) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (40034) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (40035) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1646","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (40040) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (40045) MQTT: Updated label with number: 1646[0m
+[0;32mI (40051) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (41150) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (41150) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1647","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (41156) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (41161) MQTT: Updated label with number: 1647[0m
+[0;32mI (41166) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (41661) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (41662) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1648","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (41667) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (41672) MQTT: Updated label with number: 1648[0m
+[0;32mI (41679) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (42199) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (42199) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1649","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (42205) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (42210) MQTT: Updated label with number: 1649[0m
+[0;32mI (42215) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (42710) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (42710) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1650","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (42715) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (42721) MQTT: Updated label with number: 1650[0m
+[0;32mI (42726) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (43709) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (43709) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1651","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (43714) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (43719) MQTT: Updated label with number: 1651[0m
+[0;32mI (43726) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (44835) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (44836) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1652","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (44841) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (44847) MQTT: Updated label with number: 1652[0m
+[0;32mI (44853) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (45351) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (45351) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1653","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (45356) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (45362) MQTT: Updated label with number: 1653[0m
+[0;32mI (45367) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (46269) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (46269) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1654","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (46274) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (46280) MQTT: Updated label with number: 1654[0m
+[0;32mI (46286) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (47197) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (47197) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1655","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (47203) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (47208) MQTT: Updated label with number: 1655[0m
+[0;32mI (47213) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (48010) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (48010) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1656","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (48015) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (48020) MQTT: Updated label with number: 1656[0m
+[0;32mI (48026) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (48829) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (48829) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1657","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (48835) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (48840) MQTT: Updated label with number: 1657[0m
+[0;32mI (48845) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (49546) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (49546) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1658","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (49551) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (49557) MQTT: Updated label with number: 1658[0m
+[0;32mI (49562) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (50365) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (50365) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1659","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (50370) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (50376) MQTT: Updated label with number: 1659[0m
+[0;32mI (50381) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (50984) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (50984) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1660","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (50989) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (50995) MQTT: Updated label with number: 1660[0m
+[0;32mI (51001) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (51697) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (51697) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1661","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (51702) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (51708) MQTT: Updated label with number: 1661[0m
+[0;32mI (51714) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (52636) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (52637) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1662","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (52642) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (52647) MQTT: Updated label with number: 1662[0m
+[0;32mI (52652) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (53233) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (53233) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1663","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (53239) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (53244) MQTT: Updated label with number: 1663[0m
+[0;32mI (53249) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (54154) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (54154) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1664","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (54159) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (54165) MQTT: Updated label with number: 1664[0m
+[0;32mI (54170) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (54771) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (54771) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1665","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (54776) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (54782) MQTT: Updated label with number: 1665[0m
+[0;32mI (54788) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (55587) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (55587) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1666","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (55592) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (55598) MQTT: Updated label with number: 1666[0m
+[0;32mI (55603) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (56304) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (56304) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1667","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (56309) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (56315) MQTT: Updated label with number: 1667[0m
+[0;32mI (56320) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (57231) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (57231) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1668","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (57236) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (57242) MQTT: Updated label with number: 1668[0m
+[0;32mI (57248) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (57840) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (57840) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1669","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (57846) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (57851) MQTT: Updated label with number: 1669[0m
+[0;32mI (57856) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (58359) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (58359) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1670","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (58365) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (58370) MQTT: Updated label with number: 1670[0m
+[0;32mI (58375) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (59274) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (59274) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1671","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (59279) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (59285) MQTT: Updated label with number: 1671[0m
+[0;32mI (59290) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (59990) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (59990) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1672","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (59995) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (60001) MQTT: Updated label with number: 1672[0m
+[0;32mI (60007) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (60709) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (60709) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1673","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (60714) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (60720) MQTT: Updated label with number: 1673[0m
+[0;32mI (60726) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (61700) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (61700) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1674","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (61705) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (61711) MQTT: Updated label with number: 1674[0m
+[0;32mI (61716) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (62657) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (62657) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1675","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (62662) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (62668) MQTT: Updated label with number: 1675[0m
+[0;32mI (62673) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (67773) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (67773) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1676","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (67779) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (67784) MQTT: Updated label with number: 1676[0m
+[0;32mI (67790) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (68285) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (68285) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1677","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (68290) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (68296) MQTT: Updated label with number: 1677[0m
+[0;32mI (68301) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (68797) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (68797) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1678","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (68802) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (68808) MQTT: Updated label with number: 1678[0m
+[0;32mI (68814) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (69422) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (69422) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1679","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (69428) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (69433) MQTT: Updated label with number: 1679[0m
+[0;32mI (69439) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (70230) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (70231) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1680","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (70236) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (70241) MQTT: Updated label with number: 1680[0m
+[0;32mI (70247) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (71797) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (71797) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1681","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (71802) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (71808) MQTT: Updated label with number: 1681[0m
+[0;32mI (71813) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (72507) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (72507) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1682","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (72512) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (72518) MQTT: Updated label with number: 1682[0m
+[0;32mI (72547) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (73306) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (73306) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1683","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (73311) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (73317) MQTT: Updated label with number: 1683[0m
+[0;32mI (73322) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (75355) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (75355) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1684","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (75360) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (75366) MQTT: Updated label with number: 1684[0m
+[0;32mI (75371) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (75763) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (75763) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1685","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (75768) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (75774) MQTT: Updated label with number: 1685[0m
+[0;32mI (75779) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (76374) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (76374) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1686","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (76380) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (76385) MQTT: Updated label with number: 1686[0m
+[0;32mI (76391) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (76889) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (76889) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1687","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (76895) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (76900) MQTT: Updated label with number: 1687[0m
+[0;32mI (76905) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (77527) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (77527) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1688","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (77532) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (77538) MQTT: Updated label with number: 1688[0m
+[0;32mI (77544) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (78119) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (78119) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1689","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (78124) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (78130) MQTT: Updated label with number: 1689[0m
+[0;32mI (78136) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (78534) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (78535) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1690","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (78540) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (78545) MQTT: Updated label with number: 1690[0m
+[0;32mI (78552) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (79651) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (79652) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1691","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (79657) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (79662) MQTT: Updated label with number: 1691[0m
+[0;32mI (79668) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (80163) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (80163) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1692","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (80168) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (80174) MQTT: Updated label with number: 1692[0m
+[0;32mI (80180) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (80676) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (80676) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1693","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (80681) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (80687) MQTT: Updated label with number: 1693[0m
+[0;32mI (80692) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (81291) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (81291) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1694","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (81297) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (81302) MQTT: Updated label with number: 1694[0m
+[0;32mI (81308) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (82224) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (82225) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1695","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (82230) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (82235) MQTT: Updated label with number: 1695[0m
+[0;32mI (82241) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (82834) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (82835) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1696","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (82840) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (82845) MQTT: Updated label with number: 1696[0m
+[0;32mI (82852) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (83546) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (83546) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1697","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (83551) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (83557) MQTT: Updated label with number: 1697[0m
+[0;32mI (83562) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (84054) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (84055) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1698","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (84060) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (84065) MQTT: Updated label with number: 1698[0m
+[0;32mI (84072) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (84464) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (84464) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1699","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (84469) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (84475) MQTT: Updated label with number: 1699[0m
+[0;32mI (84480) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (85079) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (85079) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1700","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (85084) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (85090) MQTT: Updated label with number: 1700[0m
+[0;32mI (85096) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (85590) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (85590) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1701","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (85596) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (85601) MQTT: Updated label with number: 1701[0m
+[0;32mI (85606) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (86614) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (86614) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1702","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (86619) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (86625) MQTT: Updated label with number: 1702[0m
+[0;32mI (86630) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (87229) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (87230) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1703","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (87235) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (87240) MQTT: Updated label with number: 1703[0m
+[0;32mI (87247) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (87845) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (87845) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1704","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (87850) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (87856) MQTT: Updated label with number: 1704[0m
+[0;32mI (87862) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (88765) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (88765) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1705","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (88771) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (88776) MQTT: Updated label with number: 1705[0m
+[0;32mI (88781) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (89278) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (89278) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1706","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (89283) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (89289) MQTT: Updated label with number: 1706[0m
+[0;32mI (89294) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (89891) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (89891) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1707","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (89897) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (89902) MQTT: Updated label with number: 1707[0m
+[0;32mI (89907) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (90413) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (90413) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1708","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (90418) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (90423) MQTT: Updated label with number: 1708[0m
+[0;32mI (90429) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (91325) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (91325) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1709","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (91330) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (91336) MQTT: Updated label with number: 1709[0m
+[0;32mI (91342) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (92349) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (92349) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1710","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (92355) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (92360) MQTT: Updated label with number: 1710[0m
+[0;32mI (92366) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (93069) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (93069) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1711","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (93074) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (93080) MQTT: Updated label with number: 1711[0m
+[0;32mI (93085) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (93987) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (93987) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1712","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (93993) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (93998) MQTT: Updated label with number: 1712[0m
+[0;32mI (94003) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (94500) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (94500) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1713","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (94505) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (94511) MQTT: Updated label with number: 1713[0m
+[0;32mI (94516) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (95012) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (95012) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1714","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (95017) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (95023) MQTT: Updated label with number: 1714[0m
+[0;32mI (95029) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (95523) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (95523) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1715","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (95528) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (95534) MQTT: Updated label with number: 1715[0m
+[0;32mI (95540) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (96137) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (96137) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1716","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (96143) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (96148) MQTT: Updated label with number: 1716[0m
+[0;32mI (96153) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (96650) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (96650) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1717","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (96655) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (96661) MQTT: Updated label with number: 1717[0m
+[0;32mI (96667) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (97366) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (97367) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1718","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (97372) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (97377) MQTT: Updated label with number: 1718[0m
+[0;32mI (97383) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (268286) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (268286) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1719","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (268292) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (268297) MQTT: Updated label with number: 1719[0m
+[0;32mI (268303) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (418495) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (418495) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1720","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (418501) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (418506) MQTT: Updated label with number: 1720[0m
+[0;32mI (418511) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (419731) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (419731) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1721","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (419737) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (419742) MQTT: Updated label with number: 1721[0m
+[0;32mI (419747) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (420344) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (420344) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1722","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (420350) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (420355) MQTT: Updated label with number: 1722[0m
+[0;32mI (420360) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (420854) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (420854) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1723","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (420860) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (420865) MQTT: Updated label with number: 1723[0m
+[0;32mI (420871) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (422183) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (422183) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1724","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (422188) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (422194) MQTT: Updated label with number: 1724[0m
+[0;32mI (422200) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (422801) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (422801) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1725","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (422807) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (422812) MQTT: Updated label with number: 1725[0m
+[0;32mI (422817) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (423309) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (423309) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1726","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (423315) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (423320) MQTT: Updated label with number: 1726[0m
+[0;32mI (423326) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (423923) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (423923) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1727","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (423929) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (423934) MQTT: Updated label with number: 1727[0m
+[0;32mI (423940) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (424339) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (424339) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1728","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (424344) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (424350) MQTT: Updated label with number: 1728[0m
+[0;32mI (424355) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (425458) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (425459) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1729","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (425464) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (425470) MQTT: Updated label with number: 1729[0m
+[0;32mI (425475) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (426198) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (426198) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1730","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (426203) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (426209) MQTT: Updated label with number: 1730[0m
+[0;32mI (426214) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (426929) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (426929) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1731","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (426935) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (426940) MQTT: Updated label with number: 1731[0m
+[0;32mI (426947) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (427919) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (427919) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1732","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (427924) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (427930) MQTT: Updated label with number: 1732[0m
+[0;32mI (427964) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (428433) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (428433) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1733","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (428439) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (428444) MQTT: Updated label with number: 1733[0m
+[0;32mI (428450) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (428963) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (428963) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1734","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (428968) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (428974) MQTT: Updated label with number: 1734[0m
+[0;32mI (428980) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (429453) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (429453) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1735","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (429458) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (429464) MQTT: Updated label with number: 1735[0m
+[0;32mI (429469) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (430578) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (430578) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1736","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (430583) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (430589) MQTT: Updated label with number: 1736[0m
+[0;32mI (430595) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (431318) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (431319) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1737","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (431324) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (431330) MQTT: Updated label with number: 1737[0m
+[0;32mI (431335) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (431704) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (431704) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1738","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (431710) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (431715) MQTT: Updated label with number: 1738[0m
+[0;32mI (431721) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (432320) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (432320) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1739","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (432326) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (432332) MQTT: Updated label with number: 1739[0m
+[0;32mI (432337) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (432947) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (432947) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1740","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (432953) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (432958) MQTT: Updated label with number: 1740[0m
+[0;32mI (432963) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (433452) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (433453) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1741","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (433458) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (433464) MQTT: Updated label with number: 1741[0m
+[0;32mI (433469) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (433975) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (433975) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1742","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (433981) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (433986) MQTT: Updated label with number: 1742[0m
+[0;32mI (433993) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (434589) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (434589) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1743","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (434595) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (434600) MQTT: Updated label with number: 1743[0m
+[0;32mI (434605) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (435499) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (435499) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1744","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (435505) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (435510) MQTT: Updated label with number: 1744[0m
+[0;32mI (435516) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (436109) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (436109) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1745","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (436115) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (436120) MQTT: Updated label with number: 1745[0m
+[0;32mI (436126) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (437234) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (437234) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1746","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (437239) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (437245) MQTT: Updated label with number: 1746[0m
+[0;32mI (437250) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (437848) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (437849) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1747","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (437854) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (437860) MQTT: Updated label with number: 1747[0m
+[0;32mI (437865) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (438366) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (438366) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1748","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (438371) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (438377) MQTT: Updated label with number: 1748[0m
+[0;32mI (438383) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (439078) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (439078) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1749","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (439083) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (439089) MQTT: Updated label with number: 1749[0m
+[0;32mI (439094) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (440204) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (440204) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1750","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (440209) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (440215) MQTT: Updated label with number: 1750[0m
+[0;32mI (440220) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (440818) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (440818) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1751","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (440823) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (440829) MQTT: Updated label with number: 1751[0m
+[0;32mI (440834) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (441228) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (441228) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1752","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (441234) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (441239) MQTT: Updated label with number: 1752[0m
+[0;32mI (441246) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (441842) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (441842) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1753","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (441847) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (441853) MQTT: Updated label with number: 1753[0m
+[0;32mI (441860) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (442353) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (442354) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1754","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (442359) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (442365) MQTT: Updated label with number: 1754[0m
+[0;32mI (442370) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (443074) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (443074) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1755","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (443080) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (443085) MQTT: Updated label with number: 1755[0m
+[0;32mI (443092) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (492036) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (492036) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1756","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (492041) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (492047) MQTT: Updated label with number: 1756[0m
+[0;32mI (492053) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (492842) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (492842) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1757","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (492848) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (492854) MQTT: Updated label with number: 1757[0m
+[0;32mI (492859) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (493352) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (493352) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1758","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (493358) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (493363) MQTT: Updated label with number: 1758[0m
+[0;32mI (493370) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (493964) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (493964) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1759","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (493970) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (493975) MQTT: Updated label with number: 1759[0m
+[0;32mI (493982) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (494482) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (494482) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1760","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (494488) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (494493) MQTT: Updated label with number: 1760[0m
+[0;32mI (494500) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (494988) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (494988) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1761","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (494994) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (494999) MQTT: Updated label with number: 1761[0m
+[0;32mI (495005) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (495512) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (495513) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1762","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (495518) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (495524) MQTT: Updated label with number: 1762[0m
+[0;32mI (495530) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (496115) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (496115) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1763","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (496120) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (496126) MQTT: Updated label with number: 1763[0m
+[0;32mI (496132) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (496626) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (496626) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1764","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (496632) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (496637) MQTT: Updated label with number: 1764[0m
+[0;32mI (496644) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (497135) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (497135) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1765","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (497140) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (497146) MQTT: Updated label with number: 1765[0m
+[0;32mI (497151) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (498264) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (498264) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1766","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (498270) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (498275) MQTT: Updated label with number: 1766[0m
+[0;32mI (498281) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (498888) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (498888) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1767","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (498894) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (498899) MQTT: Updated label with number: 1767[0m
+[0;32mI (498905) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (499598) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (499598) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1768","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (499604) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (499609) MQTT: Updated label with number: 1768[0m
+[0;32mI (499616) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (500825) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (500825) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1769","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (500830) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (500836) MQTT: Updated label with number: 1769[0m
+[0;32mI (500842) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (501235) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (501235) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1770","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (501241) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (501246) MQTT: Updated label with number: 1770[0m
+[0;32mI (501252) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (501849) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (501849) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1771","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (501855) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (501860) MQTT: Updated label with number: 1771[0m
+[0;32mI (501866) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (503074) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (503074) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1772","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (503079) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (503085) MQTT: Updated label with number: 1772[0m
+[0;32mI (503090) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (503794) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (503794) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1773","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (503800) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (503806) MQTT: Updated label with number: 1773[0m
+[0;32mI (503812) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (505339) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (505339) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1774","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (505344) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (505350) MQTT: Updated label with number: 1774[0m
+[0;32mI (505355) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (506061) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (506062) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1775","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (506067) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (506073) MQTT: Updated label with number: 1775[0m
+[0;32mI (506078) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (507690) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (507690) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1776","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (507695) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (507701) MQTT: Updated label with number: 1776[0m
+[0;32mI (507708) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (507818) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (507818) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1777","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (507824) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (507829) MQTT: Updated label with number: 1777[0m
+[0;32mI (507834) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (508615) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (508615) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1778","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (508621) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (508626) MQTT: Updated label with number: 1778[0m
+[0;32mI (508631) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (509222) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (509222) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1779","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (509228) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (509233) MQTT: Updated label with number: 1779[0m
+[0;32mI (509240) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (510255) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (510255) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1780","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (510261) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (510267) MQTT: Updated label with number: 1780[0m
+[0;32mI (510273) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (510757) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (510758) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1781","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (510763) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (510769) MQTT: Updated label with number: 1781[0m
+[0;32mI (510774) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (511585) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (511585) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1782","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (511590) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (511596) MQTT: Updated label with number: 1782[0m
+[0;32mI (511626) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (512498) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (512498) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1783","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (512504) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (512510) MQTT: Updated label with number: 1783[0m
+[0;32mI (512516) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (513525) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (513525) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1784","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (513531) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (513536) MQTT: Updated label with number: 1784[0m
+[0;32mI (513543) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (514239) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (514240) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1785","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (514245) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (514251) MQTT: Updated label with number: 1785[0m
+[0;32mI (514257) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (515161) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (515162) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1786","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (515167) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (515173) MQTT: Updated label with number: 1786[0m
+[0;32mI (515178) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (516082) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (516082) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1787","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (516088) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (516093) MQTT: Updated label with number: 1787[0m
+[0;32mI (516099) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (516595) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (516595) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1788","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (516600) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (516606) MQTT: Updated label with number: 1788[0m
+[0;32mI (516611) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (517619) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (517619) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1789","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (517624) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (517630) MQTT: Updated label with number: 1789[0m
+[0;32mI (517635) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (518442) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (518443) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1790","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (518448) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (518454) MQTT: Updated label with number: 1790[0m
+[0;32mI (518459) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (519366) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (519366) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1791","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (519372) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (519377) MQTT: Updated label with number: 1791[0m
+[0;32mI (519382) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (520716) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (520716) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1792","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (520722) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (520727) MQTT: Updated label with number: 1792[0m
+[0;32mI (520733) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (520749) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (520749) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1793","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (520754) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (520806) MQTT: Updated label with number: 1793[0m
+[0;32mI (520807) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (521619) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (521619) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1794","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (521625) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (521630) MQTT: Updated label with number: 1794[0m
+[0;32mI (521636) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (522333) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (522333) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1795","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (522339) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (522344) MQTT: Updated label with number: 1795[0m
+[0;32mI (522351) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (523353) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (523353) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1796","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (523358) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (523364) MQTT: Updated label with number: 1796[0m
+[0;32mI (523370) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (524275) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (524275) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1797","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (524280) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (524286) MQTT: Updated label with number: 1797[0m
+[0;32mI (524292) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (525196) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (525196) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1798","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (525202) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (525208) MQTT: Updated label with number: 1798[0m
+[0;32mI (525213) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (526346) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (526346) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1799","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (526352) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (526357) MQTT: Updated label with number: 1799[0m
+[0;32mI (526364) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (526968) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (526969) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1800","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (526974) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (526979) MQTT: Updated label with number: 1800[0m
+[0;32mI (526986) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (527380) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (527380) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1801","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (527385) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (527391) MQTT: Updated label with number: 1801[0m
+[0;32mI (527396) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (528067) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (528068) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1802","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (528073) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (528079) MQTT: Updated label with number: 1802[0m
+[0;32mI (528085) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (528473) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (528474) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1803","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (528479) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (528485) MQTT: Updated label with number: 1803[0m
+[0;32mI (528490) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (529111) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (529111) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1804","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (529116) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (529122) MQTT: Updated label with number: 1804[0m
+[0;32mI (529127) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (530112) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (530112) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1805","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (530117) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (530123) MQTT: Updated label with number: 1805[0m
+[0;32mI (530128) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (530733) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (530733) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1806","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (530739) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (530744) MQTT: Updated label with number: 1806[0m
+[0;32mI (530750) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (531774) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (531774) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1807","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (531779) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (531785) MQTT: Updated label with number: 1807[0m
+[0;32mI (531791) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (532671) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (532672) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1808","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (532677) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (532683) MQTT: Updated label with number: 1808[0m
+[0;32mI (532688) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (533081) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (533081) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1809","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (533086) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (533092) MQTT: Updated label with number: 1809[0m
+[0;32mI (533097) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (534005) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (534005) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1810","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (534011) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (534016) MQTT: Updated label with number: 1810[0m
+[0;32mI (534022) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (535030) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (535031) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1811","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (535036) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (535042) MQTT: Updated label with number: 1811[0m
+[0;32mI (535048) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (535641) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (535641) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1812","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (535646) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (535652) MQTT: Updated label with number: 1812[0m
+[0;32mI (535658) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (536468) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (536468) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1813","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (536474) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (536479) MQTT: Updated label with number: 1813[0m
+[0;32mI (536485) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (563600) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (563600) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1814","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (563605) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (563611) MQTT: Updated label with number: 1814[0m
+[0;32mI (563617) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (564108) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (564108) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1815","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (564114) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (564119) MQTT: Updated label with number: 1815[0m
+[0;32mI (564125) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (564623) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (564623) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1816","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (564629) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (564634) MQTT: Updated label with number: 1816[0m
+[0;32mI (564641) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (565132) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (565133) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1817","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (565138) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (565144) MQTT: Updated label with number: 1817[0m
+[0;32mI (565150) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (567719) MQTT_BACKUP: Processing topic: responsenumber[0m
+[0;32mI (567719) MQTT_BACKUP: Data: {"device_id":"94:E6:86:09:A4:78","number":"1818","service_name":"Khai hoaa","device_name":"Quay 2"}[0m
+[0;32mI (567725) LOAD_DEVICE_ID: Loaded device_id: 94:E6:86:09:A4:78[0m
+[0;32mI (567730) MQTT: Updated label with number: 1818[0m
+[0;32mI (567736) MQTT_BACKUP: current number saved successfully![0m

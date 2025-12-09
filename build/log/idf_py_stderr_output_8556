@@ -1,0 +1,33 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM7 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM7 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40375ff1: [0;33mpanic_abort[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037e7e1: [0;33mesp_system_abort[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40386401: [0;33m__assert_func[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/assert.c[0m[0m:[1;31m80[0m
+[0m--- 0x40384636: [0;33mremove_free_block[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m372[0m
+[0m--- (inlined by) [0;33mblock_locate_free[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m619[0m
+[0m--- (inlined by) [0;33mtlsf_malloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf/tlsf.c[0m[0m:[1;31m444[0m
+[0m--- 0x4038407b: [0;33mmulti_heap_malloc_impl[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/multi_heap.c[0m[0m:[1;31m216[0m
+[0m--- 0x40376a4b: [0;33maligned_or_unaligned_alloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m93[0m
+[0m--- (inlined by) [0;33mheap_caps_aligned_alloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m175[0m
+[0m--- 0x40376a6d: [0;33mheap_caps_malloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m202[0m
+[0m--- 0x403765ec: [0;33mheap_caps_malloc_default[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps.c[0m[0m:[1;31m118[0m
+[0m--- 0x403864b5: [0;33mcalloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/heap.c[0m[0m:[1;31m46[0m
+[0m--- 0x420d370e: [0;33mesp_event_post_to[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/esp_event.c[0m[0m:[1;31m928[0m
+[0m--- 0x420d4011: [0;33mesp_event_post_to[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/esp_event.c[0m[0m:[1;31m917[0m
+[0m--- 0x4200f916: [0;33mesp_mqtt_dispatch_event[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1040[0m
+[0m--- (inlined by) [0;33mesp_mqtt_dispatch_event_with_msgid[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1019[0m
+[0m--- 0x4200f9b1: [0;33mesp_mqtt_client_dispatch_transport_error[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m2267[0m
+[0m--- 0x4200fa03: [0;33mesp_mqtt_handle_transport_read_error[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m74[0m
+[0m--- 0x4200faa2: [0;33mesp_mqtt_handle_transport_read_error[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m62[0m
+[0m--- (inlined by) [0;33mmqtt_message_receive[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1253[0m
+[0m--- 0x42010462: [0;33mmqtt_process_receive[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1329[0m
+[0m--- (inlined by) [0;33mesp_mqtt_task[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/mqtt_client.c[0m[0m:[1;31m1653[0m
+[0m--- 0x40056f6f: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

@@ -13,6 +13,9 @@ extern int cnt;
 
 extern int refresh_index;
 extern void wifi_scan(void);
+extern bool found_saved_ap;
+
+lv_obj_t *ui_WIFI_Rescan_Button=NULL;
 
 
 
@@ -44,23 +47,37 @@ static void background_click_event_cb(lv_event_t *e) {
 
 
 // Callback cho button Rescan
+
 static void ui_event_WIFI_Refresh_Button(lv_event_t * e)
 {
 //    ESP_LOG("UI", "Rescan button clicked");
 
-if (cnt!=0){
+//if (cnt!=0){
 
     // Bắt đầu scan Wi-Fi (non-blocking)
     //wifi_scan();
+    found_saved_ap=false;
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);
     lv_obj_clean(ui_WIFI_SCAN_List);
     _ui_flag_modify(ui_WIFI_Details_Win, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
+    _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); //
+    _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+
+
     WIFI_SCAN_FLAG=true;
     
+//}
+
+
 }
 
+static void wifi_background_event_cb(lv_event_t * e)
+{
+    if(lv_event_get_code(e) == LV_EVENT_CLICKED) {
+         _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
 
+
+    }
 }
 
 
@@ -70,6 +87,7 @@ void ui_Wifi_Screen_init(void)
     
     ui_Main_WIFI = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Main_WIFI, LV_OBJ_FLAG_SCROLLABLE); // Disable scrolling
+    
 /*
     // Create tab view for Wi-Fi settings
     ui_WIFI = lv_tabview_create(ui_Main_WIFI, LV_DIR_TOP, 50);
@@ -111,6 +129,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_bg_opa(ui_WIFI_SCAN_STA, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                            // Set background opacity
     lv_obj_set_style_border_color(ui_WIFI_SCAN_STA, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT); // Set border color
     lv_obj_set_style_border_opa(ui_WIFI_SCAN_STA, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set border opacity
+    lv_obj_add_event_cb(ui_WIFI_SCAN_STA, wifi_background_event_cb, LV_EVENT_CLICKED, NULL);
 
     // Create button for "Click Back" functionality
     
@@ -141,6 +160,8 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_x(ui_WIFI_OPEN, 0);                      // Set X position
     lv_obj_set_y(ui_WIFI_OPEN, 12);                     // Set Y position
     lv_obj_set_align(ui_WIFI_OPEN, LV_ALIGN_TOP_RIGHT); // Align switch to the top-right corner
+    //lv_obj_add_state(ui_WIFI_OPEN, LV_STATE_CHECKED); // 
+
 
     // Create a window for displaying Wi-Fi network list
     ui_WIFI_List_Win = lv_obj_create(ui_WIFI_SCAN_STA);
@@ -425,6 +446,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_bg_opa(ui_WIFI_AP_Password, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                          // Set background opacity to 0 (transparent)
 
     /* Create eye icon to toggle password visibility */
+    
     ui_WIFI_AP_EYE = lv_img_create(ui_WIFI_AP_Password);
     lv_img_set_src(ui_WIFI_AP_EYE, &ui_img_eye_png);                                  // Set image source for eye icon (assuming ui_img_eye_png is defined elsewhere)
     lv_obj_set_width(ui_WIFI_AP_EYE, 34);                                             // Set width of the eye icon
@@ -435,6 +457,7 @@ void ui_Wifi_Screen_init(void)
     lv_img_set_zoom(ui_WIFI_AP_EYE, 255);                                             // Set image zoom level to fully zoomed-in (no scaling)
 
     /* Create AP channel input field */
+    
     ui_WIFI_AP_Channel = lv_textarea_create(ui_WIFI_AP_Information);
     lv_obj_set_width(ui_WIFI_AP_Channel, 295);                                                                // Set width to 295
     lv_obj_set_height(ui_WIFI_AP_Channel, LV_SIZE_CONTENT);                                                   // Set height based on content (70)
@@ -450,6 +473,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_bg_opa(ui_WIFI_AP_Channel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);                          // Set background opacity to 0 (transparent)
 
     /* Create label for SSID (Wi-Fi Access Point Name) */
+    
     ui_WIFI_AP_NAME_Label = lv_label_create(ui_WIFI_AP_Information);
     lv_obj_set_width(ui_WIFI_AP_NAME_Label, LV_SIZE_CONTENT);                                                    // Set width to content size
     lv_obj_set_height(ui_WIFI_AP_NAME_Label, LV_SIZE_CONTENT);                                                   // Set height to content size
@@ -462,6 +486,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_font(ui_WIFI_AP_NAME_Label, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     /* Create label for Password */
+    
     ui_WIFI_AP_PWD_Label = lv_label_create(ui_WIFI_AP_Information);
     lv_obj_set_width(ui_WIFI_AP_PWD_Label, LV_SIZE_CONTENT);                                                    // Set width to content size
     lv_obj_set_height(ui_WIFI_AP_PWD_Label, LV_SIZE_CONTENT);                                                   // Set height to content size
@@ -486,6 +511,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_text_font(ui_WIFI_AP_Channel_Label, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     /* Create container for MAC address information */
+    
     ui_WIFI_AP_MAC_ADDR = lv_obj_create(ui_WIFI_OPEN_AP_);
     lv_obj_set_width(ui_WIFI_AP_MAC_ADDR, lv_pct(48));            // Set width to 48% of parent container
     lv_obj_set_height(ui_WIFI_AP_MAC_ADDR, lv_pct(84));           // Set height to 84% of parent container
@@ -499,6 +525,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_set_style_border_opa(ui_WIFI_AP_MAC_ADDR, 0, LV_PART_MAIN | LV_STATE_DEFAULT);                        // Set border opacity to 0 (transparent)
 
     /* Create list inside MAC address container */
+    
     ui_WIFI_AP_MAC_List = lv_list_create(ui_WIFI_AP_MAC_ADDR);
     lv_obj_set_width(ui_WIFI_AP_MAC_List, lv_pct(100));                                                        // Set list width to 100% of container
     lv_obj_set_height(ui_WIFI_AP_MAC_List, lv_pct(80));                                                        // Set list height to 80% of container
@@ -568,7 +595,9 @@ void ui_Wifi_Screen_init(void)
 
 ////////
     /* Create "Rescan" button */
-    lv_obj_t *ui_WIFI_Rescan_Button = lv_btn_create(ui_WIFI_SCAN_STA);
+    
+    //lv_obj_t *ui_WIFI_Rescan_Button = lv_btn_create(ui_WIFI_SCAN_STA);
+    ui_WIFI_Rescan_Button = lv_btn_create(ui_WIFI_SCAN_STA);
     lv_obj_set_width(ui_WIFI_Rescan_Button, 140);
     lv_obj_set_height(ui_WIFI_Rescan_Button, 50);
   //  lv_obj_set_x(ui_WIFI_Rescan_Button, 10);   // Ä‘áº·t bÃªn trÃ¡i
@@ -603,6 +632,8 @@ void ui_Wifi_Screen_init(void)
     //lv_obj_add_event_cb(ui_Main_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
         // Gáº¯n sá»± kiá»‡n cho button Refresh
     lv_obj_add_event_cb(ui_WIFI_Rescan_Button, ui_event_WIFI_Refresh_Button, LV_EVENT_CLICKED, NULL);
+    
+    lv_obj_clear_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
 
 
       

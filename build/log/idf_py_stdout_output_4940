@@ -1,0 +1,1352 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (927) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1552) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1560) wifi:wifi certification version: v7.0[0m
+[0;32mI (1563) wifi:config NVS flash: enabled[0m
+[0;32mI (1566) wifi:config nano formatting: disabled[0m
+[0;32mI (1570) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1575) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1579) wifi:Init management short buffer num: 32[0m
+[0;32mI (1584) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1589) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1592) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1600) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1604) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1609) wifi_init: rx ba win: 16[0m
+[0;32mI (1611) wifi_init: accept mbox: 6[0m
+[0;32mI (1614) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1617) wifi_init: udp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp mbox: 6[0m
+[0;32mI (1623) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1629) wifi_init: tcp mss: 1440[0m
+[0;32mI (1632) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1640) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1647) reconnect: Found saved WiFi: NamTrung[0m
+[0;32mI (1651) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1690) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1715) MQTT: Other event id:7[0m
+[1;31mE (1716) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (1717) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (1718) mqtt_client: Error transport connect[0m
+[0;32mI (1722) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1722) wifi:I (1725) MQTT: Last error code reported from esp-tls: 0x8004[0m
+mode : sta (10:20:ba:05:9b:9c)I (1732) MQTT: Last tls stack error number: 0x0
+
+[0;32mI (1739) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (1739) wifi:enable tsf[0m
+[0;32mI (1743) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1747) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1722) main_task: Returned from app_main()[0m
+[0;32mI (1798) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1798) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1848) wifi:state: auth -> init (0x1100)[0m
+[0;32mI (1850) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1851) WiFi Sta: STA disconnected, reason=202[0m
+[0;32mI (1853) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;33mW (1958) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (2593) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2593) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2677) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2690) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2737) wifi:connected with NamTrung, aid = 31, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2737) wifi:security: WPA2-PSK, phy: bgn, rssi: -76[0m
+[0;32mI (2744) wifi:pm start, type: 1[0m
+
+[0;32mI (2744) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2750) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (2759) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2797) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11245) wifi:state: run -> init (0x0)[0m
+[0;32mI (11246) wifi:pm stop, total sleep time: 3295168 us / 8501796 us[0m
+
+[0;32mI (11247) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11251) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (11255) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (11281) wifi:flush txq[0m
+[0;32mI (11281) wifi:stop sw txq[0m
+[0;32mI (11281) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (11283) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (11283) wifi:enable tsf[0m
+[0;33mW (11361) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (11749) MQTT: Other event id:7[0m
+[1;31mE (11749) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11750) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11752) mqtt_client: Error transport connect[0m
+[0;32mI (11756) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11759) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11765) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11769) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11774) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (13792) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (13792) wifi_scan: Total APs scanned = 12, actual AP number ap_info holds = 12[0m
+[0;32mI (21777) MQTT: Other event id:7[0m
+[1;31mE (21778) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21778) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21780) mqtt_client: Error transport connect[0m
+[0;32mI (21784) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21787) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21793) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21797) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21802) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (24023) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (24024) wifi:flush txq[0m
+[0;32mI (24025) wifi:stop sw txq[0m
+[0;32mI (24025) wifi:lmac stop hw txq[0m
+[0;32mI (24027) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (24030) wifi:enable tsf[0m
+[0;32mI (24034) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (24121) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24121) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (24131) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (24141) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (24155) wifi:connected with NamTrung, aid = 26, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (24155) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (24158) wifi:pm start, type: 1[0m
+
+[0;32mI (24160) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (24169) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (24222) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (24538) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (24538) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (25193) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (26048) WiFi: Connected with IP: 10.10.1.37[0m
+[0;32mI (26048) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (26054) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (26055) WiFi Sta: Saved AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (26065) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (26067) mqtt_client: Client has started[0m
+[0;32mI (26071) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (26162) NVS: last index: -1[0m
+[0;32mI (26162) NVS: wifi index: 0[0m
+[0;32mI (31805) MQTT: Other event id:7[0m
+[0;32mI (31820) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (31822) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:3, winSize:64[0m
+[0;32mI (31823) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (31829) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=15981, return code=0x00 [0m
+[0;32mI (31835) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=39467, return code=0x00 [0m
+[0;32mI (32059) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=20884, return code=0x00 [0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (928) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1552) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1561) wifi:wifi certification version: v7.0[0m
+[0;32mI (1563) wifi:config NVS flash: enabled[0m
+[0;32mI (1566) wifi:config nano formatting: disabled[0m
+[0;32mI (1570) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1575) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1580) wifi:Init management short buffer num: 32[0m
+[0;32mI (1584) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1589) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1592) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1600) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1604) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1609) wifi_init: rx ba win: 16[0m
+[0;32mI (1611) wifi_init: accept mbox: 6[0m
+[0;32mI (1614) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1617) wifi_init: udp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp mbox: 6[0m
+[0;32mI (1623) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1630) wifi_init: tcp mss: 1440[0m
+[0;32mI (1633) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1640) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1647) reconnect: Found saved WiFi: NamTrung[0m
+[0;32mI (1651) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1690) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1691) wifi:enable tsf[0m
+[0;32mI (1692) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1693) MQTT: Other event id:7[0m
+[0;32mI (1694) main_task: Returned from app_main()[0m
+[0;32mI (1699) wifi:E (1695) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0
+[1;31mE (1706) transport_base: Failed to open a new connection: 32772[0m
+[0;32mI (1712) wifi:E (1717) mqtt_client: Error transport connect[0m
+state: init -> auth (0xb0)
+[0;32mI (1723) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1728) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (1731) wifi:I (1733) MQTT: Last tls stack error number: 0x0[0m
+state: auth -> assoc (0x0)I (1739) MQTT: Last captured errno : 0 (Success)
+
+[0;32mI (1745) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1751) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1774) wifi:connected with NamTrung, aid = 26, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (1775) wifi:security: WPA2-PSK, phy: bgn, rssi: -63[0m
+[0;32mI (1777) wifi:pm start, type: 1[0m
+
+[0;32mI (1779) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1787) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1796) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (1804) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (6986) wifi:state: run -> init (0x0)[0m
+[0;32mI (6987) wifi:pm stop, total sleep time: 4169886 us / 5207757 us[0m
+
+[0;32mI (6988) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6992) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (6996) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (7022) wifi:flush txq[0m
+[0;32mI (7022) wifi:stop sw txq[0m
+[0;32mI (7022) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (7023) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (7024) wifi:enable tsf[0m
+[0;33mW (7119) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (9536) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (9537) wifi_scan: Total APs scanned = 9, actual AP number ap_info holds = 9[0m
+[0;32mI (11749) MQTT: Other event id:7[0m
+[1;31mE (11749) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11750) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11752) mqtt_client: Error transport connect[0m
+[0;32mI (11756) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11759) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11765) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11769) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11774) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (18327) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (18328) wifi:flush txq[0m
+[0;32mI (18328) wifi:stop sw txq[0m
+[0;32mI (18328) wifi:lmac stop hw txq[0m
+[0;32mI (18331) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (18334) wifi:enable tsf[0m
+[0;32mI (18338) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (18344) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18350) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (18356) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18363) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (18386) wifi:connected with NamTrung, aid = 26, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (18387) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (18390) wifi:pm start, type: 1[0m
+
+[0;32mI (18392) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (18400) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (18406) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (18842) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (18842) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (19433) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (20352) WiFi: Connected with IP: 10.10.1.37[0m
+[0;32mI (20352) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (20358) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (20359) WiFi Sta: Saved AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (20359) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (20371) mqtt_client: Client has started[0m
+[0;32mI (20374) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (20467) NVS: last index: -1[0m
+[0;32mI (20467) NVS: wifi index: 0[0m
+[0;32mI (21777) MQTT: Other event id:7[0m
+[0;32mI (21805) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (21813) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (21818) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (21822) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=61638, return code=0x00 [0m
+[0;32mI (21824) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=39811, return code=0x00 [0m
+[0;32mI (21860) wifi:state: run -> init (0x0)[0m
+[0;32mI (21862) wifi:pm stop, total sleep time: 2328655 us / 3470488 us[0m
+
+[0;32mI (21862) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (21863) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (21865) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (21873) wifi:mode : null[0m
+[0;32mI (21876) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (21879) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (21884) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (21890) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (21899) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21902) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (21907) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21911) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+[0;32mI (21916) wifi:E (21918) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+flush txq
+[0;32mI (21926) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (21927) wifi:stop sw txq[0m
+[0;32mI (21933) wifi:lmac stop hw txq[0m
+[0;33mW (22015) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (22505) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (22505) wifi:enable tsf[0m
+[0;32mI (25023) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (25023) wifi_scan: Total APs scanned = 10, actual AP number ap_info holds = 10[0m
+[0;32mI (31931) MQTT: Other event id:7[0m
+[1;31mE (31931) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (31932) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (31934) mqtt_client: Error transport connect[0m
+[0;32mI (31938) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (31941) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (31947) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (31951) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (31967) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (34617) WiFi Sta: Connecting to wifi network, BSSID: 12:5F:02:15:1E:9A[0m
+[0;32mI (34651) wifi:flush txq[0m
+[0;32mI (34651) wifi:stop sw txq[0m
+[0;32mI (34652) wifi:lmac stop hw txq[0m
+[0;32mI (34653) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (34653) wifi:enable tsf[0m
+[0;32mI (34656) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (34662) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (34668) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (34690) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (34699) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (34728) wifi:connected with Namtrung 2.4G, aid = 24, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (34728) wifi:security: WPA2-PSK, phy: bgn, rssi: -70[0m
+[0;32mI (34731) wifi:pm start, type: 1[0m
+
+[0;32mI (34733) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (34742) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (34785) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (35160) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (35160) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (35514) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (35771) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (36670) WiFi: Connected with IP: 10.10.1.37[0m
+[0;32mI (36670) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (36677) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (36677) WiFi Sta: Saved AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (36687) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (36690) mqtt_client: Client has started[0m
+[0;32mI (36693) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (36834) NVS: last index: -1[0m
+[0;32mI (36834) NVS: wifi index: 1[0m
+[0;32mI (46967) MQTT: Other event id:7[0m
+[0;32mI (46988) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (47016) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (47028) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=49770, return code=0x00 [0m
+[0;32mI (47055) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=37776, return code=0x00 [0m
+[0;32mI (47061) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=18038, return code=0x00 [0m
+[0;32mI (47225) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=21716, return code=0x00 [0m
+[0;32mI (48649) wifi:state: run -> init (0x0)[0m
+[0;32mI (48651) wifi:pm stop, total sleep time: 10354827 us / 13917586 us[0m
+
+[0;32mI (48651) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (48651) wifi:<ba-del>idx:1, tid:7[0m
+[0;32mI (48655) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (48663) wifi:mode : null[0m
+[0;32mI (48666) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (48669) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[1;31mE (48674) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (48680) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (48688) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (48691) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (48696) wifi:I (48696) MQTT: Last tls stack error number: 0x0[0m
+flush txqI (48702) MQTT: Last captured errno : 113 (Software caused connection abort)
+
+[1;31mE (48710) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (48710) wifi:stop sw txq[0m
+[0;32mI (48717) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48719) wifi:lmac stop hw txq[0m
+[0;33mW (48806) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+STA:STA 
+[0;32mI (49199) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (49199) wifi:enable tsf[0m
+[0;32mI (51711) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (51711) wifi_scan: Total APs scanned = 12, actual AP number ap_info holds = 12[0m
+[0;32mI (58723) MQTT: Other event id:7[0m
+[1;31mE (58724) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (58724) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (58726) mqtt_client: Error transport connect[0m
+[0;32mI (58730) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (58733) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (58739) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (58743) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (58748) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (60962) WiFi Sta: Connecting to wifi network, BSSID: 12:5F:02:15:1E:9A[0m
+[0;32mI (60964) wifi:flush txq[0m
+[0;32mI (60964) wifi:stop sw txq[0m
+[0;32mI (60964) wifi:lmac stop hw txq[0m
+[0;32mI (60966) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (60969) wifi:enable tsf[0m
+[0;32mI (60973) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (60979) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (60985) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (61006) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (61016) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (61030) wifi:connected with Namtrung 2.4G, aid = 24, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (61030) wifi:security: WPA2-PSK, phy: bgn, rssi: -70[0m
+[0;32mI (61034) wifi:pm start, type: 1[0m
+
+[0;32mI (61036) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (61045) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (61102) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (61477) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (61477) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (62069) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (62987) WiFi: Connected with IP: 10.10.1.37[0m
+[0;32mI (62987) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (62991) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (62993) mqtt_client: Client has started[0m
+[0;32mI (62995) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (62997) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (63002) WiFi Sta: Saved AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+[0;32mI (63104) NVS: last index: -1[0m
+[0;32mI (63104) NVS: wifi index: 1[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (928) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1552) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1561) wifi:wifi certification version: v7.0[0m
+[0;32mI (1563) wifi:config NVS flash: enabled[0m
+[0;32mI (1566) wifi:config nano formatting: disabled[0m
+[0;32mI (1570) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1576) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1580) wifi:Init management short buffer num: 32[0m
+[0;32mI (1585) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1589) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1592) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1600) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1604) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1609) wifi_init: rx ba win: 16[0m
+[0;32mI (1611) wifi_init: accept mbox: 6[0m
+[0;32mI (1614) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1617) wifi_init: udp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp mbox: 6[0m
+[0;32mI (1623) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1630) wifi_init: tcp mss: 1440[0m
+[0;32mI (1633) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1640) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1647) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1652) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1690) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1691) wifi:enable tsf[0m
+[0;32mI (1692) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1693) MQTT: Other event id:7[0m
+[1;31mE (1695) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;32mI (1698) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0E (1700) transport_base: Failed to open a new connection: 32772[0m
+
+[1;31mE (1713) mqtt_client: Error transport connect[0m
+[0;32mI (1714) wifi:I (1718) MQTT: MQTT_EVENT_ERROR[0m
+state: init -> auth (0xb0)I (1722) MQTT: Last error code reported from esp-tls: 0x8004
+
+[0;32mI (1729) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (1734) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (1698) main_task: Returned from app_main()[0m
+[0;32mI (1738) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1739) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1758) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1777) wifi:connected with Namtrung 2.4G, aid = 24, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1778) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (1781) wifi:pm start, type: 1[0m
+
+[0;32mI (1783) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1791) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1800) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (1836) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11746) MQTT: Other event id:7[0m
+[1;31mE (11747) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11747) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11749) mqtt_client: Error transport connect[0m
+[0;32mI (11753) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11756) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11762) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11766) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11771) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (21774) MQTT: Other event id:7[0m
+[1;31mE (21774) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21775) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21777) mqtt_client: Error transport connect[0m
+[0;32mI (21781) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21784) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21790) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21794) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21799) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (31802) MQTT: Other event id:7[0m
+[1;31mE (31802) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (31803) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (31805) mqtt_client: Error transport connect[0m
+[0;32mI (31809) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (31812) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (31818) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (31822) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (31827) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (32046) wifi:state: run -> init (0x0)[0m
+[0;32mI (32047) wifi:pm stop, total sleep time: 23363178 us / 30264088 us[0m
+
+[0;32mI (32048) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (32053) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (32057) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (32093) wifi:flush txq[0m
+[0;32mI (32093) wifi:stop sw txq[0m
+[0;32mI (32093) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (32095) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (32095) wifi:enable tsf[0m
+[0;33mW (32183) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (34600) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (34600) wifi_scan: Total APs scanned = 16, actual AP number ap_info holds = 16[0m
+[0;32mI (41830) MQTT: Other event id:7[0m
+[1;31mE (41830) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (41831) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (41833) mqtt_client: Error transport connect[0m
+[0;32mI (41837) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (41840) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (41846) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (41850) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (41855) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48121) wifi:mode : null[0m
+[0;32mI (48122) wifi:flush txq[0m
+[0;32mI (48122) wifi:stop sw txq[0m
+[0;32mI (48122) wifi:lmac stop hw txq[0m
+[0;32mI (51858) MQTT: Other event id:7[0m
+[1;31mE (51858) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (51859) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (51861) mqtt_client: Error transport connect[0m
+[0;32mI (51865) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (51868) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (51874) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (51878) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (51883) MQTT: MQTT_EVENT_DISCONNECTED[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (849) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (928) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1552) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1560) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1561) wifi:wifi certification version: v7.0[0m
+[0;32mI (1563) wifi:config NVS flash: enabled[0m
+[0;32mI (1566) wifi:config nano formatting: disabled[0m
+[0;32mI (1570) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1576) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1580) wifi:Init management short buffer num: 32[0m
+[0;32mI (1585) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1590) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1592) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1600) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1604) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1609) wifi_init: rx ba win: 16[0m
+[0;32mI (1611) wifi_init: accept mbox: 6[0m
+[0;32mI (1614) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1617) wifi_init: udp mbox: 6[0m
+[0;32mI (1620) wifi_init: tcp mbox: 6[0m
+[0;32mI (1623) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1630) wifi_init: tcp mss: 1440[0m
+[0;32mI (1633) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1640) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1647) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1652) MQTT: Other event id:7[0m
+[0;32mI (1653) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[1;31mE (1655) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (1666) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (1672) mqtt_client: Error transport connect[0m
+[0;32mI (1676) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1678) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (1684) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (1688) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (1692) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1694) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1700) wifi:enable tsf[0m
+[0;32mI (1703) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1709) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1716) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1653) main_task: Returned from app_main()[0m
+[0;32mI (1739) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1753) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1766) wifi:connected with Namtrung 2.4G, aid = 25, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1767) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (1769) wifi:pm start, type: 1[0m
+
+[0;32mI (1772) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1780) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1788) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (1835) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11696) MQTT: Other event id:7[0m
+[1;31mE (11696) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11697) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11699) mqtt_client: Error transport connect[0m
+[0;32mI (11703) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11706) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11712) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11716) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11721) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (21724) MQTT: Other event id:7[0m
+[1;31mE (21724) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21725) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21727) mqtt_client: Error transport connect[0m
+[0;32mI (21731) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21734) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21740) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21744) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21749) MQTT: MQTT_EVENT_DISCONNECTED[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (928) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1551) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1562) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1562) wifi:wifi certification version: v7.0[0m
+[0;32mI (1564) wifi:config NVS flash: enabled[0m
+[0;32mI (1568) wifi:config nano formatting: disabled[0m
+[0;32mI (1572) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1578) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1581) wifi:Init management short buffer num: 32[0m
+[0;32mI (1586) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1590) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1593) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1598) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1602) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1606) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1611) wifi_init: rx ba win: 16[0m
+[0;32mI (1613) wifi_init: accept mbox: 6[0m
+[0;32mI (1616) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1619) wifi_init: udp mbox: 6[0m
+[0;32mI (1622) wifi_init: tcp mbox: 6[0m
+[0;32mI (1625) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1628) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1631) wifi_init: tcp mss: 1440[0m
+[0;32mI (1634) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1638) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1642) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1648) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1653) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1693) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1694) MQTT: Other event id:7[0m
+[1;31mE (1695) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (1700) transport_base: Failed to open a new connection: 32772[0m
+[0;32mI (1702) wifi:E (1706) mqtt_client: Error transport connect[0m
+mode : sta (10:20:ba:05:9b:9c)I (1711) MQTT: MQTT_EVENT_ERROR
+
+[0;32mI (1717) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (1717) wifi:I (1722) MQTT: Last tls stack error number: 0x0[0m
+enable tsfI (1728) MQTT: Last captured errno : 0 (Success)
+
+[0;32mI (1733) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1734) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1702) main_task: Returned from app_main()[0m
+[0;32mI (1833) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1834) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1856) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1865) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1885) wifi:connected with Namtrung 2.4G, aid = 24, channel 11, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1885) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (1888) wifi:pm start, type: 1[0m
+
+[0;32mI (1890) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1898) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1907) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (1934) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11736) MQTT: Other event id:7[0m
+[1;31mE (11736) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11737) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11739) mqtt_client: Error transport connect[0m
+[0;32mI (11743) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11746) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11752) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11756) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11761) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (14934) wifi:state: run -> init (0x0)[0m
+[0;32mI (14935) wifi:pm stop, total sleep time: 9456125 us / 13044635 us[0m
+
+[0;32mI (14935) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (14941) WiFi Sta: STA disconnected, reason=8[0m
+[0;32mI (14944) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (15000) wifi:flush txq[0m
+[0;32mI (15000) wifi:stop sw txq[0m
+[0;32mI (15000) wifi:lmac stop hw txq[0m
+STA:STA 
+[0;32mI (15001) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (15001) wifi:enable tsf[0m
+[0;33mW (15098) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (17509) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (17509) wifi_scan: Total APs scanned = 14, actual AP number ap_info holds = 14[0m
+[0;32mI (21764) MQTT: Other event id:7[0m
+[1;31mE (21764) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21765) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21767) mqtt_client: Error transport connect[0m
+[0;32mI (21771) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21774) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21780) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21784) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21789) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (25530) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (25558) wifi:flush txq[0m
+[0;32mI (25558) wifi:stop sw txq[0m
+[0;32mI (25558) wifi:lmac stop hw txq[0m
+[0;32mI (25559) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (25560) wifi:enable tsf[0m
+[0;32mI (25562) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (25585) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25585) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (25599) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (25610) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (25627) wifi:connected with NamTrung, aid = 26, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (25627) wifi:security: WPA2-PSK, phy: bgn, rssi: -52[0m
+[0;32mI (25630) wifi:pm start, type: 1[0m
+
+[0;32mI (25632) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (25640) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (25686) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (26066) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (26066) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (26661) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (27576) WiFi: Connected with IP: 10.10.1.37[0m
+[0;32mI (27576) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (27582) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (27583) WiFi Sta: Saved AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:1E:9A[0m
+[0;32mI (27584) MQTT_MANAGER: Starting MQTT safely...[0m
+[1;31mE (27595) mqtt_client: Client has started[0m
+[0;32mI (27598) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (27675) NVS: last index: -1[0m
+[0;32mI (27675) NVS: wifi index: 0[0m
+[0;32mI (31792) MQTT: Other event id:7[0m
+[0;32mI (31924) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (33399) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (33409) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (33413) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=25580, return code=0x00 [0m
+[0;32mI (33417) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=42189, return code=0x00 [0m
+[0;32mI (33546) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=32004, return code=0x00 [0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=13b564h (1291620) map[0m
+[0;32mI (283) esp_image: segment 1: paddr=0014b58c vaddr=3fc9c900 size=04a8ch ( 19084) load[0m
+[0;32mI (287) esp_image: segment 2: paddr=00150020 vaddr=42000020 size=d6e10h (880144) map[0m
+[0;32mI (418) esp_image: segment 3: paddr=00226e38 vaddr=3fca138c size=00d04h (  3332) load[0m
+[0;32mI (419) esp_image: segment 4: paddr=00227b44 vaddr=40374000 size=18880h (100480) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=002403cc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;33mW (461) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (461) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (468) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (476) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (480) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (484) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (489) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (493) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (498) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (502) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (506) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (511) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (516) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (520) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (526) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (538) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (538) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (538) esp_psram: Speed: 120MHz[0m
+[0;32mI (593) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (640) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (640) cpu_start: Multicore app[0m
+[0;32mI (791) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (799) cpu_start: Pro cpu start user code[0m
+[0;32mI (799) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (799) app_init: Application information:[0m
+[0;32mI (799) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (803) app_init: App version:      94f2d6e-dirty[0m
+[0;32mI (808) app_init: Compile time:     Nov  3 2025 14:27:49[0m
+[0;32mI (813) app_init: ELF file SHA256:  30fb63e57...[0m
+[0;32mI (817) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (821) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (839) heap_init: At 3FCB3318 len 000363F8 (216 KiB): RAM[0m
+[0;32mI (844) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (860) esp_psram: Adding pool of 6016K of PSRAM memory to heap allocator[0m
+[0;32mI (867) esp_psram: Adding pool of 18K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (878) spi_flash: detected chip: generic[0m
+[0;32mI (881) spi_flash: flash io: qio[0m
+[0;32mI (884) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (891) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (897) coexist: coex firmware version: 831ec70[0m
+[0;32mI (910) coexist: coexist rom version e7ae62f[0m
+[0;32mI (910) main_task: Started on CPU0[0m
+[0;32mI (911) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (916) main_task: Calling app_main()[0m
+[0;33mW (927) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1335) GT911: Initialize I2C panel IO[0m
+[0;32mI (1335) GT911: Initialize touch controller GT911[0m
+[0;33mW (1335) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1337) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1340) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1344) example: Install RGB LCD panel driver[0m
+[0;32mI (1384) example: Initialize RGB LCD panel[0m
+[0;32mI (1385) lv_port: Create LVGL task[0m
+[0;32mI (1489) MAIN: create main UI successfully[0m
+[0;32mI (1551) pp: pp rom version: e7ae62f[0m
+[0;32mI (1552) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1553) wifi:wifi driver task: 3fccde74, prio:23, stack:6656, core=0[0m
+[0;32mI (1562) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1562) wifi:wifi certification version: v7.0[0m
+[0;32mI (1564) wifi:config NVS flash: enabled[0m
+[0;32mI (1568) wifi:config nano formatting: disabled[0m
+[0;32mI (1572) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1577) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1581) wifi:Init management short buffer num: 32[0m
+[0;32mI (1586) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1591) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1593) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1597) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1602) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1605) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1610) wifi_init: rx ba win: 16[0m
+[0;32mI (1613) wifi_init: accept mbox: 6[0m
+[0;32mI (1616) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1619) wifi_init: udp mbox: 6[0m
+[0;32mI (1621) wifi_init: tcp mbox: 6[0m
+[0;32mI (1624) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1628) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1631) wifi_init: tcp mss: 1440[0m
+[0;32mI (1634) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1638) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1642) wifi_init: WiFi RX IRAM OP enabled[0m
+Wi-Fi event handler registered.
+[0;32mI (1648) reconnect: Found saved WiFi: NamTrung[0m
+[0;32mI (1653) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1694) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1694) wifi:enable tsf[0m
+[0;32mI (1695) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1696) MQTT: Other event id:7[0m
+[1;31mE (1698) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (1704) transport_base: Failed to open a new connection: 32772[0m
+[0;32mI (1707) wifi:E (1709) mqtt_client: Error transport connect[0m
+new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0I (1714) MQTT: MQTT_EVENT_ERROR
+
+[0;32mI (1723) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (1729) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (1724) wifi:I (1733) MQTT: Last captured errno : 0 (Success)[0m
+state: init -> auth (0xb0)
+[0;32mI (1739) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1707) main_task: Returned from app_main()[0m
+[0;32mI (1827) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1921) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2863) wifi:connected with NamTrung, aid = 36, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2864) wifi:security: WPA2-PSK, phy: bgn, rssi: -80[0m
+[0;32mI (2866) wifi:pm start, type: 1[0m
+
+[0;32mI (2868) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2876) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (2885) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2914) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (7727) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (11744) MQTT: Other event id:7[0m
+[1;31mE (11744) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (11745) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (11747) mqtt_client: Error transport connect[0m
+[0;32mI (11751) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (11754) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (11760) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (11764) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (11768) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (13769) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (19912) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (21772) MQTT: Other event id:7[0m
+[1;31mE (21772) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (21773) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21775) mqtt_client: Error transport connect[0m
+[0;32mI (21779) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (21782) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (21788) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (21792) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (21796) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (22414) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (22415) wifi:state: run -> init (0xc800)[0m
+[0;32mI (22416) wifi:pm stop, total sleep time: 9716553 us / 19547842 us[0m
+
+[0;32mI (22419) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22427) WiFi Sta: STA disconnected, reason=200[0m
+[0;32mI (22431) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (22444) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22444) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (22456) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (22476) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (22513) wifi:connected with NamTrung, aid = 27, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (22514) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (22516) wifi:pm start, type: 1[0m
+
+[0;32mI (22518) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (22528) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;33mW (22539) WIFI: wifi_last_Button is NULL or invalid, skip UI update[0m
+[0;32mI (22597) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m

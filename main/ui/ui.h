@@ -25,6 +25,8 @@ extern "C" {
 #include "ui_Screen5.h"
 #include "ui_Screen6.h"
 #include "ui_Screen7.h"
+#include "ui_Screen9.h"
+#include "ui_Screen10.h"
 
 
 ///////////////////// VARIABLES ////////////////////
@@ -150,7 +152,7 @@ LV_IMG_DECLARE(ui_img_776640815);    // assets/wifi_4_100x100-removebg-preview.p
 LV_IMG_DECLARE(ui_img_green_circle_2_70x70_png);    // assets/wifi_3_100x100-removebg-preview (2).png
 LV_IMG_DECLARE(ui_img_red_circle_70x70_png);    // assets/wifi_4_100x100-removebg-preview.png
 LV_IMG_DECLARE(ui_img_red_circle_20x20_png);    // assets/wifi_4_100x100-removebg-preview.png
-
+LV_IMG_DECLARE(ui_img_turn_back2_png);
 
 
 // FONTS
@@ -159,9 +161,11 @@ LV_FONT_DECLARE(ui_font_BOLD_VN25);
 LV_FONT_DECLARE(ui_font_BOLD_VN30);
 LV_FONT_DECLARE(ui_font_BOLD_VN35);
 LV_FONT_DECLARE(ui_font_BOLDVN60);
+LV_FONT_DECLARE(ui_font_BOLDVN80);
 LV_FONT_DECLARE(ui_font_BOLDVN250);
 LV_FONT_DECLARE(ui_font_BOLDVN250);
 LV_FONT_DECLARE(lv_font_montserrat_24);
+LV_FONT_DECLARE(lv_font_montserrat_20);
 LV_FONT_DECLARE(ui_font_Chinese_Font);
 
 // UI INIT
