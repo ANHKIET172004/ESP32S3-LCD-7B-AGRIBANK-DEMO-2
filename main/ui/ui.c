@@ -90,7 +90,8 @@ lv_obj_t *ui_WIFI_AP_MAC_List;
 
 extern lv_obj_t*ui_WIFI_Rescan_Button;
 extern int cnt;//
-extern int change;
+//extern int change;
+ int change;
 
 bool WIFI_CONNECTION_DONE = false;
 void ui_WIFI_list_event_cb(lv_event_t * e);
@@ -174,8 +175,8 @@ void ui_event_WIFI_Button0(lv_event_t * e)
         // Change the screen back to the main screen with a fade animation
         //_ui_screen_change(&ui_Main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Main_screen_init);
         //_ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
-        //_ui_screen_change(&ui_Screen7, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
-        _ui_screen_change(&ui_Screen9, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Screen9_screen_init);
+        //_ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
+        _ui_screen_change(&ui_Screen2, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Screen2_screen_init);
     }
 }
 
@@ -383,145 +384,7 @@ void ui_event_WIFI_EYE(lv_event_t * e)
     }
 }
 
-// Event handler for the back button in the Wifi settings (returns to the main screen)
-void ui_event_WIFI_Button2(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
 
-    // Triggered when the back button is clicked
-    if(event_code == LV_EVENT_CLICKED) {
-        // Change the screen back to the main screen with a fade animation
-       //_ui_screen_change(&ui_Main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
-       change=0;
-       _ui_screen_change(&ui_Screen6, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_Wifi_Screen_init);
-    }
-}
-
-
-/******************WIFI AP HANDLERS*********************** */
-
-// Event handler for the AP name input field
-void ui_event_WIFI_AP_NAME(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    // Triggered when the AP name input field gains focus
-    if(event_code == LV_EVENT_FOCUSED) {
-        // Set the keyboard to target the AP name field
-        _ui_keyboard_set_target(ui_WIFI_AP_Keyboard, ui_WIFI_AP_NAME);
-        // Show the keyboard and hide the input error message
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
-        _ui_flag_modify(ui_WIFI_AP_INPUT_ERROR, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the AP name input field loses focus
-    if(event_code == LV_EVENT_DEFOCUSED) {
-        // Hide the keyboard when the field loses focus
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the user finishes entering the AP name
-    if(event_code == LV_EVENT_READY) {
-        
-        // Change focus to the password field after entering the AP name
-        _ui_state_modify(ui_WIFI_AP_NAME, LV_STATE_FOCUSED, _UI_MODIFY_STATE_REMOVE);
-        _ui_state_modify(ui_WIFI_AP_Password, LV_STATE_FOCUSED, _UI_MODIFY_STATE_ADD);
-        // Set the keyboard to target the password input field
-        _ui_keyboard_set_target(ui_WIFI_AP_Keyboard, ui_WIFI_AP_Password);
-    }
-}
-
-// Event handler for the AP password input field
-void ui_event_WIFI_AP_Password(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    // Triggered when the password input field gains focus
-    if(event_code == LV_EVENT_FOCUSED) {
-        // Set the keyboard to target the password field
-        _ui_keyboard_set_target(ui_WIFI_AP_Keyboard, ui_WIFI_AP_Password);
-        // Show the keyboard and hide the input error message
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
-        _ui_flag_modify(ui_WIFI_AP_INPUT_ERROR, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the password input field loses focus
-    if(event_code == LV_EVENT_DEFOCUSED) {
-        // Hide the keyboard when the field loses focus
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the user finishes entering the password
-    if(event_code == LV_EVENT_READY) {
-        // Change focus to the AP channel field after entering the password
-        _ui_state_modify(ui_WIFI_AP_Channel, LV_STATE_FOCUSED, _UI_MODIFY_STATE_ADD);
-        _ui_state_modify(ui_WIFI_AP_Password, LV_STATE_FOCUSED, _UI_MODIFY_STATE_REMOVE);
-        // Set the keyboard to target the AP channel input field
-        _ui_keyboard_set_target(ui_WIFI_AP_Keyboard, ui_WIFI_AP_Channel);
-    }
-}
-
-// Event handler for the eye icon (toggles the visibility of the AP password)
-void ui_event_WIFI_AP_EYE(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    // Triggered when the eye icon is clicked
-    if(event_code == LV_EVENT_CLICKED) {
-        // Toggle password visibility
-        WIFI_AP_PWD = !WIFI_AP_PWD;
-        // Update the password input field based on the visibility state
-        lv_textarea_set_password_mode(ui_WIFI_AP_Password, WIFI_AP_PWD);
-        // Show the keyboard and password input field
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
-    }
-}
-
-// Event handler for the AP channel input field
-void ui_event_WIFI_AP_Channel(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    // Triggered when the AP channel input field gains focus
-    if(event_code == LV_EVENT_FOCUSED) {
-        // Set the keyboard to target the AP channel field
-        _ui_keyboard_set_target(ui_WIFI_AP_Keyboard, ui_WIFI_AP_Channel);
-        // Show the keyboard and hide the input error message
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
-        _ui_flag_modify(ui_WIFI_AP_INPUT_ERROR, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the AP channel input field loses focus
-    if(event_code == LV_EVENT_DEFOCUSED) {
-        // Hide the keyboard when the field loses focus
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-
-    // Triggered when the user finishes entering the AP channel
-    if(event_code == LV_EVENT_READY) {
-        // Hide the keyboard after the user is done entering the channel
-        _ui_flag_modify(ui_WIFI_AP_Keyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-    }
-}
-
-// Event handler for toggling the Wifi AP state (open/close)
-void ui_event_WIFI_AP_OPEN(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    // Triggered when the toggle state of the AP open button changes
-    if(event_code == LV_EVENT_VALUE_CHANGED && lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        // If checked, open the Wifi AP
-        WIFIAPOPEN(e);
-    }
-
-    if(event_code == LV_EVENT_VALUE_CHANGED && !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        // If unchecked, close the Wifi AP
-        WIFIAPCLOSE(e);
-    }
-}
-//////////////// WIFI AP
 
 void ui_init(void)
 {
@@ -529,30 +392,19 @@ void ui_init(void)
     lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
                                                false, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
-    //ui_Screen1_screen_init();
-   // ui_Screen2_screen_init();
-    //ui_Screen3_screen_init();
-    //ui_Screen4_screen_init();
-   // ui_Screen5_screen_init();
-   // ui_Screen6_screen_init();
-    ui_Screen7_screen_init();
-    ui_Screen9_screen_init();
-    ui_Screen10_screen_init();
+
+    ui_Screen1_screen_init();
+    ui_Screen2_screen_init();
+    ui_Screen3_screen_init();
     ui_Wifi_Screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
-    lv_disp_load_scr(ui_Screen7);
+    lv_disp_load_scr(ui_Screen1);
 }
 
 void ui_destroy(void)
 {
- //  ui_Screen1_screen_destroy();
-   // ui_Screen2_screen_destroy();
-    //ui_Screen3_screen_destroy();
-    //ui_Screen4_screen_destroy();
-   // ui_Screen5_screen_destroy();
-  // ui_Screen6_screen_destroy();
-   ui_Screen7_screen_destroy();
-    ui_Screen9_screen_destroy();
-   ui_Screen10_screen_destroy();
-    
+
+   ui_Screen1_screen_destroy();
+   ui_Screen2_screen_destroy();
+   ui_Screen3_screen_destroy();
 }

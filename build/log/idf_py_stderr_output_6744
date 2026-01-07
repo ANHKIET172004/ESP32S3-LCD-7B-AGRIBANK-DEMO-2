@@ -1,12 +1,23 @@
-Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py'
 [0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
 [0;33m--- Using \\.\COM7 instead...[0m
 [0;33m--- esp-idf-monitor 1.7.0 on \\.\COM7 115200[0m
 [0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
 [0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
 [0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
-[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403743c0: [0;33m_DoubleExceptionVector[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m564[0m
+[0m--- 0x400556d5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x400556e5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x403743bd: [0;33m_UserExceptionVector[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[1;31m--- Error: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0m--- 0x4037acfa: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m64[0m
+[0m--- 0x4037acf7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x42003c2e: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x403802ac: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4037ac96: [0;33mcpu_utility_ll_stall_cpu[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/esp32s3/include/hal/cpu_utility_ll.h[0m[0m:[1;31m49[0m
+[0m--- (inlined by) [0;33mesp_cpu_stall[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m34[0m
+[0;33m.[0m[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
 [0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
-[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
-[0m--- 0x403c894c: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
 [0m

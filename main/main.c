@@ -22,6 +22,11 @@
 
 #include "wifi.h"
 
+#include "esp_heap_caps.h"
+
+
+
+
 static const char *TAG = "MAIN";
 
 static esp_lcd_panel_handle_t panel_handle = NULL;
@@ -70,14 +75,14 @@ void app_main(void) {
     mqtt_queue = xQueueCreate(10, sizeof(mqtt_message_t));
 
     if (wifi_cred_mutex == NULL) {
-    wifi_cred_mutex = xSemaphoreCreateMutex();
+        wifi_cred_mutex = xSemaphoreCreateMutex();
     if (wifi_cred_mutex == NULL) {
         ESP_LOGE("WIFI", "Failed to create wifi_cred_mutex");
     }
 }
 
     //xTaskCreate(mqtt_process_task, "mqtt_process_task", 4096, NULL, 5, NULL);
-    xTaskCreatePinnedToCore(mqtt_process_task,  "mqtt_retry",  4096, NULL, 5, NULL, 1 );
+    xTaskCreatePinnedToCore(mqtt_process_task,  "mqtt_proccess_task",  8*1024, NULL, 5, NULL, 1 );// quan trọng, đặt kích thước đủ lớn (8*1024)
 
     //wifi_init_sta();
      
@@ -86,6 +91,12 @@ void app_main(void) {
   //  mqtt_start();
     xTaskCreatePinnedToCore(wifi_mqtt_manager_task, "wifi_mqtt_manager_task", 4* 1024, NULL, 4, &wifi_TaskHandle, 1);
     
-
+    
+     while (1){
+        size_t free_heap = esp_get_free_heap_size();
+         printf("Free heap: %d bytes\n", free_heap);
+         vTaskDelay(pdMS_TO_TICKS(1000));
+     }
+         
     
 }

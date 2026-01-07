@@ -3,8 +3,8 @@
 // LVGL version: 8.3.6
 // Project name: SquareLine_Project
 
-#ifndef UI_SCREEN1_H
-#define UI_SCREEN1_H
+#ifndef ui_Screen1_H
+#define ui_Screen1_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,41 +14,9 @@ extern "C" {
 extern void ui_Screen1_screen_init(void);
 extern void ui_Screen1_screen_destroy(void);
 extern lv_obj_t * ui_Screen1;
-extern lv_obj_t * ui_Panel1;
 extern lv_obj_t * ui_Label1;
-extern void ui_event_Image1(lv_event_t * e);
-extern lv_obj_t * ui_Image1;
-extern lv_obj_t * ui_Panel2;
-extern lv_obj_t * ui_Label2;
-extern void ui_event_Image2(lv_event_t * e);
-extern lv_obj_t * ui_Image2;
-extern lv_obj_t * ui_Panel3;
-extern lv_obj_t * ui_Label3;
-extern void ui_event_Image3(lv_event_t * e);
-extern lv_obj_t * ui_Image3;
-extern lv_obj_t * ui_Panel4;
-extern lv_obj_t * ui_Label4;
-extern void ui_event_Image4(lv_event_t * e);
-extern lv_obj_t * ui_Image4;
-extern lv_obj_t * ui_Panel5;
-extern lv_obj_t * ui_Label5;
-extern void ui_event_Image5(lv_event_t * e);
-extern lv_obj_t * ui_Image5;
-extern lv_obj_t * ui_Label6;
-extern lv_obj_t * ui_Panel8;
-extern lv_obj_t * ui_Image6;
-extern lv_obj_t * ui_Image7;
-extern lv_obj_t * ui_Image19;
-extern lv_obj_t * ui_Image20;
-extern lv_obj_t * ui_Image24 ;
-extern lv_obj_t * ui_Image31 ;
-extern lv_obj_t * ui_Image32 ;
-extern lv_obj_t * ui_Image34 ;
-
-/////////
-extern lv_obj_t *ui_Screen1_WifiIcon;
-extern lv_obj_t *ui_Screen1_WifiLabel;
-///////
+extern lv_obj_t * ui_Panel1;
+extern lv_obj_t * ui_Image40;
 // CUSTOM VARIABLES
 
 #ifdef __cplusplus

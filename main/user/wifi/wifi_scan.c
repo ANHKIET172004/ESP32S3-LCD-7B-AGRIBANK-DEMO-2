@@ -81,7 +81,16 @@ int wifi_get_wifi_index(void) {
 }
 
 
-
+static bool ascii_ssid(const uint8_t* ssid){
+       uint8_t* ptr=ssid;
+       while (*ptr){
+           if (*ptr>127){
+               return false;
+           }
+           ptr++;
+       }
+       return true;
+}
 
 esp_err_t read_wifi_credentials_from_nvs(char *ssid, size_t *ssid_len, char *password, size_t *password_len,uint8_t* bssid) {
     nvs_handle_t my_handle;
@@ -294,7 +303,7 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
     _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     // Disable the Wi-Fi open button and AP open button while scanning
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
-    _ui_state_modify(ui_WIFI_AP_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
+   // _ui_state_modify(ui_WIFI_AP_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
         
     
    
@@ -302,9 +311,11 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
     for (int i = 0; i < DEFAULT_SCAN_LIST_SIZE; i++)
     {
         // If no more valid APs in the list, stop
-        if (ap_info[i].rssi == 0 && ap_info[i].ssid[0] == '\0')
+        if (ap_info[i].rssi == 0 && ap_info[i].ssid[0] == '\0'&&ascii_ssid(ap_info[i].ssid))
         {
+            
             break;
+
         }
 
 

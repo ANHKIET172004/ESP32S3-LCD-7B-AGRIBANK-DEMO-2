@@ -621,6 +621,7 @@ void ui_Wifi_Screen_init(void)
 
     /* Additional event handlers for Wi-Fi AP settings */
     
+    /*
     lv_obj_add_event_cb(ui_WIFI_Button2, ui_event_WIFI_Button2, LV_EVENT_ALL, NULL);         // Button2 event handler
     lv_obj_add_event_cb(ui_WIFI_AP_NAME, ui_event_WIFI_AP_NAME, LV_EVENT_ALL, NULL);         // AP Name input field event handler
     lv_obj_add_event_cb(ui_WIFI_AP_EYE, ui_event_WIFI_AP_EYE, LV_EVENT_ALL, NULL);           // Eye icon for AP Name event handler
@@ -628,6 +629,7 @@ void ui_Wifi_Screen_init(void)
     lv_obj_add_event_cb(ui_WIFI_AP_Channel, ui_event_WIFI_AP_Channel, LV_EVENT_ALL, NULL);   // AP Channel input field event handler
     lv_obj_add_event_cb(ui_WIFI_AP_OPEN, ui_event_WIFI_AP_OPEN, LV_EVENT_ALL, NULL);         // AP Open switch event handler
     lv_keyboard_set_textarea(ui_WIFI_AP_Keyboard, ui_WIFI_AP_NAME);        // Set the AP Name input field as the keyboard's text area
+*/
 
     //lv_obj_add_event_cb(ui_Main_WIFI, background_click_event_cb, LV_EVENT_CLICKED, NULL);
         // Gáº¯n sá»± kiá»‡n cho button Refresh
@@ -665,6 +667,7 @@ void ui_Wifi_Screen_destroy(){
     ui_WIFI_INPUT_KEYBOARD = NULL;
     ui_WIFI_Wait_CONNECTION = NULL;
     ui_WIFI_PWD_Error = NULL;
+    /*
     ui_WIFI_AP = NULL;
     ui_WIFI_OPEN_AP_ = NULL;
     ui_WIFI_Button2 = NULL;
@@ -683,4 +686,5 @@ void ui_Wifi_Screen_destroy(){
     ui_WIFI_AP_OPEN = NULL;
     ui_WIFI_AP_INPUT_ERROR = NULL;
     ui_WIFI_AP_Keyboard = NULL;
+    */
 }
