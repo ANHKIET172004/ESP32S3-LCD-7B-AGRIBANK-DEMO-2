@@ -18,10 +18,10 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
   - Hiển thị dòng chữ "QUẦY TẠM THỜI ĐÓNG"
   - Khi reset thì màn hình trống, không hiển thị
 - Các giao diện của màn hình gồm có:
-  - Giao diện hiển thị số đang gọi hoặc hiển thị dòng chữ báo đóng quầy (Screen 1)
-  - Giao diện menu (Screen 2)
-  - Giao diện chọn keypad để kết nối đến (Screen 3)
-  - Giao diện đăng nhập wifi (Wifi Screen)
+  - Giao diện hiển thị số đang gọi hoặc hiển thị dòng chữ báo đóng quầy (**Screen 1**)
+  - Giao diện menu (**Screen 2**)
+  - Giao diện chọn keypad để kết nối đến (**Screen 3**)
+  - Giao diện đăng nhập wifi (**Wifi Screen**)
 
 - Kết nối tới WiFi được nhập từ màn hình
 - Wifi sau khi được kết nối thành công sẽ được lưu trong bộ nhớ NVS và tự động kết nối khi khởi động thiết bị
@@ -61,13 +61,13 @@ project/
 ### 1. Boot & reconnect
 
 - Thiết bị khởi động.
-- Hiển thị Screen 1 (màn hình chính)
+- Hiển thị **Screen 1** (màn hình chính)
 - Kiểm tra thông tin wifi trong bộ nhớ, nếu có lưu trước đó → Tự động kết nối đến wifi này
 - Nếu kết nối wifi thành công thì kết nối đến server, nếu không thành công sẽ retry **5 lần**
 - Trạng thái kết nối đến wifi được hiển thị thông qua icon cột sóng wifi ở góc phải trên cùng màn hình
 - Nếu thiết bị kết nối đến server thất bại → Hiển thị icon mất kết nối tại góc phải dưới cùng màn hình
 - Nếu thiết bị kết nối đến server thành công → Không hiển thị icon
-- Chạm **3 lần liên tục góc trên cùng bên trái** → vào giao diện menu (Screen 2)
+- Chạm **3 lần liên tục góc trên cùng bên trái** → vào giao diện menu (**Screen 2**)
 
 ---
 
@@ -89,13 +89,13 @@ project/
 ### 4. Menu & Settings
 
 - Ở màn hình chính:
-  - Chạm **3 lần góc trên bên trái** → vào menu để chọn chức năng
+  - Chạm **3 lần góc trên bên trái** → vào menu (**Screen 2**) để chọn chức năng
 - Các chức năng:
   - **WIFI**:
     - Vào màn hình cấu hình wifi
   - **KEYPAD**:
     - Chọn bàn phím gọi số trong hệ thống
-    - Thiết bị được chọn hiển thị số màu đen
+    - Thiết bị được chọn hiển thị số **màu đen**
   - **RESET**:
     - Xóa số hiển thị hiện tại trong bộ nhớ, màn hình hiển thị số lúc này sẽ trống
 
@@ -107,7 +107,8 @@ project/
   - `Back`: quay lại màn hình trước
   - `Switch`: bật / tắt WiFi
 - Khi khởi động:
-  - Không hiển thị danh sách WiFi cho đến khi switch được bật
+  - Mặc định set wifi STA để reconnect, ***switch off**
+  - **Không hiển thị danh sách WiFi cho đến khi switch được bật**
   - Tự động kết nối WiFi đã lưu trong NVS
 
 ---
