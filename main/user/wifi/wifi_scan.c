@@ -288,14 +288,16 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
  void wifi_update_list_cb(lv_timer_t * timer) {
 
            // đọc ssid và password của wifi đã lưu trước đó
-          memset(saved_ssid,0,sizeof(saved_ssid));
-          esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_password, &password_len,saved_bssid);
-          if (err==ESP_OK){
-            ESP_LOGI("NVS", "Have a saved wifi network in NVS");
-            
+         // memset(saved_ssid,0,sizeof(saved_ssid));
+        for (int i=0;i<3;i++){
+            esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_password, &password_len,saved_bssid);
+            if (err==ESP_OK){
+                ESP_LOGI("NVS", "Have a saved wifi network in NVS");
+                
+            }
         }
 
-        //lv_obj_clean(ui_WIFI_SCAN_List);//
+    lv_obj_clean(ui_WIFI_SCAN_List);//
 
 
       
@@ -346,10 +348,13 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
         //lv_obj_add_event_cb(WIFI_List_Button, ui_WIFI_list_event_cb, LV_EVENT_ALL, (void *)i);  // Pass index as user data
 
           ////////////
-
+    char ap_ssid[33] = {0};//
+    memcpy(ap_ssid, ap_info[i].ssid, 32);//
+    ap_ssid[32] = '\0';//
    // if ((strcmp((const char *)ap_info[i].ssid,(const char *) saved_ssid) == 0)&&(found_saved_ap==false)&&(connection_flag)) {//
-    if ((strcmp((const char *)ap_info[i].ssid,(const char *) saved_ssid) == 0)&&(found_saved_ap==false)&&(wifi_connected==true)) {//
-        
+    //if ((strcmp((const char *)ap_info[i].ssid,(const char *) saved_ssid) == 0)&&(found_saved_ap==false)&&(wifi_connected==true)) {//
+    if ((strcmp((const char *)ap_ssid, (const char *)saved_ssid) == 0)&&(found_saved_ap==false)&&(wifi_connected==true)) {//
+  
       // if (memcmp((const uint8_t*)ap_info[i].bssid,(const uint8_t*) saved_bssid, 6) == 0) {   //
                 ESP_LOGI(TAG, "" );
                 ESP_LOGI(TAG, "Found saved wifi network in scan list, ssid: %s",(const char *)ap_info[i].ssid );
@@ -378,7 +383,7 @@ void print_cipher_type(int pairwise_cipher, int group_cipher)
             }
 
            
-   
+      
 }
 
 
@@ -395,13 +400,13 @@ void wifi_scan(void)
 
     //esp_wifi_set_mode(WIFI_MODE_STA);//
 ///////////
-/*
+
     wifi_mode_t mode;
     if (esp_wifi_get_mode(&mode) != ESP_OK || mode != WIFI_MODE_STA) {
         ESP_LOGI(TAG, "Đặt chế độ Wi-Fi thành STA");
         ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     }
-        */
+        
     ////////
 
     // Start the Wi-Fi scan
@@ -420,7 +425,7 @@ void wifi_scan(void)
 
     // Create a timer to update the UI with the scanned Wi-Fi list
     lv_timer_t *t = lv_timer_create(wifi_update_list_cb, 100, NULL); // Update the UI every 100ms
-    lv_timer_set_repeat_count(t, 2);// 
+    lv_timer_set_repeat_count(t, 1);// 
     ////
 
 

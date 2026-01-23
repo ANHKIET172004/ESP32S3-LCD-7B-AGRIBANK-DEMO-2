@@ -21,6 +21,10 @@ extern const char *TAG_STA;
 
 // Task handle for Wi-Fi task
 extern TaskHandle_t wifi_TaskHandle;
+// Task handle for Wi-Fi mqtt manager task
+
+extern TaskHandle_t wifi_mqtt_manager_TaskHandle;
+
 
 // Array to store information about available Access Points (AP)
 extern wifi_ap_record_t ap_info[];

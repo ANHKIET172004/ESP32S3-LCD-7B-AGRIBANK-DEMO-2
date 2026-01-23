@@ -157,7 +157,9 @@ void ui_Screen2_screen_init(void)
     
 
     ui_Image3 = lv_img_create(ui_Screen2);
-    lv_img_set_src(ui_Image3, &ui_img_turn_back2_png);
+    //lv_img_set_src(ui_Image3, &ui_img_turn_back2_png);
+    lv_img_set_src(ui_Image3, &ui_img_left_arrow_70x70_png);
+
     lv_obj_set_width(ui_Image3, LV_SIZE_CONTENT);   /// 70
     lv_obj_set_height(ui_Image3, LV_SIZE_CONTENT);    /// 70
     lv_obj_set_x(ui_Image3, -447);

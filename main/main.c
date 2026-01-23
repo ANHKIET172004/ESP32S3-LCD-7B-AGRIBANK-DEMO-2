@@ -22,6 +22,8 @@
 
 #include "wifi.h"
 
+#include "init_handle/init_handle.h"
+
 #include "esp_heap_caps.h"
 
 
@@ -32,14 +34,18 @@ static const char *TAG = "MAIN";
 static esp_lcd_panel_handle_t panel_handle = NULL;
 static esp_lcd_touch_handle_t tp_handle = NULL;
 
-uint8_t start_cnt=0;
+//uint8_t start_cnt=0;
+bool spe_case=true;// reconnect khi khởi động và kết nối wifi bằng cách nhập từ màn hình
+int open_cnt=0;// biến đếm số lần bật switch
+
 
 SemaphoreHandle_t wifi_cred_mutex = NULL;
+
 
 typedef struct {
     char topic[64];
     char data[512];
-} mqtt_message_t;
+} mqtt_message_t; // struct data nhận được thông qua mqtt
 
 QueueHandle_t mqtt_queue=NULL;
 
@@ -58,8 +64,21 @@ void app_main(void) {
     ESP_ERROR_CHECK(err);
 
     tp_handle = touch_gt911_init();
+    if (tp_handle==NULL){
+        init_fail_hanlde(1);
+    }
+    else {
+        reset_retry(1);
+    }
 
     panel_handle = waveshare_esp32_s3_rgb_lcd_init();
+    if (panel_handle==NULL){
+         init_fail_hanlde(2);
+    }
+    else {
+        reset_retry(2);
+    }
+
     wavesahre_rgb_lcd_bl_on();
 
     ESP_ERROR_CHECK(lvgl_port_init(panel_handle, tp_handle));
@@ -70,33 +89,51 @@ void app_main(void) {
         ui_init();
         lvgl_port_unlock();
     }
+
+    if (!check_ui_init()){
+         init_fail_hanlde(3);
+    }
+    else {
+        reset_retry(3);
+    }
+
     ESP_LOGI(TAG, "create main UI successfully");
 
-    mqtt_queue = xQueueCreate(10, sizeof(mqtt_message_t));
+    mqtt_queue = xQueueCreate(10, sizeof(mqtt_message_t));//10
+    if (mqtt_queue==NULL){
+         init_fail_hanlde(4);
+    }
+    else {
+        reset_retry(4);
+    }
 
     if (wifi_cred_mutex == NULL) {
         wifi_cred_mutex = xSemaphoreCreateMutex();
-    if (wifi_cred_mutex == NULL) {
-        ESP_LOGE("WIFI", "Failed to create wifi_cred_mutex");
     }
-}
+
+
+    if (wifi_cred_mutex==NULL){
+         init_fail_hanlde(5);
+    }
+    else {
+        reset_retry(5);
+    }
+
 
     //xTaskCreate(mqtt_process_task, "mqtt_process_task", 4096, NULL, 5, NULL);
     xTaskCreatePinnedToCore(mqtt_process_task,  "mqtt_proccess_task",  8*1024, NULL, 5, NULL, 1 );// quan trọng, đặt kích thước đủ lớn (8*1024)
-
-    //wifi_init_sta();
      
     xTaskCreatePinnedToCore(wifi_task, "wifi_task", 7* 1024, NULL, 6, &wifi_TaskHandle, 0);
 
-  //  mqtt_start();
-    xTaskCreatePinnedToCore(wifi_mqtt_manager_task, "wifi_mqtt_manager_task", 4* 1024, NULL, 4, &wifi_TaskHandle, 1);
+    xTaskCreatePinnedToCore(wifi_mqtt_manager_task, "wifi_mqtt_manager_task", 6* 1024, NULL, 4, &wifi_mqtt_manager_TaskHandle, 1);//4
     
-    
+    /*
      while (1){
         size_t free_heap = esp_get_free_heap_size();
          printf("Free heap: %d bytes\n", free_heap);
          vTaskDelay(pdMS_TO_TICKS(1000));
      }
+         */
          
     
-}
+    }

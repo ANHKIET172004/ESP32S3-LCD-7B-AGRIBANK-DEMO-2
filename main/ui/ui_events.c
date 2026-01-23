@@ -17,6 +17,11 @@
 
 bool wifi_open=false;
 
+extern int open_cnt;
+extern bool spe_case;
+
+extern lv_obj_t* ui_WIFI_Rescan_Button;
+
 //static const char *TAG = "RECONNECT";
 
 // Hàm đọc thông tin Wi-Fi từ NVS
@@ -78,6 +83,8 @@ void reconnect_to_saved_wifi() {
 void WIFIOPEN(lv_event_t * e)
 {   
     wifi_open=true;
+    open_cnt++;//
+
     // Open WiFi in STA mode (station mode)
     wifi_open_sta();
     
@@ -121,9 +128,12 @@ void WIFIConnection(lv_event_t * e)
     
     // Get the password from the password input field
     wifi_pwd = (uint8_t *)lv_textarea_get_text(ui_WIFI_INPUT_PWD);
-    
+    lv_obj_clear_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);//
+
     // Set the WiFi STA flag to true, indicating an active connection attempt
     WIFI_STA_FLAG = true;
+    spe_case=true;//
+
 }
 
 // Event callback for opening a WiFi Access Point (AP)

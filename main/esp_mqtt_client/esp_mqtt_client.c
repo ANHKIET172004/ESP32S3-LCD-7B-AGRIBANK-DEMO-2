@@ -24,7 +24,7 @@ esp_mqtt_client_handle_t mqttClient;
 
 uint8_t key_id=0;
 
-bool stop=false;
+bool stop=false;// biến dừng nhận data từ topic responsenumber-> khi biến=true, không nhận số (dùng khi đang đóng quầy)
 
 char selected_keypad_id[19]={0};
 
@@ -171,6 +171,37 @@ static void handle_open(void)
     save_status("NO");
     ESP_LOGI(MQTT_TAG, "Device opened");
 }
+static void mqtt_event_data_handle(esp_mqtt_event_handle_t event){
+        mqtt_message_t msg;
+        int topic_len = MIN(event->topic_len, sizeof(msg.topic) - 1);
+        int data_len  = MIN(event->data_len, sizeof(msg.data) - 1);
+
+        memcpy(msg.topic, event->topic, topic_len);
+        msg.topic[topic_len] = '\0';
+
+        memcpy(msg.data, event->data, data_len);
+        msg.data[data_len] = '\0';
+
+        if (xQueueSend(mqtt_queue, &msg, 0) != pdTRUE) {// gửi data nhận được đến mqtt process task để xủ lý-> tránh xủ lý logic trong hàm event handler
+            ESP_LOGW(TAG, "MQTT queue full, message dropped");
+        }
+}
+
+static void mqtt_event_error_handle (esp_mqtt_event_handle_t event){
+        mqtt_message_t msg;
+        int topic_len = MIN(event->topic_len, sizeof(msg.topic) - 1);
+        int data_len  = MIN(event->data_len, sizeof(msg.data) - 1);
+
+        memcpy(msg.topic, event->topic, topic_len);
+        msg.topic[topic_len] = '\0';
+
+        memcpy(msg.data, event->data, data_len);
+        msg.data[data_len] = '\0';
+
+        if (xQueueSend(mqtt_queue, &msg, 0) != pdTRUE) {// gửi data nhận được đến mqtt process task để xủ lý-> tránh xủ lý logic trong hàm event handler
+            ESP_LOGW(TAG, "MQTT queue full, message dropped");
+        }
+}
 
 void mqtt_process_task(void *pvParameters)
 {
@@ -205,6 +236,7 @@ void mqtt_process_task(void *pvParameters)
 }
 
 
+/*
 
 void mqtt_process_task1(void *pvParameters)
 {
@@ -364,7 +396,7 @@ void mqtt_process_task1(void *pvParameters)
         }
     }
 }
-
+*/
 
 
 void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
@@ -380,8 +412,9 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
         esp_mqtt_client_subscribe(event->client, "closed", 0);// đóng qầy
         esp_mqtt_client_subscribe(event->client, "open", 0);// mở qầy
         esp_mqtt_client_subscribe(event->client, "device/list", 1);// nhận device list
+        
         if (lvgl_port_lock(-1)){
-        lv_obj_add_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN ); 
+        lv_obj_add_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN ); // ẩn icon mất kết nối server
         lvgl_port_unlock();
         }
 
@@ -391,7 +424,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
         if (lvgl_port_lock(-1)){
-        lv_obj_clear_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN ); 
+        lv_obj_clear_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN ); // hiện icon mất kết nối server
         lvgl_port_unlock();
         }
 
@@ -410,35 +443,11 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
         break;
         
     case MQTT_EVENT_DATA:
-         mqtt_message_t msg;
-        int topic_len = MIN(event->topic_len, sizeof(msg.topic) - 1);
-        int data_len  = MIN(event->data_len, sizeof(msg.data) - 1);
-
-        memcpy(msg.topic, event->topic, topic_len);
-        msg.topic[topic_len] = '\0';
-
-        memcpy(msg.data, event->data, data_len);
-        msg.data[data_len] = '\0';
-
-        if (xQueueSend(mqtt_queue, &msg, 0) != pdTRUE) {
-            ESP_LOGW(TAG, "MQTT queue full, message dropped");
-        }
+        mqtt_event_data_handle(event);
         break;
         
     case MQTT_EVENT_ERROR:
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_ERROR");
-        lv_obj_clear_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN ); //
-        if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
-            ESP_LOGI(MQTT_TAG, "Last error code reported from esp-tls: 0x%x", event->error_handle->esp_tls_last_esp_err);
-            ESP_LOGI(MQTT_TAG, "Last tls stack error number: 0x%x", event->error_handle->esp_tls_stack_err);
-            ESP_LOGI(MQTT_TAG, "Last captured errno : %d (%s)",  event->error_handle->esp_transport_sock_errno,
-                     strerror(event->error_handle->esp_transport_sock_errno));
-        } else if (event->error_handle->error_type == MQTT_ERROR_TYPE_CONNECTION_REFUSED) {
-            ESP_LOGI(MQTT_TAG, "Connection refused error: 0x%x", event->error_handle->connect_return_code);
-        } else {
-            ESP_LOGW(MQTT_TAG, "Unknown error type: 0x%x", event->error_handle->error_type);
-        }
-
+        mqtt_event_error_handle(event);
         break;
         
     default:
@@ -446,6 +455,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
         break;
     }
 }
+    
 
 
 

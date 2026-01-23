@@ -43,6 +43,7 @@ SET(SOURCES
     images/ui_img_green_circle_2_70x70_png.c
     images/ui_img_red_circle_20x20_png.c
     images/ui_img_turn_back2_png.c
+    images/ui_img_left_arrow_70x70_png.c
 
 
     

@@ -1,0 +1,1646 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=140a54h (1313364) map[0m
+[0;32mI (286) esp_image: segment 1: paddr=00150a7c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (291) esp_image: segment 2: paddr=00156224 vaddr=40374000 size=09df4h ( 40436) load[0m
+[0;32mI (299) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=dd540h (906560) map[0m
+[0;32mI (433) esp_image: segment 4: paddr=0023d568 vaddr=4037ddf4 size=0ea8ch ( 60044) load[0m
+[0;32mI (445) esp_image: segment 5: paddr=0024bffc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;33mW (465) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (466) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (473) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (480) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (485) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (489) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (493) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (498) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (502) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (507) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (511) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (516) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (520) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (525) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (530) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (542) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (543) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (543) esp_psram: Speed: 120MHz[0m
+[0;32mI (600) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (647) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (647) cpu_start: Multicore app[0m
+[0;32mI (796) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (805) cpu_start: Pro cpu start user code[0m
+[0;32mI (805) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (805) app_init: Application information:[0m
+[0;32mI (805) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (809) app_init: App version:      957d15a-dirty[0m
+[0;32mI (813) app_init: Compile time:     Jan 15 2026 14:28:22[0m
+[0;32mI (818) app_init: ELF file SHA256:  d04f5ef03...[0m
+[0;32mI (823) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (827) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (831) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (835) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (838) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (845) heap_init: At 3FCB38D8 len 00035E38 (215 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (855) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (860) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (866) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (872) esp_psram: Adding pool of 61K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (883) spi_flash: detected chip: generic[0m
+[0;32mI (887) spi_flash: flash io: qio[0m
+[0;32mI (890) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (896) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (903) coexist: coex firmware version: 831ec70[0m
+[0;32mI (916) coexist: coexist rom version e7ae62f[0m
+[0;32mI (916) main_task: Started on CPU0[0m
+[0;32mI (917) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (922) main_task: Calling app_main()[0m
+[0;33mW (935) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1341) GT911: Initialize I2C panel IO[0m
+[0;32mI (1341) GT911: Initialize touch controller GT911[0m
+[0;33mW (1341) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1343) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1346) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1350) example: Install RGB LCD panel driver[0m
+[0;32mI (1390) example: Initialize RGB LCD panel[0m
+[0;32mI (1391) lv_port: Create LVGL task[0m
+[0;32mI (1421) MQTT_BACKUP: Read status: NO[0m
+[0;32mI (1425) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (1438) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1441) UI: Loaded 5 devices, showing...[0m
+[0;32mI (1445) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (1469) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1474) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1479) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1484) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1489) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1494) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1499) LVGL: Displayed 5 devices[0m
+[0;32mI (1544) MAIN: create main UI successfully[0m
+[0;32mI (1603) pp: pp rom version: e7ae62f[0m
+[0;32mI (1604) net80211: net80211 rom version: e7ae62f[0m
+Free heap: 3825672 bytes
+[0;32mI (1605) wifi:wifi driver task: 3fcd212c, prio:23, stack:6656, core=0[0m
+[0;32mI (1614) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1615) wifi:wifi certification version: v7.0[0m
+[0;32mI (1617) wifi:config NVS flash: enabled[0m
+[0;32mI (1620) wifi:config nano formatting: disabled[0m
+[0;32mI (1624) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1629) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1634) wifi:Init management short buffer num: 32[0m
+[0;32mI (1639) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1643) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1646) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1650) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1654) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1658) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1663) wifi_init: rx ba win: 16[0m
+[0;32mI (1665) wifi_init: accept mbox: 6[0m
+[0;32mI (1668) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1671) wifi_init: udp mbox: 6[0m
+[0;32mI (1674) wifi_init: tcp mbox: 6[0m
+[0;32mI (1677) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1680) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1684) wifi_init: tcp mss: 1440[0m
+[0;32mI (1687) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1690) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1694) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1698) reconnect: Found saved WiFi: NamTrung[0m
+[0;32mI (1703) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1710) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1748) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1748) wifi:enable tsf[0m
+[0;32mI (1750) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1750) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (1758) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1762) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1773) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1814) wifi:connected with NamTrung, aid = 20, channel 6, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (1814) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (1816) wifi:pm start, type: 1[0m
+
+[0;32mI (1819) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1827) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1836) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (1839) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2255) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2255) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3702484 bytes
+[0;32mI (2856) esp_netif_handlers: sta ip: 10.10.1.80, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2856) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2864) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2865) MQTT: Other event id:7[0m
+[0;32mI (2879) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2880) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:11, winSize:64[0m
+[0;32mI (2881) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:4, winSize:64[0m
+[0;32mI (2894) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=54207, return code=0x00 [0m
+[0;32mI (2900) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=8573, return code=0x00 [0m
+[0;32mI (3129) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=30201, return code=0x00 [0m
+[0;32mI (3131) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=21921, return code=0x00 [0m
+[0;32mI (3133) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=18608, return code=0x01 [0m
+[0;32mI (3139) MQTT: Topic: device/list[0m
+[0;32mI (3140) MQTT: Payload: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (3164) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (3168) MQTT: Device list unchanged[0m
+Free heap: 3691584 bytes
+[0;32mI (3765) WiFi: Connected with IP: 10.10.1.80[0m
+[0;32mI (3765) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:27:1E[0m
+[0;32mI (3866) NVS: last index: -1[0m
+[0;32mI (3866) NVS: wifi index: 0[0m
+[0;33mW (3866) WIFI_UI: WIFI_List_Button is invalid[0m
+Free heap: 3691584 bytes
+Free heap: 3691584 bytes
+Free heap: 3691620 bytes
+Free heap: 3691620 bytes
+Free heap: 3691620 bytes
+Free heap: 3691620 bytes
+STA:STA 
+Free heap: 3690340 bytes
+Free heap: 3689628 bytes
+Free heap: 3689628 bytes
+[0;32mI (12774) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (12775) wifi_scan: Total APs scanned = 18, actual AP number ap_info holds = 18[0m
+[0;32mI (12878) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (12879) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (12879) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (12883) wifi_scan: [0m
+[0;32mI (12883) wifi_scan: Found saved wifi network in scan list, ssid: NamTrung[0m
+[0;32mI (12888) wifi_scan: BSSID 10:5F:02:75:1E:9A[0m
+Free heap: 3691464 bytes
+Free heap: 3691464 bytes
+Free heap: 3691464 bytes
+Free heap: 3691464 bytes
+Free heap: 3691428 bytes
+Free heap: 3691428 bytes
+Free heap: 3691428 bytes
+Free heap: 3691464 bytes
+Free heap: 3691464 bytes
+Free heap: 3691428 bytes
+Free heap: 3691428 bytes
+esp_wifi_disconnect 
+[0;32mI (24320) wifi:state: run -> init (0x0)[0m
+[0;32mI (24321) wifi:pm stop, total sleep time: 15329739 us / 22502612 us[0m
+
+[0;32mI (24322) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (24323) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (24327) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24335) WiFi Sta: Connecting to wifi network, BSSID: 9E:65:F9:4C:4B:90[0m
+[0;32mI (24335) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (24335) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (24352) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (24359) wifi:I (24360) MQTT: MQTT_EVENT_ERROR[0m
+flush txqI (24364) MQTT: Last error code reported from esp-tls: 0x0
+
+[0;32mI (24370) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (24370) wifi:I (24375) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+stop sw txq
+[1;31mE (24383) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (24384) wifi:lmac stop hw txq[0m
+[0;32mI (24391) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (24395) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (24402) wifi:enable tsf[0m
+[0;32mI (24345) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (24410) WiFi Sta: GET: SSID:RD_HC_2DFE, password:nt@14092011[0m
+Free heap: 3692804 bytes
+[0;32mI (24913) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (24913) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (25088) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25089) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (25092) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (25098) wifi:state: assoc -> run (0x10)[0m
+Free heap: 3692968 bytes
+[0;32mI (26423) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (26423) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3692968 bytes
+Free heap: 3692968 bytes
+[0;32mI (27933) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (27933) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (28108) wifi:state: run -> init (0xf00)[0m
+[0;32mI (28110) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (28111) WiFi Sta: STA disconnected, reason=15[0m
+[0;32mI (28113) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+Free heap: 3693060 bytes
+[0;32mI (29443) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (29443) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3693060 bytes
+Free heap: 3693060 bytes
+[0;32mI (30953) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (30953) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3693060 bytes
+[0;32mI (32463) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (32463) WiFi Sta: Failed to connect to SSID:RD_HC_2DFE, password:nt@14092011[0m
+[0;33mW (32563) MANUAL CONNECT: CHECK CONNECTION 1/5[0m
+Free heap: 3693060 bytes
+[0;33mW (32663) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+[0;33mW (32663) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+Free heap: 3693060 bytes
+[0;32mI (34470) MQTT: Other event id:7[0m
+[1;31mE (34470) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (34471) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (34473) mqtt_client: Error transport connect[0m
+[0;32mI (34477) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (34480) MQTT: Last error code reported from esp-tls: 0x8004[0m
+[0;32mI (34486) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (34490) MQTT: Last captured errno : 0 (Success)[0m
+[0;32mI (34494) MQTT: MQTT_EVENT_DISCONNECTED[0m
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+Free heap: 3693048 bytes
+[0;32mI (41413) WiFi Sta: Connecting to wifi network, BSSID: 12:5F:02:15:1E:9A[0m
+[0;32mI (41449) wifi:flush txq[0m
+[0;32mI (41449) wifi:stop sw txq[0m
+[0;32mI (41449) wifi:lmac stop hw txq[0m
+[0;32mI (41450) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (41450) wifi:enable tsf[0m
+[0;32mI (41453) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (41460) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (41465) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (41472) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (41485) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (41500) wifi:connected with Namtrung 2.4G, aid = 28, channel 11, BW20, bssid = 12:5f:02:15:1e:9a[0m
+[0;32mI (41501) wifi:security: WPA2-PSK, phy: bgn, rssi: -61[0m
+[0;32mI (41504) wifi:pm start, type: 1[0m
+
+[0;32mI (41506) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (41515) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (41533) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Free heap: 3692404 bytes
+[0;32mI (41958) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (41958) WiFi Sta: Retrying to connect to the AP[0m
+[0;32mI (42546) esp_netif_handlers: sta ip: 10.10.1.80, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (42546) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (42547) WiFi Sta: Updating Wi-Fi credentials in NVS...[0m
+[0;32mI (42548) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (42554) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (42554) mqtt_client: Client force reconnect requested[0m
+[0;32mI (42565) MQTT: Other event id:7[0m
+[0;32mI (42565) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (42582) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (42582) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:1e:9a), tid:7, ssn:10, winSize:64[0m
+[0;32mI (42583) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (42629) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=39035, return code=0x00 [0m
+[0;32mI (42631) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=61373, return code=0x00 [0m
+[0;32mI (42801) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=36078, return code=0x00 [0m
+[0;32mI (42803) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=53176, return code=0x00 [0m
+[0;32mI (42805) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=40494, return code=0x01 [0m
+[0;32mI (42811) MQTT: Topic: device/list[0m
+[0;32mI (42812) MQTT: Payload: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (42836) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (42841) MQTT: Device list unchanged[0m
+Free heap: 3691468 bytes
+[0;32mI (43468) WiFi: Connected with IP: 10.10.1.80[0m
+[0;32mI (43468) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:1E:9A[0m
+[0;33mW (43570) MANUAL CONNECT: CHECK CONNECTION 1/5[0m
+[0;32mI (43630) NVS: last index: 3[0m
+[0;32mI (43630) NVS: wifi index: 2[0m
+[0;33mW (43670) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+[0;33mW (43670) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+Free heap: 3691504 bytes
+Free heap: 3691468 bytes
+Free heap: 3691504 bytes
+Free heap: 3691468 bytes
+Free heap: 3691504 bytes
+Free heap: 3691504 bytes
+Free heap: 3691504 bytes
+Free heap: 3689684 bytes
+Free heap: 3691504 bytes
+Free heap: 3690332 bytes
+Free heap: 3689732 bytes
+Free heap: 3689732 bytes
+[0;32mI (54920) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (54920) wifi_scan: Total APs scanned = 17, actual AP number ap_info holds = 17[0m
+[0;32mI (55038) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (55039) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (55041) wifi_scan: [0m
+[0;32mI (55041) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (55045) wifi_scan: BSSID 12:5F:02:15:1E:9A[0m
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+Free heap: 3691432 bytes
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+Free heap: 3691468 bytes
+esp_wifi_disconnect 
+[0;32mI (64911) wifi:state: run -> init (0x0)[0m
+Free heap: 3691404 bytes
+[0;32mI (64912) wifi:pm stop, total sleep time: 17494072 us / 23406041 us[0m
+
+[0;32mI (64913) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (64917) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (64920) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (64928) WiFi Sta: Connecting to wifi network, BSSID: 12:5F:02:15:1E:9A[0m
+[0;32mI (64928) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (64929) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (64939) wifi:E (64945) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+flush txq
+[0;32mI (64955) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (64956) wifi:I (64959) MQTT: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (64965) MQTT: Last tls stack error number: 0x0[0m
+stop sw txqI (64970) MQTT: Last captured errno : 113 (Software caused connection abort)
+
+[1;31mE (64977) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (64978) wifi:lmac stop hw txq[0m
+[0;32mI (64985) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (64988) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (64995) wifi:enable tsf[0m
+[0;32mI (64938) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (65003) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (65009) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (65015) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (65022) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (65027) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (65049) wifi:connected with Namtrung 2.4G, aid = 28, channel 11, BW20, bssid = 12:5f:02:15:1e:9a[0m
+[0;32mI (65049) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (65052) wifi:pm start, type: 1[0m
+
+[0;32mI (65055) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (65064) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:11[0m
+[0;32mI (65085) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (65507) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (65507) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3692424 bytes
+[0;32mI (66098) esp_netif_handlers: sta ip: 10.10.1.80, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (66098) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (66099) WiFi Sta: Wi-Fi credentials unchanged, skip saving[0m
+[0;32mI (66107) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (66107) mqtt_client: Client force reconnect requested[0m
+[0;32mI (66112) MQTT: Other event id:7[0m
+[0;32mI (66116) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (66121) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (66130) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (66135) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (66204) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=58180, return code=0x00 [0m
+[0;32mI (66206) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=9438, return code=0x00 [0m
+[0;32mI (66363) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=58242, return code=0x00 [0m
+[0;32mI (66365) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=42293, return code=0x00 [0m
+[0;32mI (66367) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=10398, return code=0x01 [0m
+[0;32mI (66373) MQTT: Topic: device/list[0m
+[0;32mI (66374) MQTT: Payload: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (66397) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (66402) MQTT: Device list unchanged[0m
+Free heap: 3691480 bytes
+[0;32mI (67017) WiFi: Connected with IP: 10.10.1.80[0m
+[0;32mI (67017) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:1E:9A[0m
+[0;33mW (67119) MANUAL CONNECT: CHECK CONNECTION 1/5[0m
+[0;32mI (67129) NVS: last index: 0[0m
+[0;32mI (67129) NVS: wifi index: 0[0m
+[0;33mW (67219) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+[0;33mW (67219) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+Free heap: 3691492 bytes
+Free heap: 3691492 bytes
+Free heap: 3691492 bytes
+Free heap: 3691492 bytes
+Free heap: 3691492 bytes
+Free heap: 3691444 bytes
+Free heap: 3691492 bytes
+Free heap: 3691492 bytes
+esp_wifi_disconnect 
+[0;32mI (75940) wifi:state: run -> init (0x0)[0m
+[0;32mI (75941) wifi:pm stop, total sleep time: 8569555 us / 10886590 us[0m
+
+[0;32mI (75942) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (75943) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (75947) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (75955) WiFi Sta: Connecting to wifi network, BSSID: 10:5F:02:75:1E:9A[0m
+[0;32mI (75955) WiFi Sta: STA disconnected, reason=8[0m
+[1;31mE (75956) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (75972) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (75975) wifi:I (75980) MQTT: MQTT_EVENT_ERROR[0m
+flush txqI (75985) MQTT: Last error code reported from esp-tls: 0x0
+
+[0;32mI (75991) MQTT: Last tls stack error number: 0x0[0m
+[0;32mI (75991) wifi:I (75995) MQTT: Last captured errno : 113 (Software caused connection abort)[0m
+stop sw txq
+[1;31mE (76003) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (76004) wifi:lmac stop hw txq[0m
+[0;32mI (76012) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (76015) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (76022) wifi:enable tsf[0m
+[0;32mI (75965) WiFi Sta: WIFI STA_DISCONNECTED.[0m
+[0;32mI (76030) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (76037) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (76041) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (76048) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (76056) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (76071) wifi:connected with NamTrung, aid = 21, channel 6, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (76071) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (76074) wifi:pm start, type: 1[0m
+
+[0;32mI (76076) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (76085) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Free heap: 3692544 bytes
+[0;32mI (76091) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (76533) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (76533) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3692392 bytes
+[0;32mI (77109) esp_netif_handlers: sta ip: 10.10.1.80, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (77109) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (77110) WiFi Sta: Updating Wi-Fi credentials in NVS...[0m
+[0;32mI (77117) WiFi Sta: Wi-Fi credentials saved successfully![0m
+[0;32mI (77120) MQTT_MANAGER: Starting MQTT safely...[0m
+[0;32mI (77123) mqtt_client: Client force reconnect requested[0m
+[0;32mI (77128) MQTT: Other event id:7[0m
+[0;32mI (77132) MQTT_MANAGER: MQTT started.[0m
+[0;32mI (77138) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:7, winSize:64[0m
+[0;32mI (77161) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (77174) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (77232) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=51298, return code=0x00 [0m
+[0;32mI (77234) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=52874, return code=0x00 [0m
+[0;32mI (77392) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=33184, return code=0x00 [0m
+[0;32mI (77394) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=2083, return code=0x00 [0m
+[0;32mI (77396) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=43466, return code=0x01 [0m
+[0;32mI (77402) MQTT: Topic: device/list[0m
+[0;32mI (77403) MQTT: Payload: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (77426) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (77431) MQTT: Device list unchanged[0m
+[0;32mI (78043) WiFi: Connected with IP: 10.10.1.80[0m
+[0;32mI (78043) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:27:1E[0m
+Free heap: 3691372 bytes
+[0;33mW (78145) MANUAL CONNECT: CHECK CONNECTION 1/5[0m
+[0;32mI (78157) NVS: last index: 0[0m
+[0;32mI (78157) NVS: wifi index: 1[0m
+[0;33mW (78245) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+[0;33mW (78245) MANUAL CONNECT: CHECK CONNECTION 2/5[0m
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+[0;32mI (83056) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (83069) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (83074) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (83097) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (83101) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (83107) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (83112) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (83117) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (83123) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (83127) LVGL: Displayed 5 devices[0m
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+Free heap: 3691336 bytes
+Free heap: 3691372 bytes
+Free heap: 3691372 bytes
+Free heap: 3691336 bytes
+Free heap: 3691372 bytes
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=140a54h (1313364) map[0m
+[0;32mI (286) esp_image: segment 1: paddr=00150a7c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (291) esp_image: segment 2: paddr=00156224 vaddr=40374000 size=09df4h ( 40436) load[0m
+[0;32mI (299) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=dd540h (906560) map[0m
+[0;32mI (433) esp_image: segment 4: paddr=0023d568 vaddr=4037ddf4 size=0ea8ch ( 60044) load[0m
+[0;32mI (445) esp_image: segment 5: paddr=0024bffc vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;33mW (465) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (466) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (473) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (480) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (485) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (489) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (493) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (498) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (502) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (507) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (511) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (516) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (520) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (525) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (530) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (542) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (542) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (543) esp_psram: Speed: 120MHz[0m
+[0;32mI (600) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (647) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (647) cpu_start: Multicore app[0m
+[0;32mI (796) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (805) cpu_start: Pro cpu start user code[0m
+[0;32mI (805) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (805) app_init: Application information:[0m
+[0;32mI (805) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (809) app_init: App version:      957d15a-dirty[0m
+[0;32mI (813) app_init: Compile time:     Jan 15 2026 14:28:22[0m
+[0;32mI (818) app_init: ELF file SHA256:  d04f5ef03...[0m
+[0;32mI (823) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (827) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (831) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (835) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (838) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (845) heap_init: At 3FCB38D8 len 00035E38 (215 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (855) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (860) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (866) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (872) esp_psram: Adding pool of 61K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (883) spi_flash: detected chip: generic[0m
+[0;32mI (887) spi_flash: flash io: qio[0m
+[0;32mI (890) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (896) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (903) coexist: coex firmware version: 831ec70[0m
+[0;32mI (916) coexist: coexist rom version e7ae62f[0m
+[0;32mI (916) main_task: Started on CPU0[0m
+[0;32mI (917) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (922) main_task: Calling app_main()[0m
+[0;33mW (935) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1341) GT911: Initialize I2C panel IO[0m
+[0;32mI (1341) GT911: Initialize touch controller GT911[0m
+[0;33mW (1341) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1343) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1346) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1350) example: Install RGB LCD panel driver[0m
+[0;32mI (1390) example: Initialize RGB LCD panel[0m
+[0;32mI (1391) lv_port: Create LVGL task[0m
+[0;32mI (1421) MQTT_BACKUP: Read status: NO[0m
+[0;32mI (1425) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (1438) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1441) UI: Loaded 5 devices, showing...[0m
+[0;32mI (1445) TAG_NVS: Loaded JSON from NVS: [{"name":"1","device_id":"94:E6:86:09:A4:78"},{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"B8:D6:1A:B9:DA:A4"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"}][0m
+[0;32mI (1469) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1474) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1479) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1484) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1489) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1494) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1499) LVGL: Displayed 5 devices[0m
+[0;32mI (1544) MAIN: create main UI successfully[0m
+[0;32mI (1546) pp: pp rom version: e7ae62f[0m
+[0;32mI (1547) net80211: net80211 rom version: e7ae62f[0m
+Free heap: 3825672 bytes
+[0;32mI (1549) wifi:wifi driver task: 3fcd212c, prio:23, stack:6656, core=0[0m
+[0;32mI (1577) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1577) wifi:wifi certification version: v7.0[0m
+[0;32mI (1577) wifi:config NVS flash: enabled[0m
+[0;32mI (1578) wifi:config nano formatting: disabled[0m
+[0;32mI (1582) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1588) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1591) wifi:Init management short buffer num: 32[0m
+[0;32mI (1596) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1600) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1603) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1607) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1612) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1615) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1620) wifi_init: rx ba win: 16[0m
+[0;32mI (1623) wifi_init: accept mbox: 6[0m
+[0;32mI (1626) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1629) wifi_init: udp mbox: 6[0m
+[0;32mI (1632) wifi_init: tcp mbox: 6[0m
+[0;32mI (1634) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1638) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1641) wifi_init: tcp mss: 1440[0m
+[0;32mI (1644) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1648) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1652) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1656) reconnect: Found saved WiFi: NamTrung[0m
+[0;32mI (1661) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1668) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1713) wifi:mode : sta (10:20:ba:05:9b:9c)[0m
+[0;32mI (1713) wifi:enable tsf[0m
+[0;32mI (1715) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1715) WiFi Sta: GET: SSID:NamTrung, password:nt@14092011[0m
+[0;32mI (1722) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1727) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1736) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1747) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1770) wifi:connected with NamTrung, aid = 21, channel 6, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (1770) wifi:security: WPA2-PSK, phy: bgn, rssi: -61[0m
+[0;32mI (1772) wifi:pm start, type: 1[0m
+
+[0;32mI (1775) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1783) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1792) WiFi Sta: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (1852) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2219) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2219) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3702484 bytes
+[0;32mI (2810) esp_netif_handlers: sta ip: 10.10.1.80, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2810) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (2829) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (2830) MQTT: Other event id:7[0m
+[0;32mI (2840) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:11, winSize:64[0m
+[0;32mI (2848) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2883) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2894) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=51966, return code=0x00 [0m
+[0;32mI (2900) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=46031, return code=0x00 [0m
+[0;32mI (3097) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=6902, return code=0x00 [0m
+[0;32mI (3100) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=39317, return code=0x00 [0m
+[0;32mI (3102) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=16504, return code=0x01 [0m
+[0;32mI (3107) MQTT: Topic: device/list[0m
+[0;32mI (3108) MQTT: Payload: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (3132) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (3136) MQTT: Device list unchanged[0m
+Free heap: 3691596 bytes
+[0;32mI (3729) WiFi: Connected with IP: 10.10.1.80[0m
+[0;32mI (3729) WiFi Sta: Connected to AP SSID:NamTrung, password:nt@14092011, bssid:10:5F:02:75:27:1E[0m
+[0;32mI (3830) NVS: last index: -1[0m
+[0;32mI (3830) NVS: wifi index: 0[0m
+[0;33mW (3830) WIFI_UI: WIFI_List_Button is invalid[0m
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691632 bytes
+Free heap: 3691596 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691596 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691656 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3689828 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691560 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691652 bytes
+Free heap: 3691616 bytes
+Free heap: 3691652 bytes

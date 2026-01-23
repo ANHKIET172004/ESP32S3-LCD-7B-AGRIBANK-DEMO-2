@@ -15,6 +15,8 @@ const char *TAG_AP = "WiFi SoftAP";  // Tag for SoftAP mode
 const char *TAG_STA = "WiFi Sta";    // Tag for Station mode
 
 TaskHandle_t wifi_TaskHandle;
+TaskHandle_t wifi_mqtt_manager_TaskHandle;//
+
 static wifi_sta_list_t sta_list;  // List to hold connected stations information
 
 

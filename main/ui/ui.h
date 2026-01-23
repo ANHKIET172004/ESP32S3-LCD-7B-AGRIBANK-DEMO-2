@@ -148,6 +148,7 @@ LV_IMG_DECLARE(ui_img_green_circle_2_70x70_png);    // assets/wifi_3_100x100-rem
 LV_IMG_DECLARE(ui_img_red_circle_70x70_png);    // assets/wifi_4_100x100-removebg-preview.png
 LV_IMG_DECLARE(ui_img_red_circle_20x20_png);    // assets/wifi_4_100x100-removebg-preview.png
 LV_IMG_DECLARE(ui_img_turn_back2_png);
+LV_IMG_DECLARE(ui_img_left_arrow_70x70_png);
 
 
 // FONTS
@@ -166,6 +167,7 @@ LV_FONT_DECLARE(ui_font_Chinese_Font);
 // UI INIT
 void ui_init(void);
 void ui_destroy(void);
+bool check_ui_init();
 
 #ifdef __cplusplus
 } /*extern "C"*/

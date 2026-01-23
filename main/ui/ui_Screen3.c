@@ -184,7 +184,9 @@ void ui_Screen3_screen_init(void)
     lv_obj_set_style_bg_color(ui_Screen3, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Image4 = lv_img_create(ui_Screen3);
-    lv_img_set_src(ui_Image4, &ui_img_turn_back2_png);
+    //lv_img_set_src(ui_Image4, &ui_img_turn_back2_png);
+    lv_img_set_src(ui_Image4, &ui_img_left_arrow_70x70_png);
+
     lv_obj_set_width(ui_Image4, LV_SIZE_CONTENT);
     lv_obj_set_height(ui_Image4, LV_SIZE_CONTENT);
     lv_obj_set_x(ui_Image4, -447);

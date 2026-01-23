@@ -108,6 +108,7 @@ extern int rate;
 extern int start_cnt;
 
 extern uint8_t no_wifi;
+extern lv_obj_t* ui_WIFI_CONT;
 
 
 bool user_manual=false;
@@ -116,9 +117,14 @@ extern esp_mqtt_client_handle_t mqttClient;
 
 extern void mqtt_retry_publish_task(void *pvParameters);
 extern void mqtt_start(void);
+
+extern lv_obj_t * ui_Screen1;
+extern lv_obj_t * ui_Screen2;
+extern lv_obj_t * ui_Screen3;
+extern lv_obj_t*ui_WIFI_CONT;
+
 /////wifi
 
-//extern int reconnect2;
 
 // EVENTS
 lv_obj_t * ui____initial_actions0;
@@ -330,6 +336,9 @@ void ui_event_WIFI_Connection_BUTTON(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         // Show the password input field
         _ui_flag_modify(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+        _ui_flag_modify(ui_WIFI_CONT, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);//
+       
+        _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);//
     }
 }
 
@@ -342,7 +351,7 @@ void ui_event_WIFI_INPUT_PWD(lv_event_t * e)
     if(event_code == LV_EVENT_DEFOCUSED) {
         // Hide the keyboard and the password input field when it loses focus
         _ui_flag_modify(ui_WIFI_INPUT_KEYBOARD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-        _ui_flag_modify(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        //_ui_flag_modify(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
     
     // Triggered when the password input field gains focus
@@ -361,7 +370,9 @@ void ui_event_WIFI_INPUT_PWD(lv_event_t * e)
         WIFIConnection(e);
         // Hide the keyboard and password field after connection attempt
         _ui_flag_modify(ui_WIFI_INPUT_KEYBOARD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-        _ui_flag_modify(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        //_ui_flag_modify(ui_WIFI_INPUT_PWD, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_WIFI_CONT, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+
         // Show the waiting for connection window
         _ui_flag_modify(ui_WIFI_Wait_CONNECTION, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
     }
@@ -400,6 +411,15 @@ void ui_init(void)
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Screen1);
 }
+
+bool check_ui_init(){
+    if (ui_Screen1==NULL||ui_Screen2==NULL||ui_Screen3==NULL||ui_WIFI_CONT==NULL){
+        return false;
+    }
+    return true;
+}
+
+
 
 void ui_destroy(void)
 {
