@@ -9,7 +9,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## ✨ Features
+## Features
 
 - Giao diện hiển thị số thứ tự khách hàng tại quầy trực quan trên LCD 7 inch
 - Hỗ trợ cảm ứng
@@ -34,7 +34,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## 🧩 System Overview
+## System Overview
 
 - MCU: **ESP32-S3**
 - Display: **LCD TFT 7 inch**
@@ -44,7 +44,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
@@ -56,7 +56,7 @@ project/
 └── README.md
 ```
 
-## 🔄 System Workflow
+## System Workflow
 
 ### 1. Boot & reconnect
 
