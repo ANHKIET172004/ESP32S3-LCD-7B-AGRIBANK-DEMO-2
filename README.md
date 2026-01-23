@@ -2,7 +2,7 @@
 
 ESP32-S3 + 7 Inch LCD Touch Screen
 
-Thiết bị màn hình hiển thị số thứ tự khách hàng sử dụng **ESP32-S3** và **LCD TFT 7 inch**,  
+Thiết bị màn hình hiển thị số thứ tự khách hàng sử dụng **ESP32-S3-Touch-LCD-7B**,  
 ứng dụng cho ngân hàng, bệnh viện, trung tâm hành chính, quầy giao dịch.
 
 Khách hàng có thể biết được số thứ tự được gọi đến quày giao dịch.
@@ -74,7 +74,7 @@ project/
 ### 2. Update device status
 
 - Gửi tin nhắn báo **online** lên server qua **MQTT** khi kết nối thành công
-- Cấu hình last will để Khi mất kết nối đến server trong vòng 25s thì server sẽ cập nhật trạng thái thiết bị lúc là **offline**
+- Cấu hình last will để Khi mất kết nối đến server trong vòng **25s** thì server sẽ cập nhật trạng thái thiết bị lúc là **offline**
 
 ---
 
@@ -101,7 +101,7 @@ project/
 
 ### 3. WiFi Configuration
 
-- Thưc hiện ở Screen Wifi
+- Thưc hiện ở **Screen Wifi**
 - Giao diện WiFi:
   - `Refresh`: quét lại danh sách WiFi
   - `Back`: quay lại màn hình trước
@@ -114,7 +114,7 @@ project/
 
 ### 6. Select keypad
 
-- Thưc hiện ở Screen 3
+- Thưc hiện ở **Screen 3**
 - Thiết bị nhận được list các bàn phím gọi số trong hệ thống từ server thông qua MQTT
 - List các thiết bị hiển thị trong Screen3
 - Keypad được chọn sẽ có **tên được in đen** tại list button
