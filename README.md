@@ -1,4 +1,4 @@
-# QMS-DISPLAY NUMBER SCREEN
+# QMS_DISPLAY NUMBER SCREEN
 
 ESP32-S3 + 7 Inch LCD Touch Screen
 
@@ -69,22 +69,11 @@ project/
 - Nếu thiết bị kết nối đến server thành công → Không hiển thị icon
 - Chạm **3 lần liên tục góc trên cùng bên trái** → vào giao diện menu (**Screen 2**)
 
-<<<<<<< HEAD
 <div align="center">
   <img src="./main/photo/manhinhchinh.jpg" alt="Màn hình chính" width="50%"/>
   <br>
   <em>Màn hình chính</em>
 </div>
-=======
----
-
-### 2. Update device status
-
-- Gửi tin nhắn báo **online** lên server qua **MQTT** khi kết nối thành công
-- Cấu hình last will để Khi mất kết nối đến server trong vòng **25s** thì server sẽ cập nhật trạng thái thiết bị lúc là **offline**
->>>>>>> cfa0d366d730caa5157b832510f3101f36c6e545
-
----
 
 ### 2. Display
 
@@ -123,11 +112,6 @@ project/
   - `Back`: quay lại màn hình trước
   - `Switch`: bật / tắt WiFi
 - Khi khởi động:
-<<<<<<< HEAD
-=======
-  - Mặc định set wifi STA để reconnect, ***switch off**
-  - **Không hiển thị danh sách WiFi cho đến khi switch được bật**
->>>>>>> cfa0d366d730caa5157b832510f3101f36c6e545
   - Tự động kết nối WiFi đã lưu trong NVS
 
 <div align="center">
