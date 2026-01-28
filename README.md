@@ -9,7 +9,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## ✨ Features
+## Features
 
 - Giao diện hiển thị số thứ tự khách hàng tại quầy trực quan trên LCD 7 inch
 - Hỗ trợ cảm ứng
@@ -34,7 +34,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## 🧩 System Overview
+## System Overview
 
 - MCU: **ESP32-S3**
 - Display: **LCD TFT 7 inch**
@@ -44,7 +44,7 @@ Khách hàng có thể biết được số thứ tự được gọi đến qu�
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
@@ -56,7 +56,7 @@ project/
 └── README.md
 ```
 
-## 🔄 System Workflow
+## System Workflow
 
 ### 1. Boot & reconnect
 
@@ -69,24 +69,23 @@ project/
 - Nếu thiết bị kết nối đến server thành công → Không hiển thị icon
 - Chạm **3 lần liên tục góc trên cùng bên trái** → vào giao diện menu (Screen 2)
 
+<div align="center">
+  <img src="./main/photo/manhinhchinh.jpg" alt="Màn hình chính" width="50%"/>
+  <br>
+  <em>Màn hình chính</em>
+</div>
+
 ---
 
-### 2. Update device status
-
-- Gửi tin nhắn báo **online** lên server qua **MQTT** khi kết nối thành công
-- Cấu hình last will để Khi mất kết nối đến server trong vòng 25s thì server sẽ cập nhật trạng thái thiết bị lúc là **offline**
-
----
-
-### 3. Display
+### 2. Display
 
 - Thiết bị nhận được số thứ tự khách hàng từ bàn phím gọi số → hiển thị màn hình số thứ tự
-- Thiết bị nhận được lệnh reset từ bàn phím gọi số → màn hình hiển thị **Chúng tôi vô cùng cảm ơn phản hồi của quý khách!** trong 1 giây
+- Thiết bị nhận được lệnh reset từ bàn phím gọi số → màn hình hiển thị trống
 - Khi chọn "RESET" tại màn hình menu thì màn hình hiển thị trống
 
 ---
 
-### 4. Menu & Settings
+### 3. Menu & Settings
 
 - Ở màn hình chính:
   - Chạm **3 lần góc trên bên trái** → vào menu để chọn chức năng
@@ -99,7 +98,15 @@ project/
   - **RESET**:
     - Xóa số hiển thị hiện tại trong bộ nhớ, màn hình hiển thị số lúc này sẽ trống
 
-### 3. WiFi Configuration
+<div align="center">
+  <img src="./main/photo/menu.jpg" alt="Màn hình chính" width="50%"/>
+  <br>
+  <em>Màn hình menu</em>
+</div>
+
+---
+
+### 4. WiFi Configuration
 
 - Thưc hiện ở Screen Wifi
 - Giao diện WiFi:
@@ -107,17 +114,28 @@ project/
   - `Back`: quay lại màn hình trước
   - `Switch`: bật / tắt WiFi
 - Khi khởi động:
-  - Không hiển thị danh sách WiFi cho đến khi switch được bật
   - Tự động kết nối WiFi đã lưu trong NVS
+
+<div align="center">
+  <img src="./main/photo/wifi.jpg" alt="Màn hình chính" width="50%"/>
+  <br>
+  <em>Màn hình cấu hình wifi</em>
+</div>
 
 ---
 
-### 6. Select keypad
+### 5. Select keypad
 
 - Thưc hiện ở Screen 3
 - Thiết bị nhận được list các bàn phím gọi số trong hệ thống từ server thông qua MQTT
 - List các thiết bị hiển thị trong Screen3
 - Keypad được chọn sẽ có **tên được in đen** tại list button
+
+<div align="center">
+  <img src="./main/photo/keypad.jpg" alt="Màn hình chính" width="50%"/>
+  <br>
+  <em>Màn hình chọn bàn phím gọi số để kết nối</em>
+</div>
 
 ---
 

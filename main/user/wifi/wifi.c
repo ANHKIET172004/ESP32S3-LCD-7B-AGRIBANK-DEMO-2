@@ -33,6 +33,12 @@ extern int cnt;
 uint8_t no_wifi=1;
 
 extern esp_netif_t *sta_netif;
+extern lv_obj_t*ui_WIFI_Rescan_Button;
+
+
+extern bool wifi_open;
+
+extern int open_cnt;
 
 
  char saved_ssid1[32]={0} ;
@@ -192,6 +198,7 @@ void wifi_init(void) {
 //}
 
 // Set DNS address for the SoftAP mode
+
 void wifi_ap_set_dns_addr(esp_netif_t *sta_netif, esp_netif_t *ap_netif)
 {
     esp_netif_dns_info_t dns;
@@ -221,8 +228,37 @@ void wifi_task(void *arg)
 
 
     ///////
+    lv_obj_add_state(ui_WIFI_OPEN,LV_STATE_CHECKED);
+    
+    lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
+
+    found_saved_ap=false;//
+
+    cnt=0;// 
+    _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+
+    // Remove the hidden flag from the Wifi scan list (show the list)
+    _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
+    no_wifi=0;
 
 
+    wifi_open=true;
+    open_cnt++;//
+
+    // Open WiFi in STA mode (station mode)
+    wifi_open_sta();
+    
+    // Disable the "Open WiFi" and "Open WiFi AP" buttons
+    _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);
+   // _ui_state_modify(ui_WIFI_AP_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_ADD);
+    
+    // Show the loading spinner while scanning for available networks
+    _ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
+
+    
+    // Set the WiFi scan flag to true
+    WIFI_SCAN_FLAG = true;
+/////////
 
     static uint8_t connection_num = 0;  // Variable to track the number of connected stations
 
@@ -269,6 +305,7 @@ void wifi_task(void *arg)
         }
 
         // Handle the SoftAP mode if the flag is set
+        /*
         if (WIFI_AP_FLAG)
         {
             esp_err_t ret = esp_wifi_ap_get_sta_list(&sta_list);  // Get the list of connected stations
@@ -287,10 +324,9 @@ void wifi_task(void *arg)
                 ESP_LOGE(TAG_AP, "Failed to get STA list");
             }
         }
-
+*/
         vTaskDelay(10);
     }
 } 
-
 
 

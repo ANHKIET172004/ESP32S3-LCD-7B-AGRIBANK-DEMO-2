@@ -598,6 +598,7 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
 
     //memcpy(wifi_config.sta.bssid, bssid, 6); 
     //wifi_config.sta.bssid_set = true;  
+    wifi_config.sta.bssid_set = false; 
         
         
     ESP_LOGI(TAG_STA, "Connecting to wifi network, BSSID: %02X:%02X:%02X:%02X:%02X:%02X",

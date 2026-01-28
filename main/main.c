@@ -127,13 +127,13 @@ void app_main(void) {
 
     xTaskCreatePinnedToCore(wifi_mqtt_manager_task, "wifi_mqtt_manager_task", 6* 1024, NULL, 4, &wifi_mqtt_manager_TaskHandle, 1);//4
     
-    /*
+    
      while (1){
         size_t free_heap = esp_get_free_heap_size();
          printf("Free heap: %d bytes\n", free_heap);
          vTaskDelay(pdMS_TO_TICKS(1000));
      }
-         */
+         
          
     
     }

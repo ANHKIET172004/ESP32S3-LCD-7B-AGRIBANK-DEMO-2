@@ -2,33 +2,17 @@ file(GLOB_RECURSE srcs *.c
                    ui/*.c
                    ui/components/*.c
                    ui/screens/*.c
-                   #user/add_password/*.c
                    user/wifi/*.c
-                   gatt_server/*.c
-                   gatt_client/*.c
                    esp_mqtt_client/*.c
                    init_handle/*.c
-                   #user/rs485/*.c
-                   #user/can/*.c
-                   #user/pwm/*.c
-                   #user/sd_card/*.c
                    )
 set(include_dirs 
    . 
    ui
-  # user/add_password
    user/wifi
-   gatt_server
-   gatt_client
    esp_mqtt_client
    init_handle
-   #user/rs485
-   #user/can
-   #user/pwm
-   #user/sd_card
-   
-                          
-                       
+                     
    )
 idf_component_register( SRCS ${srcs} INCLUDE_DIRS ${include_dirs})
 

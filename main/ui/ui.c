@@ -202,16 +202,6 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
         cnt=0;// 
         _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
 
-       ////
-/*
-  if (mqttClient) {
-            esp_mqtt_client_start(mqttClient); 
-        } else {
-            mqtt_start(); 
-        }
-*/
-
-       /////
         // Remove the hidden flag from the Wifi scan list (show the list)
         _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
         no_wifi=0;
@@ -225,15 +215,6 @@ void ui_event_WIFI_OPEN(lv_event_t * e)
 
         cnt=0;//
         _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
-
-/////
-/*
-     if (mqttClient) {
-            esp_mqtt_client_stop(mqttClient);
-        }
-            */
-
-//////
 
 
         // Add the hidden flag to the Wifi scan list (hide the list)
