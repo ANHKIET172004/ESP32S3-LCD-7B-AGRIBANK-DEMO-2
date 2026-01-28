@@ -17,7 +17,7 @@
 
 bool wifi_open=false;
 
-extern int open_cnt;
+//extern int open_cnt;
 extern bool spe_case;
 
 extern lv_obj_t* ui_WIFI_Rescan_Button;
@@ -83,7 +83,7 @@ void reconnect_to_saved_wifi() {
 void WIFIOPEN(lv_event_t * e)
 {   
     wifi_open=true;
-    open_cnt++;//
+    //open_cnt++;//
 
     // Open WiFi in STA mode (station mode)
     wifi_open_sta();

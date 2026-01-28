@@ -11,13 +11,13 @@
 #include "esp_mqtt_client.h"
 
 
-const char *TAG_AP = "WiFi SoftAP";  // Tag for SoftAP mode
+//const char *TAG_AP = "WiFi SoftAP";  // Tag for SoftAP mode
 const char *TAG_STA = "WiFi Sta";    // Tag for Station mode
 
 TaskHandle_t wifi_TaskHandle;
 TaskHandle_t wifi_mqtt_manager_TaskHandle;//
 
-static wifi_sta_list_t sta_list;  // List to hold connected stations information
+//static wifi_sta_list_t sta_list;  // List to hold connected stations information
 
 
 ////////// các biến liên quan đến cấu hình wifi
@@ -38,7 +38,7 @@ extern lv_obj_t*ui_WIFI_Rescan_Button;
 
 extern bool wifi_open;
 
-extern int open_cnt;
+//extern int open_cnt;
 
 
  char saved_ssid1[32]={0} ;
@@ -92,6 +92,7 @@ static void wifi_connection_cb(lv_timer_t *timer)
 }
 
 // Callback function to update UI with connected stations information in SoftAP mode
+/*
 static void wifi_ap_cb(lv_timer_t *timer)
 {
     char mac_str[32];  // Buffer to hold formatted MAC address string
@@ -128,7 +129,7 @@ static void wifi_ap_cb(lv_timer_t *timer)
         ESP_LOGI(TAG_AP, "STA %d: RSSI: %d", i, sta_info.rssi);
     }
 }
-
+*/
 
 void wifi_init(void) {
    // s_wifi_event_group = xEventGroupCreate();
@@ -228,22 +229,22 @@ void wifi_task(void *arg)
 
 
     ///////
-    lv_obj_add_state(ui_WIFI_OPEN,LV_STATE_CHECKED);
+    lv_obj_add_state(ui_WIFI_OPEN,LV_STATE_CHECKED);// switch on
     
-    lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
+    //lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);// 
 
-    found_saved_ap=false;//
+    found_saved_ap=false;// đánh dấu chưa tìm được ap lưu trong nvs
 
-    cnt=0;// 
-    _ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    //cnt=0;// 
+    //_ui_flag_modify(ui_WIFI_PWD_Error, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
 
     // Remove the hidden flag from the Wifi scan list (show the list)
-    _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); 
-    no_wifi=0;
+    _ui_flag_modify(ui_WIFI_SCAN_List, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE); // hiện list wifi được scan
+    //no_wifi=0;
 
 
-    wifi_open=true;
-    open_cnt++;//
+    //wifi_open=true;
+    //open_cnt++;// tăng biến đếm số lần switch on
 
     // Open WiFi in STA mode (station mode)
     wifi_open_sta();
@@ -260,7 +261,7 @@ void wifi_task(void *arg)
     WIFI_SCAN_FLAG = true;
 /////////
 
-    static uint8_t connection_num = 0;  // Variable to track the number of connected stations
+   // static uint8_t connection_num = 0;  // Variable to track the number of connected stations
 
     while (1)
     {   

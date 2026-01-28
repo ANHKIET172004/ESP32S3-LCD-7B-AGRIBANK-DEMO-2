@@ -36,7 +36,7 @@ static esp_lcd_touch_handle_t tp_handle = NULL;
 
 //uint8_t start_cnt=0;
 bool spe_case=true;// reconnect khi khởi động và kết nối wifi bằng cách nhập từ màn hình
-int open_cnt=0;// biến đếm số lần bật switch
+//int open_cnt=0;// biến đếm số lần bật switch
 
 
 SemaphoreHandle_t wifi_cred_mutex = NULL;

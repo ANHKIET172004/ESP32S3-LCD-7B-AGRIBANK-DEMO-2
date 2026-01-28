@@ -1,0 +1,1208 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\16_LVGL_UI.elf D:\ESP32\ESP32S3_LCD 7B_DEMO_3\ESP32-S3-Touch-LCD-7B-Demo\ESP32-S3-Touch-LCD-7B-Demo\ESP-IDF\16_LVGL_UI 2\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM10'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x29 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1710
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x31d4
+entry 0x403c894c
+[0;32mI (25) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Oct 10 2025 10:23:37[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (74) boot:  2 factory          factory app      00 00 00010000 00800000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c0e0020 size=140964h (1313124) map[0m
+[0;32mI (286) esp_image: segment 1: paddr=0015098c vaddr=3fc9c900 size=057a0h ( 22432) load[0m
+[0;32mI (291) esp_image: segment 2: paddr=00156134 vaddr=40374000 size=09ee4h ( 40676) load[0m
+[0;32mI (299) esp_image: segment 3: paddr=00160020 vaddr=42000020 size=dd454h (906324) map[0m
+[0;32mI (433) esp_image: segment 4: paddr=0023d47c vaddr=4037dee4 size=0e99ch ( 59804) load[0m
+[0;32mI (445) esp_image: segment 5: paddr=0024be20 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;33mW (465) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (466) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (473) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (480) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (485) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (489) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (493) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (498) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (502) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (507) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (511) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (516) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (520) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (525) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (530) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (542) MSPI Timing: PSRAM timing tuning index: 2[0m
+[0;32mI (542) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (543) esp_psram: Speed: 120MHz[0m
+[0;32mI (600) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (647) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (647) cpu_start: Multicore app[0m
+[0;32mI (796) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (805) cpu_start: Pro cpu start user code[0m
+[0;32mI (805) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (805) app_init: Application information:[0m
+[0;32mI (805) app_init: Project name:     16_LVGL_UI[0m
+[0;32mI (809) app_init: App version:      eddf18d-dirty[0m
+[0;32mI (813) app_init: Compile time:     Jan 28 2026 15:32:36[0m
+[0;32mI (818) app_init: ELF file SHA256:  3f7c32ef6...[0m
+[0;32mI (823) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (827) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (831) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (835) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (838) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (845) heap_init: At 3FCB3820 len 00035EF0 (215 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (855) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (860) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (866) esp_psram: Adding pool of 5952K of PSRAM memory to heap allocator[0m
+[0;32mI (872) esp_psram: Adding pool of 61K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator[0m
+[0;32mI (883) spi_flash: detected chip: generic[0m
+[0;32mI (887) spi_flash: flash io: qio[0m
+[0;32mI (890) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (896) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (903) coexist: coex firmware version: 831ec70[0m
+[0;32mI (916) coexist: coexist rom version e7ae62f[0m
+[0;32mI (916) main_task: Started on CPU0[0m
+[0;32mI (917) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (922) main_task: Calling app_main()[0m
+[0;33mW (937) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1342) GT911: Initialize I2C panel IO[0m
+[0;32mI (1342) GT911: Initialize touch controller GT911[0m
+[0;33mW (1342) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1344) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1347) GT911: TouchPad_Config_Version:91[0m
+[0;32mI (1351) NVS_LOG: RESET RETRY SUCCESSFULLY[0m
+[0;32mI (1355) example: Install RGB LCD panel driver[0m
+[0;32mI (1394) example: Initialize RGB LCD panel[0m
+[0;32mI (1395) NVS_LOG: RESET RETRY SUCCESSFULLY[0m
+[0;32mI (1397) lv_port: Create LVGL task[0m
+[0;32mI (1426) MQTT_BACKUP: Read status: NO[0m
+[0;32mI (1430) TAG_NVS: Loaded JSON from NVS: [{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"10:20:BA:01:48:A8"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"},{"name":"6","device_id":"B8:D6:1A:B9:DA:A4"}][0m
+[0;32mI (1443) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1446) UI: Loaded 5 devices, showing...[0m
+[0;32mI (1450) TAG_NVS: Loaded JSON from NVS: [{"name":"2","device_id":"A8:42:E3:4C:7C:BC"},{"name":"3","device_id":"10:20:BA:01:48:A8"},{"name":"4","device_id":"R1:42:E3:4C:7C:BC"},{"name":"5","device_id":"R2:42:E3:4C:7C:BC"},{"name":"6","device_id":"B8:D6:1A:B9:DA:A4"}][0m
+[0;32mI (1473) TAG_NVS: Loaded 5 devices from NVS[0m
+[0;32mI (1478) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1484) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1489) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1494) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1499) READ_DEVICE_ID: Read device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1503) LVGL: Displayed 5 devices[0m
+[0;32mI (1609) NVS_LOG: RESET RETRY SUCCESSFULLY[0m
+[0;32mI (1609) MAIN: create main UI successfully[0m
+[0;32mI (1610) NVS_LOG: RESET RETRY SUCCESSFULLY[0m
+[0;32mI (1610) NVS_LOG: RESET RETRY SUCCESSFULLY[0m
+[0;32mI (1615) pp: pp rom version: e7ae62f[0m
+[0;32mI (1617) net80211: net80211 rom version: e7ae62f[0m
+Free heap: 3823756 bytes
+[0;32mI (1622) wifi:wifi driver task: 3fcd2198, prio:23, stack:6656, core=0[0m
+[0;32mI (1636) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1636) wifi:wifi certification version: v7.0[0m
+[0;32mI (1638) wifi:config NVS flash: enabled[0m
+[0;32mI (1641) wifi:config nano formatting: disabled[0m
+[0;32mI (1646) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1651) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1654) wifi:Init management short buffer num: 32[0m
+[0;32mI (1659) wifi:Init static tx buffer num: 16[0m
+[0;32mI (1663) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (1667) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1671) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1675) wifi:Init static rx buffer num: 16[0m
+[0;32mI (1679) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1684) wifi_init: rx ba win: 16[0m
+[0;32mI (1686) wifi_init: accept mbox: 6[0m
+[0;32mI (1689) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1692) wifi_init: udp mbox: 6[0m
+[0;32mI (1695) wifi_init: tcp mbox: 6[0m
+[0;32mI (1698) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1701) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1704) wifi_init: tcp mss: 1440[0m
+[0;32mI (1707) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1711) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1715) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1719) reconnect: Found saved WiFi: Namtrung 2.4G[0m
+[0;32mI (1724) WiFi: Wi-Fi and IP event handlers registered[0m
+Wi-Fi event handler registered.
+[0;32mI (1731) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1781) wifi:mode : sta (10:20:ba:01:48:a8)[0m
+[0;32mI (1782) wifi:enable tsf[0m
+[0;32mI (1783) reconnect: WiFi init complete, waiting for connection...[0m
+[0;32mI (1783) WiFi Sta: GET: SSID:Namtrung 2.4G, password:nt@14092011[0m
+[0;32mI (1790) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1796) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1803) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1817) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1932) wifi:connected with Namtrung 2.4G, aid = 18, channel 2, BW20, bssid = 12:5f:02:15:27:1e[0m
+[0;32mI (1933) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (1936) wifi:pm start, type: 1[0m
+
+[0;32mI (1938) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1946) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1955) WiFi Sta: Connected to SSID:Namtrung 2.4G, channel:2[0m
+[0;32mI (1988) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2288) WiFi Sta: Failed to connect to the AP[0m
+[0;32mI (2288) WiFi Sta: Retrying to connect to the AP[0m
+Free heap: 3700572 bytes
+[0;32mI (3006) esp_netif_handlers: sta ip: 10.10.1.31, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3006) WiFi Sta: WIFI GOT_IP.[0m
+[0;32mI (3021) MQTT_MANAGER: No existing client, creating new one...[0m
+[0;32mI (3022) MQTT: Other event id:7[0m
+[0;32mI (3039) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (3045) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3051) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3059) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=23609, return code=0x00 [0m
+[0;32mI (3061) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=59465, return code=0x00 [0m
+[0;32mI (3291) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=37717, return code=0x00 [0m
+[0;32mI (3293) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=54703, return code=0x00 [0m
+[0;32mI (3294) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=30753, return code=0x01 [0m
+[0;32mI (3301) MQTT: Topic: device/list[0m
+[0;32mI (3301) MQTT: Payload: [{"id":"10:20:BA:01:48:A8","name":"quay 3"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 6"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (3324) MQTT_BACKUP: Parsed 5 devices from MQTT[0m
+[0;32mI (3329) MQTT: Device list unchanged[0m
+Free heap: 3689700 bytes
+[0;32mI (3798) WiFi: Connected with IP: 10.10.1.31[0m
+[0;32mI (3798) WiFi Sta: Connected to AP SSID:Namtrung 2.4G, password:nt@14092011, bssid:12:5F:02:15:27:1E[0m
+STA:STA 
+[0;32mI (3907) NVS: last index: -1[0m
+[0;32mI (3907) NVS: wifi index: 0[0m
+[0;33mW (3907) WIFI_UI: WIFI_List_Button is invalid[0m
+[0;32mI (4552) MQTT: Topic: responsenumber[0m
+[0;32mI (4552) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2893","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (4557) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4562) MQTT: Updated number: 2893[0m
+[0;32mI (4567) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (4570) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3688728 bytes
+[0;32mI (4987) MQTT: Topic: responsenumber[0m
+[0;32mI (4988) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (4988) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3688128 bytes
+[0;32mI (5838) MQTT: Topic: responsenumber[0m
+[0;32mI (5838) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1877","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (5843) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (5848) MQTT: Updated number: 1877[0m
+[0;32mI (5852) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (5856) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (6622) MQTT: Topic: responsenumber[0m
+[0;32mI (6622) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2894","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (6627) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (6632) MQTT: Updated number: 2894[0m
+[0;32mI (6636) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (6640) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (6703) wifi_scan: Max AP number ap_info can hold = 20[0m
+[0;32mI (6703) wifi_scan: Total APs scanned = 15, actual AP number ap_info holds = 15[0m
+Free heap: 3689640 bytes
+[0;32mI (6804) MQTT: Topic: responsenumber[0m
+[0;32mI (6804) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1878","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (6805) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (6808) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (6813) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (6822) NVS: Have a saved wifi network in NVS[0m
+[0;32mI (6833) wifi_scan: [0m
+[0;32mI (6833) wifi_scan: Found saved wifi network in scan list, ssid: Namtrung 2.4G[0m
+[0;32mI (6835) wifi_scan: BSSID 12:5F:02:15:27:1E[0m
+[0;32mI (6848) MQTT: Updated number: 1878[0m
+[0;32mI (6849) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (6850) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (7930) MQTT: Topic: responsenumber[0m
+[0;32mI (7930) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1879","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (7935) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7940) MQTT: Updated number: 1879[0m
+[0;32mI (7946) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (7949) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (8658) MQTT: Topic: responsenumber[0m
+[0;32mI (8658) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (8658) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689640 bytes
+[0;32mI (9760) MQTT: Topic: responsenumber[0m
+[0;32mI (9760) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2895","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (9765) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (9770) MQTT: Updated number: 2895[0m
+[0;32mI (9774) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (9778) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+[0;32mI (11091) MQTT: Topic: responsenumber[0m
+[0;32mI (11091) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2896","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (11096) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (11101) MQTT: Updated number: 2896[0m
+[0;32mI (11105) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (11109) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (12008) MQTT: Topic: responsenumber[0m
+[0;32mI (12009) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2897","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (12013) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (12019) MQTT: Updated number: 2897[0m
+[0;32mI (12023) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (12027) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (13563) MQTT: Topic: responsenumber[0m
+[0;32mI (13563) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1880","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (13568) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (13573) MQTT: Updated number: 1880[0m
+[0;32mI (13577) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (13581) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689640 bytes
+[0;32mI (14774) MQTT: Topic: responsenumber[0m
+[0;32mI (14774) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (14775) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689640 bytes
+[0;32mI (14818) MQTT: Topic: responsenumber[0m
+[0;32mI (14818) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1881","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (14823) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (14829) MQTT: Updated number: 1881[0m
+[0;32mI (14834) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (14837) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689640 bytes
+[0;32mI (16104) MQTT: Topic: responsenumber[0m
+[0;32mI (16104) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1882","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (16109) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (16114) MQTT: Updated number: 1882[0m
+[0;32mI (16119) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (16123) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (16923) MQTT: Topic: responsenumber[0m
+[0;32mI (16923) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1883","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (16928) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (16933) MQTT: Updated number: 1883[0m
+[0;32mI (16937) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (16941) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (17460) MQTT: Topic: responsenumber[0m
+[0;32mI (17461) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1884","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (17465) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (17471) MQTT: Updated number: 1884[0m
+[0;32mI (17475) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (17479) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (18562) MQTT: Topic: responsenumber[0m
+[0;32mI (18562) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1885","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (18567) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (18572) MQTT: Updated number: 1885[0m
+[0;32mI (18577) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (18581) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+Free heap: 3689508 bytes
+[0;32mI (20097) MQTT: Topic: responsenumber[0m
+[0;32mI (20097) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1886","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (20102) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (20107) MQTT: Updated number: 1886[0m
+[0;32mI (20111) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (20115) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (21633) MQTT: Topic: responsenumber[0m
+[0;32mI (21633) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2898","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (21638) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (21643) MQTT: Updated number: 2898[0m
+[0;32mI (21647) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (21651) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (21791) MQTT: Topic: responsenumber[0m
+[0;32mI (21792) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (21792) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689508 bytes
+Free heap: 3689544 bytes
+[0;32mI (22881) MQTT: Topic: responsenumber[0m
+[0;32mI (22881) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2899","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (22886) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (22892) MQTT: Updated number: 2899[0m
+[0;32mI (22896) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (22900) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (24091) MQTT: Topic: responsenumber[0m
+[0;32mI (24091) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2900","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (24096) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (24101) MQTT: Updated number: 2900[0m
+[0;32mI (24105) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (24109) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (25626) MQTT: Topic: responsenumber[0m
+[0;32mI (25627) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1887","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (25631) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (25637) MQTT: Updated number: 1887[0m
+[0;32mI (25642) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (25645) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (26770) MQTT: Topic: responsenumber[0m
+[0;32mI (26770) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2901","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (26775) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (26781) MQTT: Updated number: 2901[0m
+[0;32mI (26786) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (26789) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689544 bytes
+[0;32mI (27891) MQTT: Topic: responsenumber[0m
+[0;32mI (27891) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2902","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (27896) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (27901) MQTT: Updated number: 2902[0m
+[0;32mI (27934) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (27934) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (28921) MQTT: Topic: responsenumber[0m
+[0;32mI (28922) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1888","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (28926) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (28932) MQTT: Updated number: 1888[0m
+[0;32mI (28936) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (28940) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689640 bytes
+[0;32mI (30149) MQTT: Topic: responsenumber[0m
+[0;32mI (30150) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1889","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (30154) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (30160) MQTT: Updated number: 1889[0m
+[0;32mI (30164) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (30168) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (30278) MQTT: Topic: responsenumber[0m
+[0;32mI (30279) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1890","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (30283) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (30289) MQTT: Updated number: 1890[0m
+[0;32mI (30294) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (30297) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (31380) MQTT: Topic: responsenumber[0m
+[0;32mI (31380) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2903","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (31385) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (31390) MQTT: Updated number: 2903[0m
+[0;32mI (31394) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (31399) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (41302) MQTT: Topic: responsenumber[0m
+[0;32mI (41302) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (41303) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (45501) MQTT: Topic: responsenumber[0m
+[0;32mI (45501) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2904","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (45506) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (45511) MQTT: Updated number: 2904[0m
+[0;32mI (45515) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (45520) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+[0;32mI (49487) MQTT: Topic: responsenumber[0m
+[0;32mI (49487) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1891","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (49492) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (49497) MQTT: Updated number: 1891[0m
+[0;32mI (49501) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (49506) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (55630) MQTT: Topic: responsenumber[0m
+[0;32mI (55630) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (55630) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+[0;32mI (60768) MQTT: Topic: responsenumber[0m
+[0;32mI (60768) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (60768) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (64863) MQTT: Topic: responsenumber[0m
+[0;32mI (64863) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (64864) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+Free heap: 3689640 bytes
+Free heap: 3689676 bytes
+[0;32mI (69867) MQTT: Topic: responsenumber[0m
+[0;32mI (69867) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2905","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (69872) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (69877) MQTT: Updated number: 2905[0m
+[0;32mI (69882) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (69886) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689640 bytes
+[0;32mI (76111) MQTT: Topic: responsenumber[0m
+[0;32mI (76111) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (76111) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (82869) MQTT: Topic: responsenumber[0m
+[0;32mI (82869) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2906","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (82874) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (82880) MQTT: Updated number: 2906[0m
+[0;32mI (82884) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (82888) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (84815) MQTT: Topic: responsenumber[0m
+[0;32mI (84815) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1892","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (84820) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (84825) MQTT: Updated number: 1892[0m
+[0;32mI (84831) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (84834) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+Free heap: 3689676 bytes
+[0;32mI (85959) MQTT: Topic: responsenumber[0m
+[0;32mI (85960) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2907","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (85964) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (85970) MQTT: Updated number: 2907[0m
+[0;32mI (85974) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (85978) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (87073) MQTT: Topic: responsenumber[0m
+[0;32mI (87073) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1893","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (87078) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (87084) MQTT: Updated number: 1893[0m
+[0;32mI (87089) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (87092) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689640 bytes
+[0;32mI (88210) MQTT: Topic: responsenumber[0m
+[0;32mI (88210) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1894","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (88215) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (88221) MQTT: Updated number: 1894[0m
+[0;32mI (88225) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (88229) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689676 bytes
+[0;32mI (89237) MQTT: Topic: responsenumber[0m
+[0;32mI (89237) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2908","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (89242) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (89247) MQTT: Updated number: 2908[0m
+[0;32mI (89251) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (89255) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (90364) MQTT: Topic: responsenumber[0m
+[0;32mI (90364) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1895","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (90369) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (90381) MQTT: Updated number: 1895[0m
+[0;32mI (90382) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (90383) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689508 bytes
+[0;32mI (91898) MQTT: Topic: responsenumber[0m
+[0;32mI (91898) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1896","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (91903) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (91908) MQTT: Updated number: 1896[0m
+[0;32mI (91912) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (91917) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (93129) MQTT: Topic: responsenumber[0m
+[0;32mI (93129) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1897","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (93134) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (93169) MQTT: Updated number: 1897[0m
+[0;32mI (93170) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (93171) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (94254) MQTT: Topic: responsenumber[0m
+[0;32mI (94254) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (94255) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (94458) MQTT: Topic: responsenumber[0m
+[0;32mI (94458) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1898","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (94463) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (94468) MQTT: Updated number: 1898[0m
+[0;32mI (94473) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (94476) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (95488) MQTT: Topic: responsenumber[0m
+[0;32mI (95488) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1899","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (95493) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (95499) MQTT: Updated number: 1899[0m
+[0;32mI (95503) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (95507) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (96609) MQTT: Topic: responsenumber[0m
+[0;32mI (96609) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2909","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (96614) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (96619) MQTT: Updated number: 2909[0m
+[0;32mI (96625) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (96628) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (97845) MQTT: Topic: responsenumber[0m
+[0;32mI (97845) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2910","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (97850) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (97855) MQTT: Updated number: 2910[0m
+[0;32mI (97859) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (97863) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689380 bytes
+Free heap: 3689544 bytes
+[0;32mI (99047) MQTT: Topic: responsenumber[0m
+[0;32mI (99048) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2911","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (99052) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (99058) MQTT: Updated number: 2911[0m
+[0;32mI (99063) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (99066) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (100277) MQTT: Topic: responsenumber[0m
+[0;32mI (100277) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2912","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (100282) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (100287) MQTT: Updated number: 2912[0m
+[0;32mI (100292) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (100296) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (100300) MQTT: Topic: responsenumber[0m
+[0;32mI (100304) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (100311) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689544 bytes
+[0;32mI (101199) MQTT: Topic: responsenumber[0m
+[0;32mI (101199) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1900","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (101204) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (101209) MQTT: Updated number: 1900[0m
+[0;32mI (101214) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (101218) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (102431) MQTT: Topic: responsenumber[0m
+[0;32mI (102431) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1901","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (102436) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (102442) MQTT: Updated number: 1901[0m
+[0;32mI (102446) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (102450) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (103760) MQTT: Topic: responsenumber[0m
+[0;32mI (103760) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1902","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (103765) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (103770) MQTT: Updated number: 1902[0m
+[0;32mI (103776) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (103779) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (104680) MQTT: Topic: responsenumber[0m
+[0;32mI (104680) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1903","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (104685) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (104691) MQTT: Updated number: 1903[0m
+[0;32mI (104695) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (104699) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689544 bytes
+[0;32mI (106011) MQTT: Topic: responsenumber[0m
+[0;32mI (106012) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1904","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (106017) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (106022) MQTT: Updated number: 1904[0m
+[0;32mI (106028) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (106031) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (106936) MQTT: Topic: responsenumber[0m
+[0;32mI (106936) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1905","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (106941) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (106947) MQTT: Updated number: 1905[0m
+[0;32mI (106951) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (106955) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (107445) MQTT: Topic: responsenumber[0m
+[0;32mI (107445) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2913","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (107450) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (107455) MQTT: Updated number: 2913[0m
+[0;32mI (107460) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (107464) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (107957) MQTT: Topic: responsenumber[0m
+[0;32mI (107957) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1906","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (107962) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (107967) MQTT: Updated number: 1906[0m
+[0;32mI (107972) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (107976) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (109186) MQTT: Topic: responsenumber[0m
+[0;32mI (109186) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1907","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (109191) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (109196) MQTT: Updated number: 1907[0m
+[0;32mI (109201) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (109205) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (110415) MQTT: Topic: responsenumber[0m
+[0;32mI (110415) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2914","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (110420) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (110425) MQTT: Updated number: 2914[0m
+[0;32mI (110430) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (110434) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (111848) MQTT: Topic: responsenumber[0m
+[0;32mI (111848) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2915","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (111853) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (111859) MQTT: Updated number: 2915[0m
+[0;32mI (111863) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (111867) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689544 bytes
+[0;32mI (113282) MQTT: Topic: responsenumber[0m
+[0;32mI (113282) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2916","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (113287) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (113293) MQTT: Updated number: 2916[0m
+[0;32mI (113298) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (113301) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689508 bytes
+[0;32mI (115330) MQTT: Topic: responsenumber[0m
+[0;32mI (115331) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1908","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (115335) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (115341) MQTT: Updated number: 1908[0m
+[0;32mI (115346) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (115349) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (115548) MQTT: Topic: responsenumber[0m
+[0;32mI (115548) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2917","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (115553) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (115559) MQTT: Updated number: 2917[0m
+[0;32mI (115563) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (115567) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+Free heap: 3689544 bytes
+[0;32mI (117303) MQTT: Topic: responsenumber[0m
+[0;32mI (117303) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1909","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (117308) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (117313) MQTT: Updated number: 1909[0m
+[0;32mI (117318) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (117322) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (118197) MQTT: Topic: responsenumber[0m
+[0;32mI (118197) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2918","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (118202) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (118208) MQTT: Updated number: 2918[0m
+[0;32mI (118212) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (118216) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (119547) MQTT: Topic: responsenumber[0m
+[0;32mI (119547) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2919","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (119552) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (119557) MQTT: Updated number: 2919[0m
+[0;32mI (119562) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (119566) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (120789) MQTT: Topic: responsenumber[0m
+[0;32mI (120789) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2920","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (120794) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (120800) MQTT: Updated number: 2920[0m
+[0;32mI (120804) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (120808) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689544 bytes
+[0;32mI (121031) MQTT: Topic: responsenumber[0m
+[0;32mI (121032) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1910","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (121036) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (121042) MQTT: Updated number: 1910[0m
+[0;32mI (121047) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (121051) MQTT_BACKUP: Save status successfully [0m
+[0;32mI (121798) MQTT: Topic: responsenumber[0m
+[0;32mI (121798) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1911","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (121803) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (121808) MQTT: Updated number: 1911[0m
+[0;32mI (121813) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (121817) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689508 bytes
+[0;32mI (122729) MQTT: Topic: responsenumber[0m
+[0;32mI (122730) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2921","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (122735) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (122740) MQTT: Updated number: 2921[0m
+[0;32mI (122745) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (122749) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+[0;32mI (125792) MQTT: Topic: responsenumber[0m
+[0;32mI (125792) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (125793) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+[0;32mI (126030) MQTT: Topic: responsenumber[0m
+[0;32mI (126030) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1912","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (126035) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (126040) MQTT: Updated number: 1912[0m
+[0;32mI (126045) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (126049) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+[0;32mI (129870) MQTT: Topic: responsenumber[0m
+[0;32mI (129870) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (129871) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689528 bytes
+[0;32mI (132943) MQTT: Topic: responsenumber[0m
+[0;32mI (132943) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1913","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (132948) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (132953) MQTT: Updated number: 1913[0m
+[0;32mI (132958) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (132962) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689528 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+[0;32mI (139088) MQTT: Topic: responsenumber[0m
+[0;32mI (139088) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1914","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (139093) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (139098) MQTT: Updated number: 1914[0m
+[0;32mI (139104) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (139107) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (143182) MQTT: Topic: responsenumber[0m
+[0;32mI (143182) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (143182) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+[0;32mI (147195) MQTT: Topic: responsenumber[0m
+[0;32mI (147195) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1915","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (147200) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (147206) MQTT: Updated number: 1915[0m
+[0;32mI (147210) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (147214) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (151292) MQTT: Topic: responsenumber[0m
+[0;32mI (151293) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (151293) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+[0;32mI (154360) MQTT: Topic: responsenumber[0m
+[0;32mI (154360) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (154361) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (160693) MQTT: Topic: responsenumber[0m
+[0;32mI (160693) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2922","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (160698) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (160704) MQTT: Updated number: 2922[0m
+[0;32mI (160708) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (160712) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (166529) MQTT: Topic: responsenumber[0m
+[0;32mI (166530) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (166530) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+[0;32mI (172572) MQTT: Topic: responsenumber[0m
+[0;32mI (172572) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (172573) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (174620) MQTT: Topic: responsenumber[0m
+[0;32mI (174620) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (174621) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689528 bytes
+Free heap: 3689564 bytes
+Free heap: 3689564 bytes
+[0;32mI (177715) MQTT: Topic: responsenumber[0m
+[0;32mI (177715) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1916","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (177720) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (177726) MQTT: Updated number: 1916[0m
+[0;32mI (177757) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (177757) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (179860) MQTT: Topic: responsenumber[0m
+[0;32mI (179860) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (179860) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (183752) MQTT: Topic: responsenumber[0m
+[0;32mI (183753) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1917","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (183757) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (183763) MQTT: Updated number: 1917[0m
+[0;32mI (183767) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (183771) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (188956) MQTT: Topic: responsenumber[0m
+[0;32mI (188956) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (188956) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (201347) MQTT: Topic: responsenumber[0m
+[0;32mI (201347) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (201348) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (209337) MQTT: Topic: responsenumber[0m
+[0;32mI (209337) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2923","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (209342) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (209348) MQTT: Updated number: 2923[0m
+[0;32mI (209353) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (209356) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (212917) MQTT: Topic: responsenumber[0m
+[0;32mI (212917) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (212918) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (216415) MQTT: Topic: responsenumber[0m
+[0;32mI (216415) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (216416) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (222850) MQTT: Topic: responsenumber[0m
+[0;32mI (222850) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (222851) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (228607) MQTT: Topic: responsenumber[0m
+[0;32mI (228608) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (228608) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (234732) MQTT: Topic: responsenumber[0m
+[0;32mI (234732) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (234732) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (237021) MQTT: Topic: responsenumber[0m
+[0;32mI (237021) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (237022) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (241834) MQTT: Topic: responsenumber[0m
+[0;32mI (241834) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (241834) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (243861) MQTT: Topic: responsenumber[0m
+[0;32mI (243861) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (243862) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (247055) MQTT: Topic: responsenumber[0m
+[0;32mI (247056) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1918","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (247061) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (247066) MQTT: Updated number: 1918[0m
+[0;32mI (247071) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (247075) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (252035) MQTT: Topic: responsenumber[0m
+[0;32mI (252035) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (252035) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (262277) MQTT: Topic: responsenumber[0m
+[0;32mI (262278) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (262278) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (268439) MQTT: Topic: responsenumber[0m
+[0;32mI (268439) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (268440) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (273350) MQTT: Topic: responsenumber[0m
+[0;32mI (273351) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (273351) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (279479) MQTT: Topic: responsenumber[0m
+[0;32mI (279480) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (279480) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (286135) MQTT: Topic: responsenumber[0m
+[0;32mI (286135) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2924","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (286140) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (286145) MQTT: Updated number: 2924[0m
+[0;32mI (286150) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (286154) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (291049) MQTT: Topic: responsenumber[0m
+[0;32mI (291049) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (291050) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (296085) MQTT: Topic: responsenumber[0m
+[0;32mI (296085) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2925","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (296090) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (296096) MQTT: Updated number: 2925[0m
+[0;32mI (296100) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (296104) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (301204) MQTT: Topic: responsenumber[0m
+[0;32mI (301204) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"8001","service_name":"Giao d\u1ecbch bu\u00f4n l\u1eadu","device_name":"qu\u1ea7y 5"}[0m
+[0;32mI (301210) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (307452) MQTT: Topic: responsenumber[0m
+[0;32mI (307452) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1919","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (307457) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (307462) MQTT: Updated number: 1919[0m
+[0;32mI (307466) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (307471) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (312451) MQTT: Topic: responsenumber[0m
+[0;32mI (312451) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"9001","service_name":"Cho vay n\u1eb7ng l\u00e3i","device_name":"qu\u1ea7y 5"}[0m
+[0;32mI (312457) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (314499) MQTT: Topic: responsenumber[0m
+[0;32mI (314499) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (314500) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (317598) MQTT: Topic: responsenumber[0m
+[0;32mI (317598) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (317598) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (321872) MQTT: Topic: responsenumber[0m
+[0;32mI (321872) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2926","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (321877) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (321882) MQTT: Updated number: 2926[0m
+[0;32mI (321888) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (321891) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (324740) MQTT: Topic: responsenumber[0m
+[0;32mI (324741) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2927","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (324745) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (324751) MQTT: Updated number: 2927[0m
+[0;32mI (324755) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (324759) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (329877) MQTT: Topic: responsenumber[0m
+[0;32mI (329877) MQTT: Payload: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (329878) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (334978) MQTT: Topic: responsenumber[0m
+[0;32mI (334979) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2928","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (334983) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (334989) MQTT: Updated number: 2928[0m
+[0;32mI (334993) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (334998) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (345024) MQTT: Topic: responsenumber[0m
+[0;32mI (345024) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (345025) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (347066) MQTT: Topic: responsenumber[0m
+[0;32mI (347067) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2929","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (347071) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (347077) MQTT: Updated number: 2929[0m
+[0;32mI (347082) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (347086) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (349111) MQTT: Topic: responsenumber[0m
+[0;32mI (349112) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2930","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (349116) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (349122) MQTT: Updated number: 2930[0m
+[0;32mI (349127) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (349130) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (352284) MQTT: Topic: responsenumber[0m
+[0;32mI (352284) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (352285) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+[0;32mI (357432) MQTT: Topic: responsenumber[0m
+[0;32mI (357432) MQTT: Payload: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1920","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 6"}[0m
+[0;32mI (357437) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (357443) MQTT: Updated number: 1920[0m
+[0;32mI (357447) MQTT_BACKUP: current number saved successfully![0m
+[0;32mI (357451) MQTT_BACKUP: Save status successfully [0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+[0;32mI (367569) MQTT: Topic: responsenumber[0m
+[0;32mI (367570) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (367570) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+Free heap: 3689696 bytes
+[0;32mI (382801) MQTT: Topic: responsenumber[0m
+[0;32mI (382801) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (382801) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689696 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes
+[0;32mI (385899) MQTT: Topic: responsenumber[0m
+[0;32mI (385899) MQTT: Payload: {"device_id":"R2:42:E3:4C:7C:BC","number":"8002","service_name":"Giao d\u1ecbch bu\u00f4n l\u1eadu","device_name":"qu\u1ea7y 5"}[0m
+[0;32mI (385905) LOAD_DEVICE_ID: Loaded device_id: B8:D6:1A:B9:DA:A4[0m
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689660 bytes
+Free heap: 3689696 bytes

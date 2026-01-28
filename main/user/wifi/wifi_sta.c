@@ -43,7 +43,7 @@ bool wifi_need_mqtt_start=false;
 extern bool user_manual;
 
 extern bool spe_case;
-extern int open_cnt;
+//extern int open_cnt;
 
 
 
@@ -324,9 +324,9 @@ static void wifi_ui_retry_fail(void *param)
     //_ui_flag_modify(ui_WIFI_Spinner, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD); 
     _ui_flag_modify(ui_WIFI_Wait_CONNECTION, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD); 
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
-    if (wifi_open){
-        lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
-    }
+   // if (wifi_open){
+    lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
+   // }
 }
 
 static void wifi_ui_retry_success(void *param)
@@ -335,9 +335,9 @@ static void wifi_ui_retry_success(void *param)
     _ui_flag_modify(ui_WIFI_Wait_CONNECTION, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD); //
 
     _ui_state_modify(ui_WIFI_OPEN, LV_STATE_DISABLED, _UI_MODIFY_STATE_REMOVE);
-    if (wifi_open){
+   // if (wifi_open){
         lv_obj_add_flag(ui_WIFI_Rescan_Button, LV_OBJ_FLAG_CLICKABLE);
-    }
+   // }
 }
 
 // Event handler for Wi-Fi events
@@ -363,7 +363,8 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
         ESP_LOGI(TAG_STA, "WIFI STA_DISCONNECTED.");
 
         //if (!user_selected_wifi&&(wifi_open==true)){
-        if( (!user_selected_wifi&&(wifi_open&&!spe_case)) || ((open_cnt==0&&!user_selected_wifi&&(!wifi_open&&!spe_case)))){// disconnect sau khi người dùng đăng nhập wifi->auto connect  
+        //if( (!user_selected_wifi&&(wifi_open&&!spe_case)) || ((open_cnt==0&&!user_selected_wifi&&(!wifi_open&&!spe_case)))){// disconnect sau khi người dùng đăng nhập wifi->auto connect  
+        if( !user_selected_wifi&&!spe_case ){// auto connect  
 
             if (s_retry_num < auto_wifi_retry) {
                 if (s_retry_num==0){
@@ -398,7 +399,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
         wifi_need_mqtt_start=true; 
         //found_saved_ap=false;//
 
-        if (user_selected_wifi==true){
+        if (user_selected_wifi==true){// kết nối thành công khi đăng nhập
             user_selected_wifi=false;
             save_wifi_credentials((char*)sta_config.sta.ssid,(char*)sta_config.sta.password,sta_config.sta.bssid);// lưu ssid, password và của wifi kết nối thành công vào nvs
 
@@ -406,7 +407,8 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
 
         //mqtt_start();
          //if ( (user_selected_wifi==false)&&(wifi_open==true)){
-         if( (!user_selected_wifi&&(wifi_open==true&&!spe_case)) || ((open_cnt==0&&!user_selected_wifi&&(!wifi_open&&!spe_case)))){// disconnect sau khi ngÆ°á»i dĂ¹ng nháº­p wifi->auto connect  
+         //if( (!user_selected_wifi&&(wifi_open==true&&!spe_case)) || ((open_cnt==0&&!user_selected_wifi&&(!wifi_open&&!spe_case)))){// disconnect sau khi ngÆ°á»i dĂ¹ng nháº­p wifi->auto connect  
+         if( !user_selected_wifi&&!spe_case){// auto connect thành công 
 
              s_retry_num=0;
 
@@ -531,7 +533,7 @@ void wifi_wait_connect()
                     ESP_LOGI(TAG_STA, "Retrying to connect to the AP");
                 }
                 else {
-                    // Reset retry counter after 5 attempts and log the failure
+                    // Reset retry counter after n attempts and log the failure
                     s_retry_num1 = 0;
                     lv_timer_t *t = lv_timer_create(wifi_ok_cb, 100, NULL);  // Update the UI every 100ms
                     lv_timer_set_repeat_count(t, 1);
@@ -542,10 +544,11 @@ void wifi_wait_connect()
 
                      
 
-                 if (user_selected_wifi){// nếu connect bằng cách nhập pass thì lưu pass, ngược lại ko lưu
-                  user_selected_wifi=false;
+                 if (user_selected_wifi){// 
+                    user_selected_wifi=false;
 
-             }  
+                }  
+
                 spe_case=false;
                 lv_async_call(wifi_ui_retry_fail, NULL); //
 
@@ -631,7 +634,8 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
         vTaskDelay(pdMS_TO_TICKS(100));
     }
     */
-    uint8_t cnt=0;//
+    //uint8_t cnt=0;//
+    /*
     while (!WIFI_CONNECTION_DONE&&cnt<5)
     {   
         cnt++;//
@@ -640,7 +644,7 @@ void wifi_sta_init(uint8_t *ssid, uint8_t *pwd, wifi_auth_mode_t authmode,  cons
     }
     ESP_LOGW("MANUAL CONNECT","CHECK CONNECTION %d/%d",cnt,5);
     WIFI_CONNECTION_DONE = false;
-     
+     */
     
 }
 

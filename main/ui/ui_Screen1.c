@@ -20,6 +20,7 @@ extern int cnt;
 static int change=0;
 char prev_number[5]={0};
 size_t prev_number_len=sizeof(prev_number);
+uint8_t max_touch=3;
 
 char display_number[5]={0};
 
@@ -50,7 +51,7 @@ static void area_click_event_cb(lv_event_t *e) {
         click_count = 1;
     }
 
-    if (click_count >= 7) {
+    if (click_count >= max_touch) {
         click_count = 0;
         _ui_screen_change(&ui_Screen2, LV_SCR_LOAD_ANIM_MOVE_LEFT, 50, 0, &ui_Screen2_screen_init);
 
